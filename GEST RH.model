@@ -1,0 +1,9 @@
+:Model File for GEST RH
+
+ Todo :
+	- Optimize
+	- Write Documentation
+	- Publish
+
+	- Employé ( CRUD )
+	- Dossier ( CRUD ), Il faudra prévoir différents états de dossier
