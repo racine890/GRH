@@ -1,9 +1,32 @@
 :Model File for GEST RH
 
- Todo :
-	- Optimize
-	- Write Documentation
-	- Publish
+Conventions :
+	- Les noms des tables commenceront toutes par grh_ ( ex : grh_user, grh_rights, grh_worker, ... )
+	- On enregistrera un maximum d'informations dans les tables, meme si on ne sait pas ce qu'on va en faire.
+	- Pour chaque table, on va créer 3 droits : read, write, et remove.
+	- Pour chaque écran ch, on va créer 3 droits : read, write, et remove.
+	- Les tables de liaisons doivent etre nommées dans le genre grh_table1_table2_assoc. Exemple, une liaison entre la table grh_user et la table grh_worker aura le nom grh_user_worker_assoc.
+	- On utilisera des constantes d'état. ( Par exemple 0 pour désactivé, 1 pour actif, 2 pour en état brouillon , etc )
 
-	- Employé ( CRUD )
-	- Dossier ( CRUD ), Il faudra prévoir différents états de dossier
+ Todo :
+	- Optimiser
+	- Ecrire la documentation
+	- Publier
+
+	- Gérer l'authentification ( Sécurité )
+		- Choisir un SGBD
+		- Créer la table des utilisateurs, et la table des droits
+		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin"
+		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit )
+		- Un utilisateur doit avoir un ou plusieurs droits
+		- Créer la table pour associer les utilisateurs et les droits
+		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base.
+
+	- Gérer les employés ( Création, Modification, Suppression )
+		- Créer la table des Employés.
+		- Créer la table dossier.
+		- Créer la table d'association des Employés aux dossiers. Un employé a un dossier.
+		- Créer la table des statuts par poste. Chaque statut doit avoir au moins un titre, et peut-etre un statut parent. Chaque employé doit avoir un statut. Par exemple, on pourra créer un statut "Stagiaire en développement logiciel" qui n'a aucun parent. Puis un statut "Employé en développement logiciel" qui aura pour parent "Stagiaire en développement logiciel", et tous les postes dans l'ordre ascendant. Ajouter toute colonne que vous jugerez utile.
+		- Créer la table des badges avec des badges par défaut, puis les associer aux employés.
+		- Créer la table d'évènements. Elle doit au moins avoir les colonnes de titre, de temps accordé par an, et la lier à la table employé.
+		- On doit avoir la table de pointage, pour enregistrer les heures d'arrivée et de départ des employés chaque jour.
