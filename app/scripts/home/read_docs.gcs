@@ -1,0 +1,9 @@
+# Read docs script
+# Mostly, will just open some file or some link, locally or remotely
+SetVar *platform PLATFORM
+compare *platform win32
+if 0 then
+	evaluate system("start https://gcenterburkina.com/path/to/doc")
+	end
+evaluate system("xdg-open https://gcenterburkina.com/path/to/doc")
+end
