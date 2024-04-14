@@ -1,1 +1,197 @@
+connect MySQL with ( 'root', '', 'localhost', 'grh' )
+
+create table grh_user with q1
+create table grh_right with q2
+create table grh_user_right_assoc with q3
+create table grh_workerstation with q4
+create table grh_status with q5
+create table grh_workerstation_status_assoc with q6
+create table grh_badge with q7
+create table grh_event with q8
+create table grh_worker  with q9
+create table grh_folder with q10
+create table grh_mobile with q11
+create table grh_clockingtime with q12
+create table grh_worker_badge_assoc with q13 
+create table grh_worker_event_assoc with q14
+create table grh_worker_workerstation_assoc with q15
+commit
+close database
 end
+
+[q1]
+create table if not exists grh_user(
+    id integer PRIMARY KEY AUTO_INCREMENT,
+    user_name varchar (60),
+    passw varchar(300),
+    salt varchar(4),
+    statut integer (1) DEFAULT 1,
+    last_connection_time timestamp ,
+    create_date timestamp DEFAULT CURRENT_TIMESTAMP
+    
+)
+[/q1]
+
+[q2]
+    create table if not exists grh_right(
+    id integer PRIMARY KEY AUTO_INCREMENT,
+    name_right varchar (60),
+    statut integer (1) DEFAULT 1,
+    create_date timestamp DEFAULT CURRENT_TIMESTAMP
+    
+)
+[/q2]
+
+[q3]
+create table if not exists grh_user_right_assoc(
+    id integer PRIMARY KEY AUTO_INCREMENT,
+    id_right integer,
+    id_user integer,
+    date datetime,
+    read_access integer (0) DEFAULT 0,
+    write_access integer (0) DEFAULT 0,
+    remove_access integer (0) DEFAULT 0,
+    statut integer (1) DEFAULT 1,
+    foreign key (id_user) references grh_user(id),
+    foreign key (id_right) references grh_right(id), 
+    create_date timestamp DEFAULT CURRENT_TIMESTAMP
+    
+)
+[/q3]
+
+[q4]
+create table if not exists grh_workerstation(
+ id integer PRIMARY KEY AUTO_INCREMENT,
+ label varchar(100),
+ statut integer (1) DEFAULT 1,
+ create_date timestamp DEFAULT CURRENT_TIMESTAMP
+
+)
+[/q4]
+
+[q5]
+create table if not exists grh_status(
+ id integer PRIMARY KEY AUTO_INCREMENT,
+ type varchar(100),
+ statut integer (1) DEFAULT 1,
+ create_date timestamp DEFAULT CURRENT_TIMESTAMP
+
+)
+[/q5]
+
+[q6]
+create table if not exists grh_workerstation_status_assoc(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_workerstation integer,
+id_status integer,
+statut integer (1) DEFAULT 1,
+foreign key (id_workerstation) references grh_workerstation(id),
+foreign key (id_status) references grh_status(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q6]
+
+[q7]
+create table if not exists grh_badge(
+id integer PRIMARY KEY AUTO_INCREMENT,
+description varchar(100),
+icon varchar(200),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q7]
+
+[q8]
+create table if not exists grh_event(
+id integer PRIMARY KEY AUTO_INCREMENT,
+title varchar(60),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q8]
+
+[q9]
+ create table if not exists  grh_worker(
+id integer PRIMARY KEY AUTO_INCREMENT,
+firstname varchar(20),
+lastname varchar(20),
+date_birth timestamp,
+profile_picture varchar(200),
+address varchar(60),
+mail varchar(60),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q9]
+
+[q10]
+ create table if not exists grh_folder(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_worker integer,
+type_folder varchar(60),
+foreign key (id_worker) references grh_worker(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q10]
+
+[q11]
+ create table if not exists grh_mobile(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_worker integer,
+number integer,
+foreign key (id_worker) references grh_worker(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q11]
+
+[q12]
+ create table if not exists grh_clockingtime(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_worker integer,
+arrive_timing timestamp,
+depart_timing timestamp DEFAULT CURRENT_TIMESTAMP,
+foreign key (id_worker) references grh_worker(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q12]
+
+[q13]
+create table if not exists grh_worker_badge_assoc(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_worker integer,
+id_badge integer,
+periods varchar(60),
+statu integer ,
+foreign key (id_worker) references grh_worker(id),
+foreign key (id_badge) references grh_badge(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q13] 
+
+[q14]
+create table if not exists grh_worker_event_assoc(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_worker integer,
+id_event integer,
+start timestamp,
+end  timestamp DEFAULT CURRENT_TIMESTAMP,
+justify varchar(60),
+foreign key (id_worker) references grh_worker(id),
+foreign key (id_event) references grh_event(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q14] 
+
+[q15]
+create table if not exists grh_worker_workerstation_assoc(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_worker integer,
+id_workerstation integer,
+start_date timestamp,
+end_date timestamp DEFAULT CURRENT_TIMESTAMP,
+foreign key (id_worker) references grh_worker(id),
+foreign key (id_workerstation) references grh_workerstation(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q15] 
+
+
+
+
