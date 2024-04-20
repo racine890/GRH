@@ -21,7 +21,7 @@ Conventions :
 	- Gérer les employés ( Création, Modification, Suppression )
 
 	- Créer la fenêtre de Configuration globale
-		- Afficher la page d'accueil, avec Sign-In et Read the docs
+		- Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
 		- Avant même l'initialisation de la base de données, Il est important d'afficher une fenêtre de Config exigeant de spécifier les paramètres par défaut. Les stocker par la suite pour les utiliser ( dbName, userName, host, password ) - Peut-être simplifier ça avec juste un fichier de Configuration?? Non ?. L'écran exécutera initDatabase. Il ne s'affiche que si la Configuration n'est pas faite.
 		- Afficher l'écran d'acceptation des conditions d'utilisation et de la license. C'est de là que viendra le fichier accepted.txt qui sera créé uniquement si l'utilisateur accepte. Bien sûr, il ne peut pas continuer, sinon. La page ne s'affiche que si le fichier n'existe pas.
 		- Afficher l'écran de connexion, et tester avec l'utilisateur par défaut.

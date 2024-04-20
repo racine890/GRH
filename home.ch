@@ -6,14 +6,14 @@ Size: 500
 Title: HR Management Tool - By GC
 
 Background: app/res/bg.png
-Onload: app/scripts/db/initDatabase.gcs
+#Onload: app/scripts/db/initDatabase.gcs
 
 Buttons.nb: 2
 Button1: Sign-in
 Button1.id: 0
 0.x: 160
 0.y: 410
-0.link: app/screens/sign-in.ch
+0.link: app/screens/licence.ch
 
 Button2: Read the docs
 Button2.id: 1
