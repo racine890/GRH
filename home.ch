@@ -13,7 +13,7 @@ Button1: Sign-in
 Button1.id: 0
 0.x: 160
 0.y: 410
-0.link: app/screens/sign-in.ch
+0.link: app/screens/licence.ch
 
 Button2: Read the docs
 Button2.id: 1
