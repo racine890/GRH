@@ -10,3 +10,6 @@
 
 <h2>Contribuer</h2>
     Clonez simplement le dépôt, puis réalisez votre feature. Vous pourrez ensuite réaliser votre fonctionnalité, et effectuer un merge request pour racine23102001.
+
+<h2>Contact</h2>
+    Contactez-nous à l'adresse gcenterburkina@gmail.com
