@@ -21,19 +21,19 @@ Conventions :
 	- Gérer les employés ( Création, Modification, Suppression )
 
 	- Créer la fenêtre de Configuration globale
-		- Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
 		- Avant même l'initialisation de la base de données, Il est important d'afficher une fenêtre de Config exigeant de spécifier les paramètres par défaut. Les stocker par la suite pour les utiliser ( dbName, userName, host, password ) - Peut-être simplifier ça avec juste un fichier de Configuration?? Non ?. L'écran exécutera initDatabase. Il ne s'affiche que si la Configuration n'est pas faite.
-		- Afficher l'écran d'acceptation des conditions d'utilisation et de la license. C'est de là que viendra le fichier accepted.txt qui sera créé uniquement si l'utilisateur accepte. Bien sûr, il ne peut pas continuer, sinon. La page ne s'affiche que si le fichier n'existe pas.
 		- Afficher l'écran de connexion, et tester avec l'utilisateur par défaut.
 
 Done :
 - Créer la table des Employés. (ok)
 - Créer la table dossier. (ok)
+- Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
 - Créer la table d'association des Employés aux dossiers. Un employé a un dossier. (ok)
 - Créer la table des statuts par poste. Chaque statut doit avoir au moins un titre, et peut-etre un statut parent. Chaque employé doit avoir un statut. Par exemple, on pourra créer un statut "Stagiaire en développement logiciel" qui n'a aucun parent. Puis un statut "Employé en développement logiciel" qui aura pour parent "Stagiaire en développement logiciel", et tous les postes dans l'ordre ascendant. Ajouter toute colonne que vous jugerez utile. (ok)
 - Créer la table des badges avec des badges par défaut, puis les associer aux employés. (ok)
 - Créer la table d'évènements. Elle doit au moins avoir les colonnes de titre, de temps accordé par an, et la lier à la table employé. (ok)
 - On doit avoir la table de pointage, pour enregistrer les heures d'arrivée et de départ des employés chaque jour. (ok)
+- Afficher l'écran d'acceptation des conditions d'utilisation et de la license. C'est de là que viendra le fichier accepted.txt qui sera créé uniquement si l'utilisateur accepte. Bien sûr, il ne peut pas continuer, sinon. La page ne s'affiche que si le fichier n'existe pas. (ok)
 - Choisir un SGBD (ok)
 - Créer la table des utilisateurs, et la table des droits (ok)
 - Un utilisateur doit avoir un ou plusieurs droits (ok)
