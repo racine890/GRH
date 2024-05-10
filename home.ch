@@ -23,7 +23,7 @@ Button2.id: 1
 
 Buttons.width: 200
 Buttons.size: 50
-Button.Background: #EEB530
-Button.Foreground: #FFFFF1
+Button.Background: #55968F
+Button.Foreground: #FFFFFF
 
 # END

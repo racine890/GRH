@@ -2,10 +2,10 @@
 #- nom de la base, l'utilisateur mysql(root), le mot de passe(), ladresse ip de la base(le localhost)
 
 Buttons.nb: 2
-Button.size:50
-Button.width:150
-Button.Background:#55968F
-Button.Foreground:#FFFFFF
+Button.size: 50
+Button.width: 150
+Button.Background: #55968F
+Button.Foreground: #FFFFFF
 
 Button1: Enregistrer
 Button1.id: 0
@@ -20,7 +20,7 @@ Button2.id: 1
 1.link: home.ch
 
 input.nb: 4
-input.Background:#ADD2CA
+input.Background: #ADD2CA
 Input1: 
 Input1.id: 2
 2.x: 450
@@ -50,21 +50,21 @@ Text1.id: 6
 Text2: Utilisateur:
 Text2.id: 7
 7.x: 300
-7.y:80
+7.y: 80
 
 Text3: Mot De Passe:
 Text3.id: 8
 8.x: 300
-8.y:130
+8.y: 130
 
 Text4: Adresse Ip De La Base
 Text4.id: 9
 9.x: 300
-9.y:180
+9.y: 180
 
-Background:app/res/plum.png
-Background.x:0
-Background.y:0
-Background.width:5
+Background: app/res/plum.png
+Background.x: 0
+Background.y: 0
+Background.width: 5
 
-
+# END

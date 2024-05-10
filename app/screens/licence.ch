@@ -25,7 +25,7 @@ Button-1: app/scripts/licence/licence_accept.gcs
 
 Buttons.width: 200
 Buttons.size: 50
-Button.Background: #EEB530
-Button.Foreground: #FFFFF1
+Button.Background: #55968F
+Button.Foreground: #FFFFFF
 
 #END
