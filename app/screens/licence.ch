@@ -2,7 +2,7 @@ OnDisplay: app/scripts/licence/licence_showlicense.gcs
 BackGround: app/res/bg.png
 
 Text.nb: 1
-Text1: J'ai lu et j'accepte les conditions d'utilisation
+Text1: I have readed and i accept usage terms.
 Text1.id: 0
 0.x: 390
 0.y: 350

@@ -15,12 +15,12 @@ Input2.id: 3
 3.y: 300
 
 Text.nb: 4
-Text1: Adresse E-mail
+Text1: E-mail address
 Text1.id: 6
 6.x: 300
 6.y: 230
 
-Text2: Mot de passe
+Text2: Password
 Text2.id: 7
 7.x: 300
 7.y: 280
