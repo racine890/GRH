@@ -4,3 +4,6 @@ write Terms and Conditions have been accepted. =>accepted.txt
 #Le bouton suivant, juste afficher l'écran de connexion
 load app/screens/sign-in.ch
 end
+
+# role
+# 	Ecris un fichier et ouvre l'écran suivant.

@@ -1,0 +1,7 @@
+ConfigInput 3 show='*'
+LoadPic app/res/login.png at 380-100
+end
+
+# role :
+# 	Change l'affichage du texte dans l'input 3
+#	Puis affiche login.png sur la fenêtre.

@@ -41,7 +41,7 @@ Input4.id: 5
 5.x: 450
 5.y: 200
 
-text.nb: 4
+Text.nb: 4
 Text1: Nom De La Base:
 Text1.id: 6
 6.x: 300
