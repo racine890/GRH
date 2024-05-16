@@ -192,6 +192,5 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q15] 
 
-
-
-
+#	role:
+#		Creates the database

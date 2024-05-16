@@ -17,12 +17,9 @@ if 0 then
 	end
 end
 
-[
-licence_showlicence.gcs
-
-vars:
-	*licence_checked: booléen contenant 1 si la checkbox est cochée et 0 sinon.
-
-evals:
-	self.page.img_upd(image, id): Fonction python permettant de changer une image sans modifier son id.
-]
+#	role:
+#		Change l'image checkbox.png en checkbox-checked.png en modifiant *licence_checked
+#		et vice-versa.
+#
+#	vars:
+#		*licence_checked: booléen contenant 1 si la checkbox est cochée et 0 sinon.

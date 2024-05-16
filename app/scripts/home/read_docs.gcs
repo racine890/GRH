@@ -7,3 +7,9 @@ if 0 then
 	end
 evaluate system("xdg-open https://gcenterburkina.com/path/to/doc")
 end
+
+# role :
+# 	Just opens the doc from the website
+#
+# vars:
+#	*platform : a copy of PLATFORM

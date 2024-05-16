@@ -1,0 +1,13 @@
+# Note : Après l'écran d'inscription, on pourra réaliser celui-ci.
+
+# A faire :
+# 1) récupérer les champs
+# 2) vérifier les contraintes métier
+# 3) rechercher le mail et obtenir le sel
+# 4) hasher avec le sel + bcrypt
+# 5) vérifier le mot de passe
+# 6) récupérer les variables globales ( droits, personne, etc )
+# 7) charger l'écran proncipal
+
+load app/screens/main.ch
+end
