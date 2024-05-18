@@ -11,7 +11,7 @@ Button1: Enregistrer
 Button1.id: 0
 0.x: 200
 0.y: 300
-0.link: 
+0.link: app/scripts/licence/checkconfig_save_database.gcs
 
 Button2: Retour
 Button2.id: 1

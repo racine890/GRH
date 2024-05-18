@@ -25,4 +25,8 @@ Buttons.size: 50
 Button.Background: #55968F
 Button.Foreground: #FFFFFF
 
+[events]
+Control-q: @[exit]
+[/events]
+
 # END
