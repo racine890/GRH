@@ -1,13 +1,11 @@
 
 Background: app/res/bgmain.png
-Background.x: 50
-Background.y: 50
 
 Text.nb: 8
 Text1: user
 Text1.id: 0
-0.x: 90
-0.y: 170
+0.x: 50
+0.y: 150
 
 Text2: worker
 Text2.id: 1
@@ -31,7 +29,7 @@ Text5.id: 4
 
 Text6: clocking time 
 Text6.id: 5
-5.x: 370
+5.x: 400
 5.y: 250
 
 Text7: status
@@ -42,14 +40,14 @@ Text7.id: 6
 
 Text8: configuration 
 Text8.id: 7
-7.x: 110
+7.x: 70
 7.y: 300
 #les icones se telechargerons apres le chargement de l'ppli
 OnDisplay: @showIcons
 
 [@showIcons]
-LoadPic app/res/user.png at 78-70
-LoadPic app/res/configuration.png at 78-230
+LoadPic app/res/user.png at 38-70
+LoadPic app/res/configuration.png at 38-230
 LoadPic app/res/worker.png at 250-50
 LoadPic app/res/postworker.png at 375-50
 LoadPic app/res/badge.png at 475-50
@@ -63,9 +61,10 @@ end
 
 # la partie suivante nous permettra de prendre les id de nos icone et les reliers a des evenements
 
-[events]
 # on executera la fonction @dist au clic de la souris 
+[events]
 Button-1: @dist
+Control-r: @[load app/screens/main.ch;end]
 [/events]
 
 [@dist]
@@ -76,7 +75,7 @@ print var LASTCLICKEDID
 #print file
 #print section 
 #PrintVars
-
+end
 switch LASTCLICKEDID
 if 1 then
     load app/home.ch
