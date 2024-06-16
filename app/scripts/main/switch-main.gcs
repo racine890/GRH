@@ -1,0 +1,18 @@
+print var LASTCLICKEDID
+#1=user,11=configuration,12=worker,13=post,14=badge,15=events,16=clocking,17=status
+#print val Hello world!
+#print var
+#print file
+#print section 
+#PrintVars
+
+switch LASTCLICKEDID
+print var LASTCOMPARE
+if 11 then
+	print val texte
+	load app/screens/config-1.ch
+	end
+end
+
+
+    
