@@ -1,3 +1,5 @@
+![GRH](https://firebasestorage.googleapis.com/v0/b/gc-website-1ea74.appspot.com/o/uploads%2Fprojects%2Fproject-5.jpg?alt=media&token=42155678-c020-4d63-9985-148608552cc9)
+
 <h1>GRH, Un outil global pour la gestion de la resource humaine</h1>
 
 <h2>A propos</h2>
