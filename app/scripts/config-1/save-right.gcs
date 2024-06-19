@@ -1,0 +1,6 @@
+print val Enregistrement
+GetInput 3
+SetVar *saisie LASTRESULT
+print var saisie
+execute app/scripts/db/db-insert-right.gcs
+end

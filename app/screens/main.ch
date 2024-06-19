@@ -42,63 +42,16 @@ Text8: configuration
 Text8.id: 7
 7.x: 70
 7.y: 300
-#les icones se telechargerons apres le chargement de l'ppli
-OnDisplay: @showIcons
-
-[@showIcons]
-LoadPic app/res/user.png at 38-70
-LoadPic app/res/configuration.png at 38-230
-LoadPic app/res/worker.png at 250-50
-LoadPic app/res/postworker.png at 375-50
-LoadPic app/res/badge.png at 475-50
-LoadPic app/res/event.png at 270-200
-LoadPic app/res/time.png at 370-200
-LoadPic app/res/preview.png at 470-200
-
-
-end
-[/@showIcons]
+#les icones se telechargerons apres le chargement de l'appli
+OnDisplay: app/scripts/main/loadimg.gcs
 
 # la partie suivante nous permettra de prendre les id de nos icone et les reliers a des evenements
 
-# on executera la fonction @dist au clic de la souris 
 [events]
-Button-1: @dist
-Control-r: @[load app/screens/main.ch;end]
+Button-1: app/scripts/main/switch-main.gcs
 [/events]
 
-[@dist]
-print var LASTCLICKEDID
-#1=user,11=configuration,12=worker,13=post,14=badge,15=events,16=clocking,17=status
-#print val Hello world!
-#print var
-#print file
-#print section 
-#PrintVars
-end
-switch LASTCLICKEDID
-if 1 then
-    load app/home.ch
-    end
-if 11 then
-    execute app/scripts/sign-in/configure.gcs
-    end
-if 12 then
-    load app/home.ch
-    end
-if 13 then
-     load app/home.ch
-if 14 then
-	 load app/home.ch
-if 15 then
-     load app/home.ch
-if 16 then
-     load app/home.ch
-if 13 then
-    #execute 4.gcx
-	 load app/home.ch
-    end
-[/@dist]
+
 
 
 
