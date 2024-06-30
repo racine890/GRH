@@ -26,10 +26,10 @@ end
 create table if not exists grh_user(
     id integer PRIMARY KEY AUTO_INCREMENT,
     user_name varchar (60),
-    passw varchar(300),
-    salt varchar(4),
+    passw blob,
+    salt blob,
     statut integer (1) DEFAULT 1,
-    last_connection_time timestamp ,
+    last_connection_time timestamp DEFAULT NULL,
     create_date timestamp DEFAULT CURRENT_TIMESTAMP
     
 )
