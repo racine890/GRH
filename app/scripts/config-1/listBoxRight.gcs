@@ -1,0 +1,4 @@
+execute app/scripts/db/collect-right.gcs
+SetVar *all_rights LASTLIST
+create ListBox with *all_rights at 350-250
+end
