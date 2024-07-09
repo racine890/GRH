@@ -1,0 +1,11 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+# selection des droits dans la base de donnee
+query select_one with getUser
+close database
+end
+
+[getUser]
+select * from grh_user where user_name = *name ;
+[/getUser]

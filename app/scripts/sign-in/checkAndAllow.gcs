@@ -9,5 +9,41 @@
 # 6) récupérer les variables globales ( droits, personne, etc )
 # 7) charger l'écran proncipal
 
-load app/screens/main.ch
+GetInput 2
+SetVar *name LASTRESULT
+if evaluate( {*name} == ""  ) then
+	MessageBox Wait.. Please Enter Username
+	end
+
+GetInput 3
+SetVar *passw LASTRESULT
+if evaluate( {*passw} == ""  ) then
+	MessageBox Wait.. Please Enter your password
+	end
+
+execute app/scripts/db/getusername-for-login.gcs
+print val -------------- USER CHECK ----------------
+print var  LASTTUPLE
+compare LASTTUPLE None
+if 0 then
+	MessageBox Error this account does not exists
+	end
+
+GetTableElement 2 of  LASTTUPLE
+SetVar *passw-db LASTRESULT	
+
+print var LASTTUPLE
+GetTableElement 3 of  LASTTUPLE
+SetVar *check-salt LASTRESULT
+print var *check-salt
+
+evaluate crypt_pass({*passw}, {*check-salt})
+SetVar *passw LASTRESULT
+
+compare *passw *passw-db
+if 0 then
+	load app/screens/main.ch
+	end
+		
+
 end

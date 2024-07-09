@@ -45,13 +45,13 @@ Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
-Button1: Retour
+Button1: Return
 Button1.id: 8
 8.link: app/screens/sign-in.ch
 8.x: 20
 8.y: 250
 
-Button2: Enregistrer
+Button2: Save
 Button2.id: 9
 9.link: app/scripts/config-1/save-user.gcs
 9.x: 360
