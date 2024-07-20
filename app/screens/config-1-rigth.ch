@@ -24,7 +24,7 @@ Input1.id: 3
 3.y: 120
 
 Buttons.nb: 1
-Button.size: 50
+Button.size: 30
 Button.width: 100
 Button.Background: #55968F
 Button.Foreground: #FFFFFF
