@@ -47,7 +47,7 @@ Button.Background: #FFFFFF
 Button.Foreground: #55968F
 Button1: Return
 Button1.id: 8
-8.link: app/screens/sign-in.ch
+8.link: app/screens/main.ch
 8.x: 20
 8.y: 250
 
@@ -60,7 +60,7 @@ Button2.id: 9
 
 
 
-OnDisplay: app/scripts/config-1/loadimag.gcs
+OnDisplay: app/scripts/config-1/config-init.gcs
 
 #on executera le script contenu dans le fichier switch-config1.gcs
 [events]

@@ -49,7 +49,8 @@ SetVar *form_password LASTRESULT
 
 GetTableElement 0 of *form_right
 SetVar *form_right_id LASTRESULT
-
+SetVar *param_age_minimal 14
+SetVar *param_age_maximal 17
 print val ----------------- ???? ---------------------
 print var *form_password
 print var *form_username

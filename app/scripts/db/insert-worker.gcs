@@ -1,0 +1,12 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+#print var LASTFILE
+execute query insert
+commit
+close database
+end
+
+[insert]
+insert into grh_worker(firstname,lastname,date_birth,address,mail) values ( *name,*lastname,*birthday,*address,*mail );
+[/insert]

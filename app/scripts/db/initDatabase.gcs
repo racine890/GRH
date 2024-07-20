@@ -8,7 +8,7 @@ create table grh_right with q2
 create table grh_user_right_assoc with q3
 create table grh_workerstation with q4
 create table grh_status with q5
-create table grh_workerstation_status_assoc with q6
+create table grh_worker_status_assoc with q6
 create table grh_badge with q7
 create table grh_event with q8
 create table grh_worker  with q9
@@ -18,8 +18,29 @@ create table grh_clockingtime with q12
 create table grh_worker_badge_assoc with q13 
 create table grh_worker_event_assoc with q14
 create table grh_worker_workerstation_assoc with q15
+execute query ir1
+execute query ir2
+execute query ir3
+execute query ir4
+execute query event1
+execute query event2
+execute query event3
+execute query status1
+execute query status2
+execute query status3
 commit
 close database
+#initialisation d'un utilisateur
+
+SetVar *form_username admin
+evaluate make_salt()
+SetVar *passw_salt LASTRESULT
+SetVar *form_password admin
+evaluate crypt_pass({*form_password}, {*passw_salt})
+SetVar *form_password LASTRESULT
+SetVar *form_right_id 1
+execute app/scripts/db/insert-user.gcs
+
 end
 
 [q1]
@@ -83,12 +104,12 @@ create table if not exists grh_status(
 [/q5]
 
 [q6]
-create table if not exists grh_workerstation_status_assoc(
+create table if not exists grh_worker_status_assoc(
 id integer PRIMARY KEY AUTO_INCREMENT,
-id_workerstation integer,
+id_worker integer,
 id_status integer,
 statut integer (1) DEFAULT 1,
-foreign key (id_workerstation) references grh_workerstation(id),
+foreign key (id_worker) references grh_worker(id),
 foreign key (id_status) references grh_status(id),
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
@@ -99,6 +120,7 @@ create table if not exists grh_badge(
 id integer PRIMARY KEY AUTO_INCREMENT,
 description varchar(100),
 icon varchar(200),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q7]
@@ -107,6 +129,7 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
 create table if not exists grh_event(
 id integer PRIMARY KEY AUTO_INCREMENT,
 title varchar(60),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q8]
@@ -120,6 +143,9 @@ date_birth timestamp,
 profile_picture varchar(200),
 address varchar(60),
 mail varchar(60),
+foresight_date timestamp,
+event_date timestamp,
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q9]
@@ -130,6 +156,7 @@ id integer PRIMARY KEY AUTO_INCREMENT,
 id_worker integer,
 type_folder varchar(60),
 foreign key (id_worker) references grh_worker(id),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q10]
@@ -140,6 +167,7 @@ id integer PRIMARY KEY AUTO_INCREMENT,
 id_worker integer,
 number integer,
 foreign key (id_worker) references grh_worker(id),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q11]
@@ -151,6 +179,7 @@ id_worker integer,
 arrive_timing timestamp,
 depart_timing timestamp DEFAULT CURRENT_TIMESTAMP,
 foreign key (id_worker) references grh_worker(id),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q12]
@@ -164,6 +193,7 @@ periods varchar(60),
 statu integer ,
 foreign key (id_worker) references grh_worker(id),
 foreign key (id_badge) references grh_badge(id),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q13] 
@@ -178,6 +208,7 @@ end  timestamp DEFAULT CURRENT_TIMESTAMP,
 justify varchar(60),
 foreign key (id_worker) references grh_worker(id),
 foreign key (id_event) references grh_event(id),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q14] 
@@ -191,9 +222,52 @@ start_date timestamp,
 end_date timestamp DEFAULT CURRENT_TIMESTAMP,
 foreign key (id_worker) references grh_worker(id),
 foreign key (id_workerstation) references grh_workerstation(id),
+statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q15] 
+
+#L'enregistrement des droit par defaut
+[ir1]
+insert into grh_right(name_right) value ("Admin");
+[/ir1]
+
+[ir2]
+insert into grh_right(name_right) value ("Hr Management");
+[/ir2]
+ 
+[ir3]
+insert into grh_right(name_right) value ("Invited User");
+[/ir3]
+
+[status1]
+insert into grh_status(type) value ("Intern");
+[/status1]
+
+
+[status2]
+insert into grh_status(type) value ("Employee");
+[/status2]
+
+[status3]
+insert into grh_status(type) value ("Appliant");
+[/status3]
+
+
+[event1]
+insert into grh_event(title) value ("Wedding");
+[/event1]
+
+[event2]
+insert into grh_event(title) value ("Burrial");
+[/event2]
+
+[event3]
+insert into grh_event(title) value ("Pregnancy");
+[/event3]
+
+
+
 
 #	role:
 #		Creates the database

@@ -1,0 +1,3 @@
+execute app/scripts/config-1/loadimag.gcs
+execute app/scripts/config-1/listBoxRight.gcs
+end
