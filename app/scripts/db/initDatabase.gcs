@@ -8,10 +8,10 @@ create table grh_right with q2
 create table grh_user_right_assoc with q3
 create table grh_workerstation with q4
 create table grh_status with q5
+create table grh_worker  with q9
 create table grh_worker_status_assoc with q6
 create table grh_badge with q7
 create table grh_event with q8
-create table grh_worker  with q9
 create table grh_folder with q10
 create table grh_mobile with q11
 create table grh_clockingtime with q12
@@ -50,7 +50,7 @@ create table if not exists grh_user(
     passw blob,
     salt blob,
     statut integer (1) DEFAULT 1,
-    last_connection_time timestamp DEFAULT NULL,
+    last_connection_time timestamp,
     create_date timestamp DEFAULT CURRENT_TIMESTAMP
     
 )
@@ -130,6 +130,8 @@ create table if not exists grh_event(
 id integer PRIMARY KEY AUTO_INCREMENT,
 title varchar(60),
 statut integer (1) DEFAULT 1,
+foresight_date timestamp,
+event_date timestamp,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q8]
@@ -143,8 +145,6 @@ date_birth timestamp,
 profile_picture varchar(200),
 address varchar(60),
 mail varchar(60),
-foresight_date timestamp,
-event_date timestamp,
 statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )

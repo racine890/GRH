@@ -80,3 +80,7 @@ Input5.id: 12
 #Input6.id: 13
 #13.x: 300
 #13.y: 330
+
+[events]
+Button-1: @[end]
+[/events]
