@@ -31,7 +31,7 @@ Text5.id: 4
 #5.y: 300
 
 
-Buttons.nb: 2
+Buttons.nb: 3
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
@@ -76,10 +76,13 @@ Input5.id: 12
 12.x: 250
 12.y: 280
 
-#Input6:
-#Input6.id: 13
-#13.x: 300
-#13.y: 330
+
+Button3: Attribute status
+Button3.id: 13
+13.link: app/screens/worker-status-screen.ch
+13.x: 550
+13.y: 2
+
 
 [events]
 Button-1: @[end]

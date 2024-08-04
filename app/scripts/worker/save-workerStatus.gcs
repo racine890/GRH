@@ -1,0 +1,21 @@
+print var SELECTED
+if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the status
+	end
+if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the worker
+	end
+GetTableElement 0 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *selected_status_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *selected_worker_id LASTRESULT
+
+execute app/scripts/db/insert-workerStatus.gcs
+MessageBox done.. Operation success
+end
+
+
+
