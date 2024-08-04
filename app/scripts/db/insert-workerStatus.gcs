@@ -1,0 +1,21 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+# selection des droits dans la base de donnee
+evaluate self.connect.cursor.execute("insert into grh_user(user_name, passw, salt) values ( %s , %s , %s);", ({*form_username}, {*form_password}, {*passw_salt}))
+
+execute query update
+execute query insert
+#Et on insère cet id dans grh_user_right_assoc. Comme c'est le dernier utilisateur qu'on a inséré, son id est le dernier dans la liste.
+
+commit
+close database
+end
+
+[insert]
+insert into grh_worker_status_assoc(id_worker, id_status) values ( *selected_worker_id, *selected_status_id);
+[/insert]
+
+[update]
+update grh_worker_status_assoc set statut = 0 where id_worker = *selected_worker_id;
+[/update]
