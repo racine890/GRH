@@ -2,11 +2,10 @@
 evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
-# selection des droits dans la base de donnee
-query select_all with right
+query select_all with worker
 close database
 end
 
-[right]
-	Select * from grh_worker
-[/right]
+[worker]
+	Select * from grh_worker where statut=1
+[/worker]

@@ -8,5 +8,5 @@ close database
 end
 
 [status]
-	Select * from grh_status
+	Select * from grh_status where statut=1
 [/status]

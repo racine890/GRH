@@ -1,0 +1,28 @@
+
+
+GetInput 3
+SetVar *form_post LASTRESULT
+print val --------------- Form Post Check 1 -----------------------
+print var *form_post
+
+
+
+if evaluate( {*form_post} == ""  ) then
+	MessageBox Wait.. Please Enter Post
+	end
+
+#on doit verifer que les post ne se repete pas
+execute app/scripts/db/get-post.gcs
+print val -------------- Post CHECK ----------------
+print var LASTTUPLE
+SetVar *check-post LASTTUPLE
+compare *check-post None
+if 5 then
+	MessageBox Error This post is already exist
+	end
+
+execute app/scripts/db/insert-post.gcs
+
+MessageBox success operation succeeded
+
+end
