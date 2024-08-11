@@ -15,6 +15,9 @@ if 11 then
 if 12 then
 	load app/screens/worker-screen.ch
 	end
+if 13 then
+	load app/screens/post.ch
+	end
 end
 
 

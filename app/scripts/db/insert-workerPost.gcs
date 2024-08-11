@@ -11,9 +11,9 @@ close database
 end
 
 [insert]
-insert into grh_worker_status_assoc(id_worker, id_status) values ( *selected_worker_id, *selected_status_id);
+insert into grh_worker_workerstation_assoc(id_worker, id_workerstation) values ( *selected_worker_id, *selected_post_id);
 [/insert]
 
 [update]
-update grh_worker_status_assoc set statut = 0 where id_worker = *selected_worker_id;
+update grh_worker_workerstation_assoc set statut = 0 where id_worker = *selected_worker_id;
 [/update]
