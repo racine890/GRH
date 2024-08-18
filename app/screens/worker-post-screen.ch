@@ -15,7 +15,7 @@ Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
-Button1: Return
+Button1: Turn back
 Button1.id: 2
 2.link: app/screens/post.ch
 2.x: 150

@@ -31,12 +31,12 @@ Text5.id: 4
 #5.y: 300
 
 
-Buttons.nb: 3
+Buttons.nb: 4
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
-Button1: Return
+Button1: Turn back
 Button1.id: 6
 6.link: app/screens/main.ch
 6.x: 100
@@ -82,6 +82,12 @@ Button3.id: 13
 13.link: app/screens/worker-status-screen.ch
 13.x: 550
 13.y: 2
+
+Button4: Manage files
+Button4.id: 14
+14.link: app/screens/folder-screen.ch
+14.x: 550
+14.y: 40
 
 
 [events]

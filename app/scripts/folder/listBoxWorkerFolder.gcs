@@ -1,0 +1,8 @@
+execute app/scripts/db/get-worker-folder.gcs
+
+SetVar *all_worker_folder LASTLIST
+SetVar *disp *all_worker_folder 
+
+create ListBox with *disp at 200-173
+evaluate self.page.boxes[0][1].config(width=0)
+end

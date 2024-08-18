@@ -1,0 +1,18 @@
+print val test
+if evaluate(self.focus_get() != self.page.entries[-1][1]) then 
+	end
+GetInput 4
+SetVar *search_term LASTRESULT
+print var  *search_term 
+# Recherche par rapport au nom, au prénom au mail et au service.
+#lambda sont des racoursi de fonction,l,st sont ses argument
+evaluate lambda l, st : [folder for folder in l if st.lower() in folder[1].lower() or st.lower() in str(folder[2]).lower() or st.lower() in folder[3].lower() or st.lower() in folder[4].lower()]=>*filter_search
+evaluate {*filter_search}({*all_worker_folder}, {*search_term})=>*disp
+evaluate self.page.boxes[0][1].delete(0,"end")
+ForEach *folder in *disp insert
+end
+
+# Réinsertion
+[@insert]
+evaluate self.page.boxes[0][1].insert("end", {*folder})
+[/@insert]

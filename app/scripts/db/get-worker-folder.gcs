@@ -1,0 +1,14 @@
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+# selection des droits dans la base de donnee
+query select_all with file
+close database
+end
+
+[file]
+	SELECT grh_folder.id, grh_folder.label,grh_folder.create_date, grh_worker.firstname, grh_worker.lastname
+	FROM grh_folder
+	INNER JOIN grh_worker WHERE grh_folder.id_worker = grh_worker.id AND grh_folder.statut=1;
+[/file]

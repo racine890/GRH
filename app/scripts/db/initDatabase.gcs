@@ -18,6 +18,8 @@ create table grh_clockingtime with q12
 create table grh_worker_badge_assoc with q13 
 create table grh_worker_event_assoc with q14
 create table grh_worker_workerstation_assoc with q15
+create table grh_document with q16
+create table grh_document_folder_assoc with q17
 execute query ir1
 execute query ir2
 execute query ir3
@@ -154,7 +156,8 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
  create table if not exists grh_folder(
 id integer PRIMARY KEY AUTO_INCREMENT,
 id_worker integer,
-type_folder varchar(60),
+label varchar(60),
+description text,
 foreign key (id_worker) references grh_worker(id),
 statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
@@ -227,6 +230,29 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q15] 
 
+
+[q16]
+ create table if not exists  grh_document(
+id integer PRIMARY KEY AUTO_INCREMENT,
+document_type varchar(300),
+document_store_path varchar(300),
+statut integer (1) DEFAULT 1,
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q16]
+
+
+[q17]
+ create table if not exists  grh_document_folder_assoc(
+id integer PRIMARY KEY AUTO_INCREMENT,
+id_document integer,
+id_folder integer,
+statut integer (1) DEFAULT 1,
+foreign key (id_document) references grh_document(id),
+foreign key (id_folder) references grh_folder(id),
+create_date timestamp DEFAULT CURRENT_TIMESTAMP
+)
+[/q17]
 #L'enregistrement des droit par defaut
 [ir1]
 insert into grh_right(name_right) value ("Admin");
