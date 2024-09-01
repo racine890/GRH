@@ -234,9 +234,11 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
 [q16]
  create table if not exists  grh_document(
 id integer PRIMARY KEY AUTO_INCREMENT,
+id_worker integer,
 document_type varchar(300),
 document_store_path varchar(300),
 statut integer (1) DEFAULT 1,
+foreign key (id_worker) references grh_worker(id),
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q16]

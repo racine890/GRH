@@ -1,6 +1,10 @@
 # This is the userModule, both for library import and custom classes definition
 # librairie python que l'on importe ici
 import bcrypt
+#bibliotheque pour copier les fichier et.... 
+import shutil
+import platform
+import os
 #bcrypt permet de generer du sel(des caractere)
 make_salt = lambda : bcrypt.gensalt()
 #hasher le mot de passe
@@ -14,3 +18,8 @@ formatDate = lambda strdate : '-'.join(strdate.split('/')[::-1])
 
 # Pour transformer la date traitable en date lisible
 unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1])
+if platform.system() =='Linux':
+	basepath= os.path.expanduser("~")+"/.gc_programms/tk/grh/"
+else:
+	basepath="C:/GC_PROGRAMMS/tk/grh/"
+

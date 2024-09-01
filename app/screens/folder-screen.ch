@@ -5,7 +5,7 @@ Text1.id: 0
 0.x: 200
 0.y: 100
 
-Buttons.nb: 5
+Buttons.nb: 4
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
@@ -13,14 +13,14 @@ Button.Foreground: #55968F
 Button1: Turn back
 Button1.id: 2
 2.link: app/screens/worker-screen.ch
-2.x: 150
-2.y: 350
+2.x: 120
+2.y: 280
 
-Button2: create new folder
+Button2: create folder
 Button2.id: 3
 #3.link: app/scripts/post/save-workerPost.gcs
-3.x: 320
-3.y: 350
+3.x: 280
+3.y: 280
 
 
 
@@ -32,24 +32,20 @@ Input1.id: 4
 4.x: 200
 4.y: 150
 
-Button3: create new folder
+Button3: create document
 Button3.id: 5
-#5.link: app/scripts/post/save-workerPost.gcs
-5.x: 50
-5.y: 450
+5.link: app/screens/document-screen.ch
+5.x: 80
+5.y: 350
 
-Button4: create new folder
+Button4: Post up
 Button4.id: 6
 #6.link: app/scripts/post/save-workerPost.gcs
-6.x: 200
-6.y: 450
+6.x: 320
+6.y: 350
 
 
-Button5: create new folder
-Button5.id: 7
-#7.link: app/scripts/post/save-workerPost.gcs
-7.x: 350
-7.y: 450
+
 
 [events]
 Key: app/scripts/folder/search-folder.gcs
