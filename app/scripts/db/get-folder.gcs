@@ -1,0 +1,12 @@
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+# selection des status dans la base de donnee
+query select_all with status
+close database
+end
+
+[status]
+	Select * from grh_folder where statut=1
+[/status]

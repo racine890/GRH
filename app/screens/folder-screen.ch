@@ -1,54 +1,60 @@
 Background: app/res/bgform.png
-Text.nb: 2
-Text1: Select file 
+Text.nb: 3
+Text1: Label of folder
 Text1.id: 0
-0.x: 200
-0.y: 100
+0.x: 100
+0.y: 160
 
-Buttons.nb: 4
+Text2: Description
+Text2.id: 1
+1.x: 100
+1.y: 220
+
+Text3: select worker
+Text3.id: 2
+2.x: 100
+2.y: 280
+
+
+
+Buttons.nb: 3
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
 Button1: Turn back
-Button1.id: 2
-2.link: app/screens/worker-screen.ch
-2.x: 120
-2.y: 280
+Button1.id: 3
+3.link: app/screens/worker-folder-document-screen.ch
+3.x: 100
+3.y: 400
 
-Button2: create folder
-Button2.id: 3
-#3.link: app/scripts/post/save-workerPost.gcs
-3.x: 280
-3.y: 280
+Button2: Save
+Button2.id:4
+4.x: 250
+4.y: 400
+4.link:app/scripts/folder/save-folder.gcs
 
-
-
-input.nb: 1
-input.Background: #ADD2CA
-entry.width: 200
-Input1: 
-Input1.id: 4
-4.x: 200
-4.y: 150
-
-Button3: create document
+Button3: Choose document
 Button3.id: 5
-5.link: app/screens/document-screen.ch
-5.x: 80
-5.y: 350
+5.link: app/screens/folder_document_assoc_screen.ch
+5.x: 550
+5.y: 2
 
-Button4: Post up
-Button4.id: 6
-#6.link: app/scripts/post/save-workerPost.gcs
-6.x: 320
-6.y: 350
+input.nb: 2
+input.Background: #ADD2CA
+Input1: 
+Input1.id: 6
+6.x: 250
+6.y: 180
 
-
+Input2: 
+Input2.id: 7
+7.x: 250
+7.y: 240
 
 
 [events]
-Key: app/scripts/folder/search-folder.gcs
+Button-1: @[end]
 [/events]
 
-OnDisplay: app/scripts/folder/listBoxWorkerFolder.gcs
+OnDisplay: app/scripts/folder/listBoxWorker.gcs

@@ -1,14 +1,14 @@
 Background: app/res/bgform.png
 Text.nb: 2
-Text1: Enter type of document
+Text1: Select document
 Text1.id: 0
-0.x: 100
-0.y: 125
+0.x: 200
+0.y: 100
 
-Text2: Select the path
+Text2: Select folder
 Text2.id: 1
-1.x: 100
-1.y: 240
+1.x: 50
+1.y: 100
 
 Buttons.nb: 3
 Button.size: 30
@@ -19,29 +19,14 @@ Button1: Turn back
 Button1.id: 2
 2.link: app/screens/worker-folder-document-screen.ch
 2.x: 120
-2.y: 330
+2.y: 280
 
 Button2: Save
 Button2.id: 3
-3.link: app/scripts/document/save-file.gcs
+#3.link:
 3.x: 280
-3.y: 330
+3.y: 280
 
-
-
-input.nb: 1
-input.Background: #ADD2CA
-entry.width: 200
-Input1: 
-Input1.id: 4
-4.x: 200
-4.y: 150
-
-Button3: document path
-Button3.id: 5
-5.link: app/scripts/document/openfile.gcs
-5.x: 200
-5.y: 250
 
 [events]
 Key: @[end]
