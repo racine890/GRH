@@ -40,7 +40,7 @@ Button3.id: 5
 
 Button4: Post up
 Button4.id: 6
-#6.link: app/scripts/post/save-workerPost.gcs
+6.link: app/screens/consult-folder.ch
 6.x: 320
 6.y: 350
 

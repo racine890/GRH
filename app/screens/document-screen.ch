@@ -1,5 +1,5 @@
 Background: app/res/bgform.png
-Text.nb: 2
+Text.nb: 3
 Text1: Enter type of document
 Text1.id: 0
 0.x: 100
@@ -42,6 +42,12 @@ Button3.id: 5
 5.link: app/scripts/document/openfile.gcs
 5.x: 200
 5.y: 250
+
+
+Text3: Select author 
+Text3.id: 6
+6.x: 100
+6.y: 170
 
 [events]
 Key: @[end]
