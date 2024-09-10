@@ -23,7 +23,7 @@ Text3.id: 2
 2.x: 100
 2.y: 280
 
-Buttons.nb: 3
+Buttons.nb: 2
 
 Button.size: 30
 Button.width: 150

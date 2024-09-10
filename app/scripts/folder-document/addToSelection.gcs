@@ -1,0 +1,20 @@
+# J'ai pas voulu trop débugger, il y'a un problème avec SELECTED
+SetVar SELECTED evaluate(self.page.boxes[0][1].get( "active" ))
+
+# Sélectionner une pièce est nécessaire
+if evaluate({SELECTED} == "") then
+	MessageBox Error You must chose an element to add
+	end
+
+# Récupérer l'élément sélectionné
+SetVar *elementToSend SELECTED
+
+if evaluate({*elementToSend} in {*fda.choosen}) then
+	MessageBox Duplicate Document is already selected!
+	end
+
+# Envoyer l'élément sélectionné dans la nouvelle liste
+evaluate self.page.boxes[1][1].insert("end", {*elementToSend})
+
+evaluate {*fda.choosen}.append({*elementToSend})
+end

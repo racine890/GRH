@@ -1,9 +1,14 @@
 # self.page.boxes.clear() permet d'effacer les listBox
-evaluate  self.page.boxes.clear()
-execute app/scripts/db/get-folder.gcs
-SetVar *all_folder LASTLIST
-create ListBox 0 with *all_folder at 280-260
+evaluate self.page.boxes.clear()
+
+# Récupération et initialisation des
 execute app/scripts/db/get-document.gcs
-SetVar *all_document LASTLIST
-create ListBox 1 with *all_document at 280-150
+SetVar *fda.all_document LASTLIST
+create ListBox 0 with *fda.all_document at 280-150
+
+evaluate []
+SetVar *fda.wanted_document LASTRESULT
+create ListBox 1 with *fda.wanted_document at 280-260
+
+SetVar *fda.choosen evaluate([])
 end

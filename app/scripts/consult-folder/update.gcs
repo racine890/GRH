@@ -14,6 +14,6 @@ GetTableElement 4 of LASTTUPLE
 evaluate 'Created the '+unFormatDate(str({LASTRESULT})[:str({LASTRESULT}).index(' ')-1])
 CreateText 1 LASTRESULT
 
-execute app/scripts/db/getDocumentByFolder.gcs
+execute app/scripts/db/get-documentByFolder.gcs
 create ListBox with LASTLIST at 200-400
 end

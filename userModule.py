@@ -23,6 +23,7 @@ formatDate = lambda strdate : '-'.join(strdate.split('/')[::-1])
 # Pour transformer la date traitable en date lisible
 unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1])
 
+# Le dossier d'installation du logiciel en cas de déploiement binaire
 if platform.system() =='Linux':
 	basepath= os.path.expanduser("~")+"/.gc_programms/tk/grh/"
 else:

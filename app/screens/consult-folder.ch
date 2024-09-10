@@ -29,7 +29,7 @@ Text5.id: 12
 Buttons.nb: 8
 
 Button.size: 30
-Button.width: 100
+Button.width: 150
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
 
@@ -39,10 +39,11 @@ Button1.id: 2
 2.x: 560
 2.y: 450
 
-Button2: Post
+Button2: Set Documents
 Button2.id: 3
 3.x: 560
 3.y: 0
+3.link: app/screens/folder_document_assoc_screen.ch
 
 Button3: Transfer
 Button3.id: 4
@@ -82,6 +83,7 @@ Edit.BeginY: 200
 
 [events]
 Key: @[end]
+Button-1: @[end]
 [/events]
 
 OnDisplay: app/scripts/consult-folder/update.gcs
