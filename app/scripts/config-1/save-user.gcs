@@ -1,0 +1,63 @@
+SetVar *form_password evaluate("")
+
+GetInput 5
+SetVar *form_username LASTRESULT
+print val --------------- Form username Check 1 -----------------------
+print var *form_username
+
+GetInput 6
+SetVar *form_password LASTRESULT
+
+# verifier que selected(la listBox) nest pas vide
+if evaluate( {SELECTED} == ""  ) then
+	MessageBox Wait.. Please select a right
+	end
+SetVar *form_right SELECTED
+
+if evaluate( {*form_username} == ""  ) then
+	MessageBox Wait.. Please Enter Username
+	end
+
+if evaluate( {*form_password} == "" ) then
+	MessageBox Wait.. Please Enter Password
+	end
+
+#on doit verifer que tout les utilisateur n'ont pas le meme pseudo
+execute app/scripts/db/get-username.gcs
+print val -------------- USER CHECK ----------------
+print var LASTTUPLE
+SetVar *check-username LASTTUPLE
+compare *check-username None
+if 5 then
+	MessageBox Error This username is already use
+	end
+
+# Générer du sel :
+evaluate make_salt()
+
+# Stocker le résultat dans une variable
+SetVar *passw_salt LASTRESULT
+
+# Ensuites, utiliser ce sel pour hasher le mot de passe. Les arguments sont le mot de passe et le sel
+evaluate crypt_pass({*form_password}, {*passw_salt})
+
+# Tu peux donc écraser le mot de passe avec son hash
+SetVar *form_password LASTRESULT
+
+#Et la seconde c'est d'insérer le droit de l'utilisateur
+#Regardes dans le listbox : Il y'a plusieurs éléments. C'est parceque SELECTED est un tuple ( LASTLIST contient des tuples ). L'id c'est le premier élément du tuple, donc on le récupère :
+
+GetTableElement 0 of *form_right
+SetVar *form_right_id LASTRESULT
+SetVar *param_age_minimal 14
+SetVar *param_age_maximal 17
+print val ----------------- ???? ---------------------
+print var *form_password
+print var *form_username
+print var *form_right_id
+print var *passw_salt
+execute app/scripts/db/insert-user.gcs
+
+MessageBox success operation succeeded
+
+end

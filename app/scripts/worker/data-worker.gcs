@@ -1,0 +1,65 @@
+
+GetInput 8
+SetVar *worker_name LASTRESULT
+print val --------------- Form workername Check 1 -----------------------
+print var *worker_name
+
+GetInput 9
+SetVar *lastname LASTRESULT
+
+GetInput 10
+SetVar *birthday LASTRESULT
+
+GetInput 11
+SetVar *address LASTRESULT
+
+GetInput 12
+SetVar *mail LASTRESULT
+
+
+if evaluate( {*worker_name} == ""  ) then
+	MessageBox Wait.. Please Enter workername
+	end
+
+if evaluate( {*lastname} == "" ) then
+	MessageBox Wait.. Please Enter Password
+	end
+
+if evaluate( {*birthday} == "" ) then
+	MessageBox Wait.. Please Enter Password
+	end
+# vérifier que la date saisie est une vraie date ( pas si elle est correcte )
+if evaluate(not dateCheck({*birthday})) then
+	MessageBox Error the date Entered is incorrect !
+	end
+print val -----------------Date----------------
+
+if evaluate( {*address} == "" ) then
+	MessageBox Wait.. Please Enter Password
+	end
+
+if evaluate( {*mail} == "" ) then
+	MessageBox Wait.. Please Enter Password
+	end
+execute app/scripts/db/select-worker-mail.gcs
+
+print val -------------- WORKER CHECK ----------------
+print var LASTTUPLE
+SetVar *check-mail LASTTUPLE
+compare *check-mail None
+if 5 then
+	MessageBox Error This mail is already use
+	end
+#convertir la date comme ceci :
+evaluate formatDate({*birthday})
+SetVar *birthday LASTRESULT
+print val ----------------------date after format
+print var *birthday
+#on pouvait egalement convertir la date comme ceci:
+#evaluate formatDate({*date_saisie}) =>*date_saisie
+
+execute app/scripts/db/insert-worker.gcs
+
+MessageBox success operation succeeded
+
+end

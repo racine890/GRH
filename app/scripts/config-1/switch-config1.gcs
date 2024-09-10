@@ -1,0 +1,13 @@
+print var LASTCLICKEDID
+switch LASTCLICKEDID
+#print var LASTCOMPARE
+if 12 then
+	#print val texte
+	load app/screens/config-1-rigth.ch
+	end
+if 7 then
+	load app/screens/config-1.ch
+	end
+
+
+end

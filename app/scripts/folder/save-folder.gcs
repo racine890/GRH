@@ -1,0 +1,36 @@
+GetInput 6
+print var LASTRESULT
+SetVar *label LASTRESULT
+
+if evaluate( {LASTRESULT} == ""  ) then
+	MessageBox Wait.. Please enter folder label
+	end
+
+GetInput 7
+print var LASTRESULT
+SetVar *description LASTRESULT
+#if evaluate( {LASTRESULT} == ""  ) then
+#	MessageBox Wait.. Please enter folder description
+#	end
+
+
+if evaluate({SELECTED} == "") then
+	MessageBox Wait.. Please select a worker
+	end
+print val --------- employe selectionne
+print var SELECTED
+
+GetTableElement 0 of SELECTED
+SetVar *idworker_selected LASTRESULT
+print val ------ id selectionne
+print var *idworker_selected
+
+
+
+
+
+execute app/scripts/db/insert-workerfolder.gcs
+MessageBox done.. Operation success
+end
+
+
