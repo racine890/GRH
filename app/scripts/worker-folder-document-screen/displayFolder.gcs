@@ -1,0 +1,10 @@
+# Obligatoire de sélectionner un dossier
+if evaluate({SELECTED} == "") then
+	MessageBox Wait.. Please select a worker
+	end
+
+GetTableElement 0 of SELECTED
+SetVar *wfds.folderToDisplay.id LASTRESULT
+
+load app/screens/consult-folder.ch
+end

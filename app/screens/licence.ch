@@ -1,3 +1,8 @@
+#
+#	Licence.ch
+#		Afficher les conditions d'utilisation et exiger leur acceptation
+#
+
 OnDisplay: app/scripts/licence/licence_showlicense.gcs
 BackGround: app/res/bg.png
 

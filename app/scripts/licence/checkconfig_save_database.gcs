@@ -2,31 +2,40 @@ check file configscreen.ch
 if 1 then
 	load app/screens/sign-in.ch
 	end
+
 GetInput 2
 SetVar *data_base_name LASTRESULT
+
 GetInput 3
 SetVar *user_base_name LASTRESULT
+
 GetInput 4
 SetVar *password LASTRESULT
+
 GetInput 5
 SetVar *adress LASTRESULT
+
 # essayer de se connecter a la base de donnee avec les informations recu
 #creation d'une variable de teste
 SetVar *testvariable 0
+
 try @connect else @alternatif
+
 compare *testvariable 0
 if 0 then
 	end
+
 #creation du fichier config.ch avec la fonction ch_create (seulement pour les ch)
 evaluate ch_create( "Config.ch")
+
 #enregistrer toutes les informations de la base de donnee cree
 evaluate ch_update("db_user: "+{*user_base_name},"Config.ch")
 evaluate ch_update("db_password: "+{*password},"Config.ch")
 evaluate ch_update("db_host: "+{*adress},"Config.ch")
 evaluate ch_update("db_name: "+{*data_base_name},"Config.ch")
+
 # execute le script initDatabase.gcs
 execute app/scripts/db/initDatabase.gcs
-print val @@@@@@@@@@@@@@@@@@@@@@@
 load app/screens/sign-in.ch
 
 end

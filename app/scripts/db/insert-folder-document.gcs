@@ -1,19 +1,21 @@
 evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
+print val -- Query
+print var *selected_doc_id
+print var *selected_folder_id
 
 execute query update
 execute query insert
-
 
 commit
 close database
 end
 
 [insert]
-insert into grh_document_folder_assoc(id_document, id_folder) values ( *selected_doc_id, *selected_folder_id);
+insert into grh_document_folder_assoc (id_document, id_folder) values ( *selected_doc_id, *selected_folder_id );
 [/insert]
 
 [update]
-update grh_document_folder_assoc set statut = 0 where id_document = *selected_doc_id;
+update grh_document_folder_assoc set statut = 0 where id_document = *selected_doc_id ;
 [/update]

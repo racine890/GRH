@@ -1,27 +1,23 @@
-print var SELECTED
-if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
-	MessageBox Wait.. Please select the folder
+# Arrêter si il n'ya rien de choisi
+count *fda.choosen
+compare LASTRESULT 0
+if 0 then
+	MessageBox No element to set, choose some first!
 	end
-GetTableElement 0 of SELECTED
-print val ------------ folder selectionne
-print var SELECTED
-GetTableElement 0 of LASTRESULT 
-SetVar *selected_folder_id LASTRESULT
-print var *selected_folder_id
 
+SetVar *selected_folder_id *wfds.folderToDisplay.id
 
-if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
-	MessageBox Wait.. Please select the document
-	end
-GetTableElement 1 of SELECTED
-print val ------------ document selectionne
-print var SELECTED
-GetTableElement 0 of LASTRESULT 
-SetVar *selected_doc_id LASTRESULT
+# Save each document inside the folder
 
+ForEach *choosen_document of *fda.choosen save
 
-
-
-execute app/scripts/db/insert-folder-document.gcs
 MessageBox done.. Operation success
 end
+
+[@save]
+print val -- Foreach element :
+print var *choosen_document
+GetTableElement 0 of *choosen_document
+SetVar *selected_doc_id LASTRESULT
+execute app/scripts/db/insert-folder-document.gcs
+[/@save]
