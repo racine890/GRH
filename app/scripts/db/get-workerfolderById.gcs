@@ -1,0 +1,20 @@
+# !!! Attend l'id dans une variable nommée *arg_id
+check var *arg_id
+if 0 then
+	print val --- La variable *arg_id est manquante. Impossible de continuer!
+	end
+
+# Connexion à la base
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+# Récupérer un unique dossier
+query select_one with q
+
+close database
+end
+
+[q]
+select label, description, firstname, lastname, grh_folder.create_date from grh_folder, grh_worker where grh_folder.id_worker = grh_worker.id and grh_folder.id = *arg_id ;
+[/q]

@@ -1,4 +1,12 @@
+#
+#	Folder-Screen.ch
+#		Ecran formulaire de création d'un dossier
+#
+
 Background: app/res/bgform.png
+
+OnDisplay: app/scripts/folder/listBoxWorker.gcs
+
 Text.nb: 3
 Text1: Label of folder
 Text1.id: 0
@@ -15,13 +23,13 @@ Text3.id: 2
 2.x: 100
 2.y: 280
 
-
-
 Buttons.nb: 3
+
 Button.size: 30
-Button.width: 100
+Button.width: 150
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
+
 Button1: Turn back
 Button1.id: 3
 3.link: app/screens/worker-folder-document-screen.ch
@@ -30,7 +38,7 @@ Button1.id: 3
 
 Button2: Save
 Button2.id:4
-4.x: 250
+4.x: 270
 4.y: 400
 4.link:app/scripts/folder/save-folder.gcs
 
@@ -40,21 +48,20 @@ Button3.id: 5
 5.x: 550
 5.y: 2
 
-input.nb: 2
-input.Background: #ADD2CA
-Input1: 
+Input.nb: 1
+
+Input.Background: #ADD2CA
+
 Input1.id: 6
 6.x: 250
 6.y: 180
 
-Input2: 
-Input2.id: 7
-7.x: 250
-7.y: 240
-
+Edit.BeginX: 270
+Edit.BeginY: 200
+Edit.width: 200
+Edit.size: 50
 
 [events]
 Button-1: @[end]
+Key: @[end]
 [/events]
-
-OnDisplay: app/scripts/folder/listBoxWorker.gcs

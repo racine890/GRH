@@ -1,36 +1,28 @@
+# Récupération du titre
 GetInput 6
-print var LASTRESULT
 SetVar *label LASTRESULT
 
+# titre obligatoire
 if evaluate( {LASTRESULT} == ""  ) then
 	MessageBox Wait.. Please enter folder label
 	end
 
-GetInput 7
-print var LASTRESULT
+# Récupération de la description
+GetEditText
 SetVar *description LASTRESULT
-#if evaluate( {LASTRESULT} == ""  ) then
-#	MessageBox Wait.. Please enter folder description
-#	end
 
-
+# Travailleur obligatoire
 if evaluate({SELECTED} == "") then
 	MessageBox Wait.. Please select a worker
 	end
-print val --------- employe selectionne
-print var SELECTED
 
+# Récupérer l'id du travailleur sélectionné
 GetTableElement 0 of SELECTED
 SetVar *idworker_selected LASTRESULT
-print val ------ id selectionne
-print var *idworker_selected
 
-
-
-
-
+# Et créer le dossier
 execute app/scripts/db/insert-workerfolder.gcs
+
+# Notifier et quitter
 MessageBox done.. Operation success
 end
-
-

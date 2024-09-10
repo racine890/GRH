@@ -1,8 +1,16 @@
+# Récupérer les dossiers
 execute app/scripts/db/get-worker-folder.gcs
 
+# Filtre pour la recherche
 SetVar *all_worker_folder LASTLIST
 SetVar *disp *all_worker_folder 
 
+# Suppression du contenu de SELECTED
+SetVar SELECTED
+
+# Affichage de la listbox
 create ListBox with *disp at 200-173
+
+# Largeur configurée au plus large élément
 evaluate self.page.boxes[0][1].config(width=0)
 end

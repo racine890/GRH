@@ -1,0 +1,19 @@
+SetVar *arg_id *wfds.folderToDisplay.id
+execute app/scripts/db/get-workerfolderById.gcs
+
+GetTableElement 0 of LASTTUPLE
+CreateText 0 LASTRESULT
+
+GetTableElement 1 of LASTTUPLE
+SetEditText var LASTRESULT
+
+evaluate 'Owner : '+{LASTTUPLE}[2]+' '+{LASTTUPLE}[3]
+CreateText 10 LASTRESULT
+
+GetTableElement 4 of LASTTUPLE
+evaluate 'Created the '+unFormatDate(str({LASTRESULT})[:str({LASTRESULT}).index(' ')-1])
+CreateText 1 LASTRESULT
+
+execute app/scripts/db/getDocumentByFolder.gcs
+create ListBox with LASTLIST at 200-400
+end

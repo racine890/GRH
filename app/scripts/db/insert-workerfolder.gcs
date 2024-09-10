@@ -8,5 +8,5 @@ close database
 end
 
 [insert]
-insert into grh_folder(id_worker, label, description) values ( *idworker_selected,*description,*label );
+insert into grh_folder(id_worker, label, description) values ( *idworker_selected , *label , *description );
 [/insert]
