@@ -45,7 +45,7 @@ Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
-Button1: Return
+Button1: Turn back
 Button1.id: 8
 8.link: app/screens/main.ch
 8.x: 20

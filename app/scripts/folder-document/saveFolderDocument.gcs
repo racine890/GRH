@@ -1,0 +1,27 @@
+print var SELECTED
+if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the folder
+	end
+GetTableElement 0 of SELECTED
+print val ------------ folder selectionne
+print var SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *selected_folder_id LASTRESULT
+print var *selected_folder_id
+
+
+if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the document
+	end
+GetTableElement 1 of SELECTED
+print val ------------ document selectionne
+print var SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *selected_doc_id LASTRESULT
+
+
+
+
+execute app/scripts/db/insert-folder-document.gcs
+MessageBox done.. Operation success
+end

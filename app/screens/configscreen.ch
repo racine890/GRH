@@ -13,7 +13,7 @@ Button1.id: 0
 0.y: 300
 0.link: app/scripts/licence/checkconfig_save_database.gcs
 
-Button2: Retour
+Button2: Turn back
 Button2.id: 1
 1.x: 450
 1.y:300 
