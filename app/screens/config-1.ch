@@ -1,29 +1,24 @@
 Background: app/res/bgcongig1.png
 
-Text.nb: 5
+Text.nb: 4
 Text1: User Management
 Text1.id: 0
 0.x: 70
 0.y: 50
 
-Text2: Add A Right
-Text2.id: 1
-1.x: 50
-1.y: 180
-
-Text3: Username
-Text3.id: 2
+Text2: Username
+Text2.id: 2
 2.x: 250
 2.y: 125
 
 
-Text4: password
-Text4.id: 3
+Text3: password
+Text3.id: 3
 3.x: 250
 3.y: 180
 
-Text5: choose the right
-Text5.id: 4
+Text4: choose the right
+Text4.id: 4
 4.x: 250
 4.y: 230
 
