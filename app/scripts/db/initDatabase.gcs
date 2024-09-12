@@ -30,6 +30,9 @@ execute query event3
 execute query status1
 execute query status2
 execute query status3
+execute query badge1
+execute query badge2
+execute query badge3
 commit
 close database
 #initialisation d'un utilisateur
@@ -294,6 +297,21 @@ insert into grh_event(title) value ("Burrial");
 insert into grh_event(title) value ("Pregnancy");
 [/event3]
 
+
+#enregistrement des badges
+[badge1]
+insert into grh_badge(description,icon) value ("Employe de l'annee","app/res/emplyee_annee.png");
+[/badge1]
+
+
+[badge2]
+insert into grh_badge(description,icon) value ("Employe le plus ponctuelle","app/res/emplyee_ponctuel.png");
+[/badge2]
+
+
+[badge3]
+insert into grh_badge(description,icon) value ("Employe avec tableau d'honneur","app/res/tableau_d'honneur.png");
+[/badge3]
 
 
 
