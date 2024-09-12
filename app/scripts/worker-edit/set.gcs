@@ -1,0 +1,23 @@
+if evaluate( self.focus_get() != self.page.lb ) then
+	end
+
+GetTableElement 0 of SELECTED
+SetVar *we_worker_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+SetInputText 8 LASTRESULT
+
+GetTableElement 2 of SELECTED
+SetInputText 9 LASTRESULT
+
+GetTableElement 3 of SELECTED
+evaluate unFormatDate({LASTRESULT}.split(' ')[0])
+SetInputText 10 LASTRESULT
+
+GetTableElement 5 of SELECTED
+SetInputText 11 LASTRESULT
+
+GetTableElement 6 of SELECTED
+SetInputText 12 LASTRESULT
+
+end

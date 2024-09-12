@@ -1,0 +1,69 @@
+# Mise à jour d'un worker
+compare *we_worker_id None
+if 0 then
+	MessageBox wait... Please select a worker first.
+	end
+
+GetInput 8
+SetVar *worker_name LASTRESULT
+
+GetInput 9
+SetVar *lastname LASTRESULT
+
+GetInput 10
+SetVar *birthday LASTRESULT
+
+GetInput 11
+SetVar *address LASTRESULT
+
+GetInput 12
+SetVar *mail LASTRESULT
+
+# Mandatory fields
+if evaluate( {*worker_name} == ""  ) then
+	MessageBox Wait.. Please Enter workername
+	end
+
+if evaluate( {*lastname} == "" ) then
+	MessageBox Wait.. Please Enter Password
+	end
+
+if evaluate( {*birthday} == "" ) then
+	MessageBox Wait.. Please Enter Password
+	end
+
+# vérifier que la date saisie est une vraie date ( pas si elle est correcte )
+if evaluate(not dateCheck({*birthday})) then
+	MessageBox Error the date Entered is incorrect !
+	end
+
+if evaluate( {*address} == "" ) then
+	MessageBox Wait.. Please Enter Address !
+	end
+
+if evaluate( {*mail} == "" ) then
+	MessageBox Wait.. Please Enter Mail !
+	end
+
+# Get a worker having that exact mail
+# execute app/scripts/db/select-worker-mail.gcs
+
+# Stopper si le mail existe déjà
+# SetVar *check-mail LASTTUPLE
+# compare *check-mail None
+# if 5 then
+#	MessageBox Error This mail is already use
+#	end
+
+# convertir la date comme ceci
+evaluate formatDate({*birthday})
+SetVar *birthday LASTRESULT
+# on pouvait egalement convertir la date comme ceci:
+# evaluate formatDate({*date_saisie}) =>*date_saisie
+
+SetVar *arg_id *we_worker_id
+execute app/scripts/db/update-worker.gcs
+
+MessageBox success operation succeeded
+load app/screens/worker-edit.ch
+end
