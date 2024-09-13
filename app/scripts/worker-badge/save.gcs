@@ -1,0 +1,24 @@
+print var SELECTED
+if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the badge
+	end
+if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the worker
+	end
+GetTableElement 0 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *badge_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *worker_id LASTRESULT
+
+GetInput 5
+SetVar *period LASTRESULT
+
+execute app/scripts/db/insert-workerBadge.gcs
+MessageBox done.. Operation success
+end
+
+
+

@@ -315,5 +315,6 @@ insert into grh_badge(description,icon) value ("Employe avec tableau d'honneur",
 
 
 
+
 #	role:
 #		Creates the database
