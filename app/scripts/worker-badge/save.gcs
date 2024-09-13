@@ -16,6 +16,10 @@ SetVar *worker_id LASTRESULT
 GetInput 5
 SetVar *period LASTRESULT
 
+if evaluate( {*period} == ""  ) then
+	MessageBox Wait.. Please Enter period
+	end
+
 execute app/scripts/db/insert-workerBadge.gcs
 MessageBox done.. Operation success
 end

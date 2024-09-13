@@ -196,10 +196,10 @@ id integer PRIMARY KEY AUTO_INCREMENT,
 id_worker integer,
 id_badge integer,
 periods varchar(60),
-statu integer ,
+quantite integer DEFAULT 1,
 foreign key (id_worker) references grh_worker(id),
 foreign key (id_badge) references grh_badge(id),
-statut integer (1) DEFAULT 1,
+statut integer DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q13] 

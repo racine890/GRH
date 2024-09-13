@@ -28,7 +28,7 @@ Button1.id: 2
 
 Button2: Save
 Button2.id: 3
-3.link: app/scripts/worker/save.gcs
+3.link: app/scripts/worker-badge/save.gcs
 3.x: 320
 3.y: 350
 

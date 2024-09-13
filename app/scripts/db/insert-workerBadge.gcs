@@ -10,5 +10,5 @@ close database
 end
 
 [insert]
-insert into grh_worker_badge_assoc(id_worker, id_status) values ( *selected_worker_id, *selected_status_id);
+insert into grh_worker_badge_assoc(id_worker, id_badge,periods) values ( *worker_id, *badge_id, *period);
 [/insert]
