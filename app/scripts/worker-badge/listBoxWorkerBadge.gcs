@@ -1,0 +1,8 @@
+evaluate  self.page.boxes.clear()
+execute app/scripts/db/collect-badge.gcs
+SetVar *all_badge LASTLIST
+create ListBox 0 with *all_badge at 280-260
+execute app/scripts/db/get-worker.gcs
+SetVar *all_workers LASTLIST
+create ListBox 1 with *all_workers at 280-150
+end

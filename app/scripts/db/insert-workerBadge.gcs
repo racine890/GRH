@@ -1,0 +1,14 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+execute query insert
+
+
+commit
+close database
+end
+
+[insert]
+insert into grh_worker_badge_assoc(id_worker, id_badge,periods) values ( *worker_id, *badge_id, *period);
+[/insert]

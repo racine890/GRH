@@ -18,6 +18,10 @@ if 12 then
 if 13 then
 	load app/screens/post.ch
 	end
+
+if 14 then
+	load app/screens/worker-badge-screen.ch
+	end
 end
 
 
