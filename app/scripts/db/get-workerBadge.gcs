@@ -1,0 +1,17 @@
+check var *arg_id
+if 0 then
+	print val This script needs the var *arg_id
+	end
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_all with get
+
+close database
+end
+
+[get]
+select icon from grh_worker_badge_assoc, grh_badge where id_badge = grh_badge.id and id_worker = *arg_id ;
+[/get]
