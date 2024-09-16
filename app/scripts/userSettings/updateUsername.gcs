@@ -1,0 +1,11 @@
+GetInput 5
+SetVar *new_username LASTRESULT
+
+GetTableElement 0 of *session_user
+SetVar *arg_id LASTRESULT
+
+execute app/scripts/db/update_username.gcs
+MessageBox Done! Your username has been updated!
+
+load app/screens/sign-in.ch
+end

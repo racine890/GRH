@@ -1,0 +1,7 @@
+GetTableElement 1 of *session_user
+SetInputText 5 LASTRESULT
+
+ConfigInput 6 show="*"
+ConfigInput 11 show="*"
+ConfigInput 10 show="*"
+end

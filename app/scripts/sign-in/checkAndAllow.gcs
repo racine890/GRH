@@ -8,6 +8,7 @@
 # 5) vérifier le mot de passe
 # 6) récupérer les variables globales ( droits, personne, etc )
 # 7) charger l'écran proncipal
+SetVar LASTTUPLE None
 
 GetInput 2
 SetVar *name LASTRESULT
@@ -22,8 +23,7 @@ if evaluate( {*passw} == ""  ) then
 	end
 
 execute app/scripts/db/getusername-for-login.gcs
-print val -------------- USER CHECK ----------------
-print var  LASTTUPLE
+
 compare LASTTUPLE None
 if 0 then
 	MessageBox Error this account does not exists
@@ -32,18 +32,17 @@ if 0 then
 GetTableElement 2 of  LASTTUPLE
 SetVar *passw-db LASTRESULT	
 
-print var LASTTUPLE
 GetTableElement 3 of  LASTTUPLE
 SetVar *check-salt LASTRESULT
-print var *check-salt
 
 evaluate crypt_pass({*passw}, {*check-salt})
 SetVar *passw LASTRESULT
 
 compare *passw *passw-db
 if 0 then
+	SetVar *session_user LASTTUPLE
 	load app/screens/main.ch
 	end
-		
 
+MessageBox Error this account does not exists
 end

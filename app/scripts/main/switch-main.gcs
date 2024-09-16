@@ -8,6 +8,9 @@ print var LASTCLICKEDID
 
 switch LASTCLICKEDID
 print var LASTCOMPARE
+if 10 then
+	load app/screens/userSettings.ch
+	end
 if 11 then
 	print val texte
 	load app/screens/config-1.ch
