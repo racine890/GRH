@@ -10,6 +10,10 @@ Conventions :
 
  Todo :
 	- Optimiser
+	- Icônes lors de la sélection des badges
+	- Evènements
+	- Etats html / pdf
+	- Pointage des absences
 	- Voir mon statut (Mes badges, etc) - x (Un worker n'est pas un user.. Peut-être que ça devrait changer)
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
