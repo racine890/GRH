@@ -300,12 +300,12 @@ insert into grh_event(title) value ("Pregnancy");
 
 #enregistrement des badges
 [badge1]
-insert into grh_badge(description,icon) value ("Employe de l'annee","app/res/emplyee_annee.png");
+insert into grh_badge(description,icon) value ("Employe de l'annee","app/res/employe_annee.png");
 [/badge1]
 
 
 [badge2]
-insert into grh_badge(description,icon) value ("Employe le plus ponctuelle","app/res/emplyee_ponctuel.png");
+insert into grh_badge(description,icon) value ("Employe le plus ponctuelle","app/res/employe_ponctuel.png");
 [/badge2]
 
 
