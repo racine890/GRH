@@ -1,0 +1,36 @@
+SetVar *userAdress Ouagadougou
+
+execute app/scripts/db/get-worker.gcs
+evaluate [(str(el[1]), str(el[2]), unFormatDate(str(el[3]).split(' ')[0]), str(el[5]), str(el[6]), unFormatDate(str(el[8]).split(' ')[0])) for el in {LASTLIST}]
+SetVar *mydbdata LASTRESULT
+
+count LASTLIST
+SetVar *total LASTRESULT
+
+evaluate unFormatDate(get_today())
+SetVar *today LASTRESULT
+
+PrintState MySTATE as state.html use app/res/default.dat
+
+SetVar *platform PLATFORM
+
+if evaluate({*platform} == "win32") then
+	evaluate system('state.html')
+	end
+
+evaluate system('xdg-open state.html')
+end
+[/@create]
+
+[MySTATE]
+TEL: 56 52 15 32
+MAIL: gcenterburkina@gmail.com
+ADRESS: *userAdress
+REFERENCE: ---
+TITLE: WORKERS SUMMARY
+HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE
+ROWS: *mydbdata
+FOOTER: ("TOTAL",5,'*total'),("PRINT DATE",5,'*today')
+LOGO: app/res/worker.png
+COMPANY: G. CENTER
+[/MySTATE]
