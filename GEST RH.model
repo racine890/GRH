@@ -10,9 +10,10 @@ Conventions :
 
  Todo :
 	- Optimiser
-	- Icônes lors de la sélection des badges
+	
 	- Evènements
 	- Etats html / pdf
+	- Paramétrage entreprise
 	- Pointage des absences
 	- Voir mon statut (Mes badges, etc) - x (Un worker n'est pas un user.. Peut-être que ça devrait changer)
 	- Ecrire la documentation - Publier avant
@@ -37,6 +38,7 @@ Done :
 - Changer Pseudo (ok)
 - Changer mot de passe (ok)
 - On doit avoir la table de pointage, pour enregistrer les heures d'arrivée et de départ des employés chaque jour. (ok)
+- Icônes lors de la sélection des badges (ok)
 - Afficher l'écran d'acceptation des conditions d'utilisation et de la license. C'est de là que viendra le fichier accepted.txt qui sera créé uniquement si l'utilisateur accepte. Bien sûr, il ne peut pas continuer, sinon. La page ne s'affiche que si le fichier n'existe pas. (ok)
 - Choisir un SGBD (ok)
 - Créer la table des utilisateurs, et la table des droits (ok)

@@ -31,7 +31,7 @@ Text5.id: 4
 4.x: 100
 4.y: 260
 
-Buttons.nb: 5
+Buttons.nb: 6
 Button.size: 30
 Button.width: 150
 Button.Background: #FFFFFF
@@ -45,7 +45,7 @@ Button1.id: 6
 
 Button2: Save
 Button2.id:7
-7.x: 250
+7.x: 300
 7.y: 380
 7.link:app/scripts/worker/data-worker.gcs
 
@@ -66,6 +66,12 @@ Button5.id: 15
 15.link: app/screens/worker-edit.ch
 15.x: 550
 15.y: 80
+
+Button6: Print Summary
+Button6.id: 16
+16.link: app/scripts/states/worker_summary.gcs
+16.x: 550
+16.y: 120
 
 Input.nb: 5
 Input.Background: #ADD2CA

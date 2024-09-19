@@ -32,7 +32,7 @@ Text6.id: 5
 5.x: 400
 5.y: 250
 
-Text7: status
+Text7: reports
 Text7.id: 6
 6.x: 470
 6.y: 250

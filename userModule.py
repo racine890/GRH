@@ -6,6 +6,7 @@ import bcrypt
 import shutil
 import platform
 import os
+from datetime import datetime
 
 
 #bcrypt permet de generer du sel(des caractere)
@@ -22,6 +23,8 @@ formatDate = lambda strdate : '-'.join(strdate.split('/')[::-1])
 
 # Pour transformer la date traitable en date lisible
 unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1])
+
+get_today = lambda : datetime.today().strftime('%Y-%m-%d')
 
 # Le dossier d'installation du logiciel en cas de déploiement binaire
 if platform.system() =='Linux':
