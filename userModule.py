@@ -28,3 +28,7 @@ if platform.system() =='Linux':
 	basepath= os.path.expanduser("~")+"/.gc_programms/tk/grh/"
 else:
 	basepath="C:/GC_PROGRAMMS/tk/grh/"
+
+
+prepareData = lambda List : [{"title": '', "icon": e[2] , "description": e[1][:7], "action": '@[SetVar *selected '+ str(e[0])+','+str(e[2]) +']'} for e in List ]
+

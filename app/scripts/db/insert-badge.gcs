@@ -1,0 +1,12 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+#print var LASTFILE
+evaluate self.connect.cursor.execute("insert into grh_badge(description, icon) values ( %s, %s );", ({*editcontent},{*toUpload}))
+commit
+close database
+end
+
+[insert]
+insert into grh_badge(description, icon) values (  *editcontent, *toUpload );
+[/insert]

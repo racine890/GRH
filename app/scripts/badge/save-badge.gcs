@@ -1,0 +1,33 @@
+GetEditText
+
+if evaluate( {LASTRESULT} == "" ) then
+	MessageBox Wait.. Please Enter the description of this badge
+	end
+
+SetVar *editcontent LASTRESULT 
+print val ---------  Edit content
+print var *editcontent
+
+
+if evaluate( {*openfile} == () ) then
+	MessageBox Wait.. Please choose a file
+	end
+print val --------- fichier selectionne
+print var *openfile
+
+
+SetVar *toUpload
+
+evaluate basepath+"data/"+{*openfile}[{*openfile}.rindex("/")+1:]
+SetVar *process_file LASTRESULT
+add *toUpload *process_file
+add LASTRESULT ;
+SetVar *toUpload LASTRESULT
+evaluate shutil.copy({*openfile}, {*process_file})
+
+execute app/scripts/db/insert-badge.gcs
+MessageBox done.. Operation success
+SetVar *openfile evaluate(())
+end
+# fonction pour permettre de garder dans un fichier les chemins des fichier enregistree
+
