@@ -21,7 +21,6 @@ SetVar *toUpload
 evaluate basepath+"data/"+{*openfile}[{*openfile}.rindex("/")+1:]
 SetVar *process_file LASTRESULT
 add *toUpload *process_file
-add LASTRESULT ;
 SetVar *toUpload LASTRESULT
 evaluate shutil.copy({*openfile}, {*process_file})
 

@@ -1,5 +1,5 @@
 execute app/scripts/db/get-badge.gcs
-create ListBox with LASTLIST at 30-200
+create ListBox with LASTLIST at 30-400
 SetVar *badge_id None
 LoadPic app/res/badge.png at 10-50
 
@@ -8,13 +8,13 @@ evaluate prepareData({LASTLIST})
 
 SetVar *data LASTRESULT
 # Syntax : create frame with [...]
-create frame with background = 'silver', width=400, height=150
+create frame with background = 'silver', width=200, height=150
 SetVar *frame LASTRESULT
 # Could've been a canvas
 # create frame with background = 'silver', width=300, height=150
 
 # Using place manager
-place *frame at 300-0
+place *frame at 180-50
 # pack and grid are available, too
 # pack *frame side='top'
 # grid frame row=0, column=1
