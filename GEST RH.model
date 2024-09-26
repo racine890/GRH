@@ -24,8 +24,6 @@ Conventions :
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 
-	- Gérer les employés ( Création, Modification, Suppression )
-
 Done :
 - Créer la table des Employés. (ok)
 - Créer la table dossier. (ok)
@@ -47,3 +45,4 @@ Done :
 - Créer la fenêtre de Configuration globale (ok)
 	- Avant même l'initialisation de la base de données, Il est important d'afficher une fenêtre de Config exigeant de spécifier les paramètres par défaut. Les stocker par la suite pour les utiliser ( dbName, userName, host, password ) - Peut-être simplifier ça avec juste un fichier de Configuration?? Non ?. L'écran exécutera initDatabase. Il ne s'affiche que si la Configuration n'est pas faite. (ok)
 	- Afficher l'écran de connexion, et tester avec l'utilisateur par défaut. (ok)
+- Gérer les employés ( Création, Modification, Suppression ) (ok)
