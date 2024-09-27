@@ -28,6 +28,10 @@ if 14 then
 	load app/screens/worker-badge-screen.ch
 	end
 
+if 16 then
+	load app/screens/clocking.ch
+	end
+
 if 17 then
 	load app/screens/states.ch
 	end

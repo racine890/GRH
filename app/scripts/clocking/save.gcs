@@ -1,0 +1,24 @@
+# Get All the data from the table
+execute app/scripts/db/disableTodayClockings.gcs
+
+evaluate {*tableCanvas}.select_All()
+evaluate {*tableCanvas}.getSelectionValues()
+
+evaluate merge_lists({LASTRESULT})
+ForEach *row of LASTRESULT save
+MessageBox Done! Clockings have been updated for today !
+end
+
+[@save]
+GetTableElement 0 of *row
+evaluate {LASTRESULT}.split('-')[0]
+SetVar *worker_id LASTRESULT
+
+GetTableElement 1 of *row
+SetVar *arrive_timing LASTRESULT
+
+GetTableElement 2 of *row
+SetVar *depart_timing LASTRESULT
+
+execute app/scripts/db/insertTodayClocking.gcs
+[/@save]
