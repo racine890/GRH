@@ -1,5 +1,6 @@
-# tache: formulaire qui prend les information de la base de donnee
-#- nom de la base, l'utilisateur mysql(root), le mot de passe(), ladresse ip de la base(le localhost)
+#	configscreen
+# 	tache: formulaire qui prend les information de la base de donnee
+# 	nom de la base, l'utilisateur mysql(root), le mot de passe(), ladresse ip de la base(le localhost)
 
 Buttons.nb: 2
 Button.size: 50
@@ -63,8 +64,5 @@ Text4.id: 9
 9.y: 180
 
 Background: app/res/plum.png
-Background.x: 0
-Background.y: 0
-Background.width: 5
 
 # END

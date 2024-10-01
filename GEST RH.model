@@ -10,9 +10,10 @@ Conventions :
 
  Todo :
 	- Optimiser
-	- Icônes lors de la sélection des badges
+	
 	- Evènements
 	- Etats html / pdf
+	- Paramétrage entreprise
 	- Pointage des absences
 	- Voir mon statut (Mes badges, etc) - x (Un worker n'est pas un user.. Peut-être que ça devrait changer)
 	- Ecrire la documentation - Publier avant
@@ -22,8 +23,6 @@ Conventions :
 		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin" (ok)
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
-
-	- Gérer les employés ( Création, Modification, Suppression )
 
 Done :
 - Créer la table des Employés. (ok)
@@ -37,6 +36,7 @@ Done :
 - Changer Pseudo (ok)
 - Changer mot de passe (ok)
 - On doit avoir la table de pointage, pour enregistrer les heures d'arrivée et de départ des employés chaque jour. (ok)
+- Icônes lors de la sélection des badges (ok)
 - Afficher l'écran d'acceptation des conditions d'utilisation et de la license. C'est de là que viendra le fichier accepted.txt qui sera créé uniquement si l'utilisateur accepte. Bien sûr, il ne peut pas continuer, sinon. La page ne s'affiche que si le fichier n'existe pas. (ok)
 - Choisir un SGBD (ok)
 - Créer la table des utilisateurs, et la table des droits (ok)
@@ -45,3 +45,4 @@ Done :
 - Créer la fenêtre de Configuration globale (ok)
 	- Avant même l'initialisation de la base de données, Il est important d'afficher une fenêtre de Config exigeant de spécifier les paramètres par défaut. Les stocker par la suite pour les utiliser ( dbName, userName, host, password ) - Peut-être simplifier ça avec juste un fichier de Configuration?? Non ?. L'écran exécutera initDatabase. Il ne s'affiche que si la Configuration n'est pas faite. (ok)
 	- Afficher l'écran de connexion, et tester avec l'utilisateur par défaut. (ok)
+- Gérer les employés ( Création, Modification, Suppression ) (ok)

@@ -5,19 +5,21 @@ print var LASTCLICKEDID
 #print file
 #print section 
 #PrintVars
-
 switch LASTCLICKEDID
-print var LASTCOMPARE
+
 if 10 then
 	load app/screens/userSettings.ch
 	end
+
 if 11 then
 	print val texte
 	load app/screens/config-1.ch
 	end
+
 if 12 then
 	load app/screens/worker-screen.ch
 	end
+
 if 13 then
 	load app/screens/post.ch
 	end
@@ -25,7 +27,12 @@ if 13 then
 if 14 then
 	load app/screens/badge-screen.ch
 	end
+
+if 16 then
+	load app/screens/clocking.ch
+	end
+
+if 17 then
+	load app/screens/states.ch
+	end
 end
-
-
-    

@@ -23,7 +23,7 @@ Text3.id: 4
 
 Buttons.nb: 2
 Button.size: 30
-Button.width: 100
+Button.width: 150
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
 

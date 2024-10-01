@@ -1,0 +1,43 @@
+# Save today and display it
+evaluate get_today()
+SetVar *todayDate LASTRESULT
+evaluate unFormatDate({*todayDate})
+CreateText 1 LASTRESULT
+
+# Now get the clockings from the database
+execute app/scripts/db/getTodaysClocking.gcs
+print var LASTLIST
+
+# Initialise data dict
+evaluate dict()
+SetVar *tableData LASTRESULT
+SetVar *ind 0
+turn *ind into int
+
+# To format data as accepted by tkintertable
+ForEach *row in LASTLIST parse
+
+# Create a frame to create my table in
+create frame width=300, height=300, bg="white"
+SetVar *bgFrame LASTRESULT
+place *bgFrame at 100-100
+
+# Create my table using data and display it
+evaluate tkintertable.TableCanvas({*bgFrame}, data={*tableData}, cellbackgr='#55968F', rowselectedcolor='#55968F', editable=True)
+SetVar *tableCanvas LASTRESULT
+evaluate {*tableCanvas}.show()
+
+end
+
+
+# Parse : Just takes every row and makes a dictionnary of it.
+# Matches the format of tkintertable data
+# May make *tableData look like this :
+# {
+#	0: {"HR": "1-John Doe", "Arrival": "07-30", "Depart": "16-30"},
+# }
+[@parse]
+evaluate lambda row : {"HR": str(row[4])+'-'+row[0]+' '+row[1], "Arrival": str(row[2]), "Depart": str(row[3])}
+evaluate {*tableData}.__setitem__({*ind}, {LASTRESULT}({*row}))
+increment *ind
+[/@parse]

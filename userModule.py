@@ -6,6 +6,8 @@ import bcrypt
 import shutil
 import platform
 import os
+from datetime import datetime
+from modules import tkintertable
 
 
 #bcrypt permet de generer du sel(des caractere)
@@ -22,6 +24,21 @@ formatDate = lambda strdate : '-'.join(strdate.split('/')[::-1])
 
 # Pour transformer la date traitable en date lisible
 unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1])
+
+get_today = lambda : datetime.today().strftime('%Y-%m-%d')
+
+def merge_lists(listOfLists):
+	newList = []
+	ref = listOfLists[0]
+
+	while len(ref) != 0:
+		tmpList = []
+		for l in listOfLists:
+			tmpList.append(l.pop(0) if l!=[] else "")
+		newList.append(tmpList)
+
+	return newList
+
 
 # Le dossier d'installation du logiciel en cas de déploiement binaire
 if platform.system() =='Linux':
