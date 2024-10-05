@@ -23,12 +23,11 @@ from __future__ import absolute_import, division, print_function
 try:
     from tkinter import *
     from tkinter.ttk import *
-    from tkinter import filedialog, messagebox, simpledialog
+    from tkinter import filedialog, messagebox
 except:
     from Tkinter import *
     from ttk import *
     import tkFileDialog as filedialog
-    import tkSimpleDialog as simpledialog
     import tkMessageBox as messagebox
 
 import os, csv

@@ -28,12 +28,11 @@ except:
     from Tkinter import *
     from ttk import *
 if (sys.version_info > (3, 0)):
-    from tkinter import filedialog, messagebox, simpledialog
+    from tkinter import filedialog, messagebox
     from tkinter import font
     import tkinter.colorchooser as tkColorChooser
 else:
     import tkFileDialog as filedialog
-    import tkSimpleDialog as simpledialog
     import tkMessageBox as messagebox
     import tkFont as font
     import tkColorChooser
@@ -41,7 +40,6 @@ else:
 from .TableModels import TableModel
 from .TableFormula import Formula
 from .Prefs import Preferences
-from .Dialogs import *
 
 import math, time
 import os, types
@@ -478,9 +476,8 @@ class TableCanvas(Canvas):
         """Add new rows"""
 
         if num == None:
-            num = simpledialog.askinteger("Now many rows?",
-                                            "Number of rows:",initialvalue=1,
-                                             parent=self.parentframe)
+            num = 1
+            
         if not num:
             return
         keys = self.model.autoAddRows(num)
@@ -581,9 +578,8 @@ class TableCanvas(Canvas):
         """Automatically add x number of cols"""
 
         if numcols == None:
-            numcols = simpledialog.askinteger("Auto add rows.",
-                                                "How many empty columns?",
-                                                parent=self.parentframe)
+            numcols = 1
+            
         self.model.auto_AddColumns(numcols)
         self.parentframe.configure(width=self.width)
         self.redrawTable()
@@ -603,9 +599,8 @@ class TableCanvas(Canvas):
         """Return the row/col for the input value"""
 
         if searchstring == None:
-            searchstring = simpledialog.askstring("Search table.",
-                                               "Enter search value",
-                                               parent=self.parentframe)
+            searchstring = ""
+            
         found=0
         if findagain == None or not hasattr(self,'foundlist'):
             self.foundlist=[]
@@ -2526,9 +2521,8 @@ class ColumnHeader(Canvas):
         popupmenu.post(event.x_root, event.y_root)
         return popupmenu
 
-    def relabel_Column(self):
+    def relabel_Column(self, ans=None):
         col=self.table.currentcol
-        ans = simpledialog.askstring("New column name?", "Enter new name:")
         if ans !=None:
             if ans == '':
                 messagebox.showwarning("Error", "Name should not be blank.")

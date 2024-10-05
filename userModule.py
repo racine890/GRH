@@ -7,7 +7,15 @@ import shutil
 import platform
 import os
 from datetime import datetime
-from modules import tkintertable
+try:
+	from sys import path
+	# On ajoute le dossier module au path pour pouvoir importer ce qui s'y trouve comme si c'était à la racine
+	path.append("./modules")
+	# Tkintertable pour gérer les tableaux
+	import tkintertable
+except ImportError as e:
+	print("*** Error : Could not find tkinterTable")
+	pass
 
 
 #bcrypt permet de generer du sel(des caractere)
@@ -25,9 +33,12 @@ formatDate = lambda strdate : '-'.join(strdate.split('/')[::-1])
 # Pour transformer la date traitable en date lisible
 unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1])
 
+# Récupère la date d'aujourd'hui
 get_today = lambda : datetime.today().strftime('%Y-%m-%d')
 
-def merge_lists(listOfLists):
+# Fusionne des listes comme [[1,2], ["un", "deux"]] pour donner un truc comme [[1, "un"],[2, "deux"]]
+# Continue jusqu'au nombre d'éléments de la première sous liste
+def merge_lists(listOfLists: list) -> list:
 	newList = []
 	ref = listOfLists[0]
 

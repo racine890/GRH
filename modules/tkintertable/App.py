@@ -28,11 +28,10 @@ except:
     from Tkinter import *
     from ttk import *
 if (sys.version_info > (3, 0)):
-    from tkinter import filedialog, messagebox, simpledialog
+    from tkinter import filedialog, messagebox
     from tkinter import font
 else:
     import tkFileDialog as filedialog
-    import tkSimpleDialog as simpledialog
     import tkMessageBox as messagebox
     import tkFont as font
 
@@ -318,8 +317,8 @@ class TablesApp(Frame):
         names = [self.notebook.tab(i, "text") for i in self.notebook.tabs()]
         noshts = len(names)
         if sheetname == None:
-            sheetname = simpledialog.askstring("New sheet name?", "Enter sheet name:",
-                                                initialvalue='sheet'+str(noshts+1))
+            sheetname = "New sheet"
+
         checksheet_name(sheetname)
         page = Frame(self.notebook)
         self.notebook.add(page, text=sheetname)
@@ -359,13 +358,12 @@ class TablesApp(Frame):
             self.add_Sheet(newname, newdata)
         return
 
-    def rename_Sheet(self):
+    def rename_Sheet(self, newname=None):
         """Rename a sheet"""
 
         #s = self.notebook.getcurselection()
         s = self.notebook.index(self.notebook.select())
-        newname = simpledialog.askstring("New sheet name?", "Enter new sheet name:",
-                                                initialvalue=s)
+
         if newname == None:
             return
         self.copy_Sheet(newname)
