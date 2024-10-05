@@ -1,32 +1,41 @@
-#print var LASTCLICKEDID
-print val --------- selection
-print var *selected
+# If an image has been clicked from the kanban, it may look like "1,badge.png"
 if evaluate({*selected} != '' and ',' in {*selected}) then
+
+	# First, Set the badge_id
 	evaluate {*selected}.split(',')[0]
 	SetVar *badge_id LASTRESULT
 
+	# And then the badge path
 	evaluate {*selected}.split(',')[1]
 	SetVar *badge_path LASTRESULT
 	define $Pic LASTRESULT
-	ChangePic 9 $Pic
+
+	# Update the default picture and reinitialize selected value. 10 is the value of LASTCLICKEDID when you click on the default icon.
+	ChangePic 10 $Pic
 	SetVar *selected
 	end
 
+# Now if it isn't the listbox, stop there.
 if evaluate( self.focus_get() != self.page.lb ) then
 	end
 
+# This is only for a selection inside the listbox
+# Get the id
 GetTableElement 0 of SELECTED
 SetVar *badge_id LASTRESULT
 
+# Set the description
 GetTableElement 1 of SELECTED
 SetEditText var LASTRESULT
 
+# Get the path and Remove ';' if there is.
 GetTableElement 2 of SELECTED
 evaluate {LASTRESULT}.replace(";","")
-# oncree une constante
+
+# Constant creation. Will add its textual content to the instruction before execution.
 define $Pic LASTRESULT
-ChangePic 9 $Pic
 
-
+# Alter a pic based on its LASTCLICKEDID value
+ChangePic 10 $Pic
 
 end
