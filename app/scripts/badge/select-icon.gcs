@@ -1,0 +1,10 @@
+# fd.askopenfilename nous permettra de selectionner q'un seul fichier a la fois
+evaluate fd.askopenfilename( title = "Chose file path",filetypes = ( ("jpeg document","*.jpeg"), ("png document","*.png") ))
+print var LASTRESULT
+
+if evaluate ({LASTRESULT} == "" ) then
+	MessageBox Error No badge provided 
+	end
+SetVar *openfile LASTRESULT
+
+end

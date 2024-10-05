@@ -1,0 +1,13 @@
+# Mise à jour d'un worker
+
+MessageBox confirm Are you sure you want to delete this worker ?
+compare LASTRESULT True
+if 5 then
+	end
+
+SetVar *arg_id *badge_id
+execute app/scripts/db/delete-badge.gcs
+
+MessageBox success operation succeeded
+load app/screens/edit-badge.ch
+end

@@ -1,0 +1,32 @@
+#print var LASTCLICKEDID
+print val --------- selection
+print var *selected
+if evaluate({*selected} != '' and ',' in {*selected}) then
+	evaluate {*selected}.split(',')[0]
+	SetVar *badge_id LASTRESULT
+
+	evaluate {*selected}.split(',')[1]
+	SetVar *badge_path LASTRESULT
+	define $Pic LASTRESULT
+	ChangePic 9 $Pic
+	SetVar *selected
+	end
+
+if evaluate( self.focus_get() != self.page.lb ) then
+	end
+
+GetTableElement 0 of SELECTED
+SetVar *badge_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+SetEditText var LASTRESULT
+
+GetTableElement 2 of SELECTED
+evaluate {LASTRESULT}.replace(";","")
+# oncree une constante
+define $Pic LASTRESULT
+ChangePic 9 $Pic
+
+
+
+end

@@ -1,0 +1,31 @@
+execute app/scripts/db/get-badge.gcs
+create ListBox with LASTLIST at 30-400
+SetVar *badge_id None
+LoadPic app/res/badge.png at 10-50
+
+# Need a list of dicts. Must have keys title, icon, description and action.
+evaluate prepareData({LASTLIST})
+
+SetVar *data LASTRESULT
+# Syntax : create frame with [...]
+create frame with background = 'silver', width=200, height=150
+SetVar *frame LASTRESULT
+# Could've been a canvas
+# create frame with background = 'silver', width=300, height=150
+
+# Using place manager
+place *frame at 180-50
+# pack and grid are available, too
+# pack *frame side='top'
+# grid frame row=0, column=1
+
+# Syntax : create kanban with [list] show [?] columns {on [frame]}
+# if the on part is not specified, will create the kanban on the window sheet.
+create kanban with *data show 3 columns on *frame
+end
+
+[@select]
+# Update on MessageBox : If it's a question, tk will automatically turn it in yesno MessageBox.
+
+[/@select]
+end

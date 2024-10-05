@@ -1,0 +1,19 @@
+# Mise à jour d'un worker
+compare *badge_id  None
+if 0 then
+	MessageBox wait... Please select a badge .
+	end
+
+GetEditText 
+SetVar *description LASTRESULT
+
+# Mandatory fields
+if evaluate( {*description} == ""  ) then
+	MessageBox Wait.. Please Enter description
+	end
+
+execute app/scripts/db/update-badge.gcs
+
+MessageBox success operation succeeded
+load app/screens/edit-badge.ch
+end
