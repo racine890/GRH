@@ -29,10 +29,9 @@ except:
     from Tkinter import *
     from ttk import *
 if (sys.version_info > (3, 0)):
-    from tkinter import filedialog, messagebox, simpledialog
+    from tkinter import filedialog, messagebox
 else:
     import tkFileDialog as filedialog
-    import tkSimpleDialog as simpledialog
     import tkMessageBox as messagebox
 
 from math import *
