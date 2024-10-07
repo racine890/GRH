@@ -46,8 +46,6 @@ Button3.id: 4
 4.x: 550
 4.y: 450
 
-
-
 Edit.BeginX: 270
 Edit.BeginY: 380
 Edit.width: 200

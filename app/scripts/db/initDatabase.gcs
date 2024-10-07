@@ -139,7 +139,7 @@ id integer PRIMARY KEY AUTO_INCREMENT,
 title varchar(60),
 statut integer (1) DEFAULT 1,
 foresight_date timestamp,
-event_date timestamp,
+event_date timestamp  DEFAULT CURRENT_TIMESTAMP,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q8]
