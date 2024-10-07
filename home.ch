@@ -1,5 +1,5 @@
 # HRM Home
-
+debug:yes
 use tk
 Width: 700
 Size: 500

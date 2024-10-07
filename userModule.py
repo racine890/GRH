@@ -7,7 +7,7 @@ import shutil
 import platform
 import os
 from datetime import datetime
-from modules import tkintertable
+#from modules import tkintertable
 
 
 #bcrypt permet de generer du sel(des caractere)

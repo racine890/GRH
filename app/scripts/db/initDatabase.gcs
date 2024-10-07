@@ -56,7 +56,10 @@ create table if not exists grh_user(
     salt blob,
     statut integer (1) DEFAULT 1,
     last_connection_time timestamp,
-    create_date timestamp DEFAULT CURRENT_TIMESTAMP
+    create_date timestamp DEFAULT CURRENT_TIMESTAMP,
+    worker_id integer,
+    foreign key (worker_id) references grh_worker(id)
+    
     
 )
 [/q1]
@@ -159,9 +162,11 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
  create table if not exists grh_folder(
 id integer PRIMARY KEY AUTO_INCREMENT,
 id_worker integer,
+workerstation_id integer,
 label varchar(60),
 description text,
 foreign key (id_worker) references grh_worker(id),
+foreign key (workerstation_id) references grh_workerstation(id),
 statut integer (1) DEFAULT 1,
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
