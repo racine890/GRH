@@ -2,11 +2,13 @@ evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch
 define $TMP LASTRESULT
 connect MySQL with $TMP
 #print var LASTFILE
+GetTableElement 5 of *session_user
+SetVar *workerstation_id LASTRESULT
 execute query insert
 commit
 close database
 end
 
 [insert]
-insert into grh_folder(id_worker, label, description) values ( *idworker_selected , *label , *description );
+insert into grh_folder(id_worker, label, description,workerstation_id) values ( *idworker_selected , *label , *description, *workerstation_id );
 [/insert]

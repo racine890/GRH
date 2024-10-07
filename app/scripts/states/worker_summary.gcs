@@ -12,9 +12,8 @@ SetVar *today LASTRESULT
 
 PrintState MySTATE as state.html use app/res/default.dat
 
-SetVar *platform PLATFORM
 
-if evaluate({*platform} == "win32") then
+if evaluate(platform.system() != "Linux") then
 	evaluate system('state.html')
 	end
 

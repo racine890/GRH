@@ -23,7 +23,7 @@ if evaluate( {*passw} == ""  ) then
 	end
 
 execute app/scripts/db/getusername-for-login.gcs
-
+print var LASTTUPLE
 compare LASTTUPLE None
 if 0 then
 	MessageBox Error this account does not exists
