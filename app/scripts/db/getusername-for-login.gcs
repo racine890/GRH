@@ -7,5 +7,21 @@ close database
 end
 
 [getUser]
-select * from grh_user where user_name = *name ;
+(select grh_user.id, 
+grh_user.user_name,
+grh_user.passw,
+grh_user.salt,
+grh_user.worker_id,
+grh_worker_workerstation_assoc.id_workerstation 
+from grh_user,grh_worker_workerstation_assoc,grh_worker 
+where user_name = *name and grh_user.worker_id = grh_worker.id 
+and grh_worker_workerstation_assoc.id_worker = grh_worker.id and grh_user.statut = 1) union (
+select 
+grh_user.id, 
+grh_user.user_name,
+grh_user.passw,
+grh_user.salt,
+grh_user.worker_id,
+0
+from grh_user where user_name = *name and grh_user.statut = 1);
 [/getUser]

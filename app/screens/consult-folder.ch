@@ -53,6 +53,7 @@ Button3: Transfer
 Button3.id: 4
 4.x: 560
 4.y: 70
+4.link: app/screens/post_workerstation.ch
 
 Button4: ......
 Button4.id: 5
