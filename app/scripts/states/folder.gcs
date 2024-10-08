@@ -1,0 +1,73 @@
+SetVar *userAdress Ouagadougou
+SetVar *arg_id *wfds.folderToDisplay.id
+
+execute app/scripts/db/get-folderById.gcs
+SetVar *mydbdata LASTTUPLE
+
+GetTableElement 2 of *mydbdata
+SetVar *state.label LASTRESULT
+
+GetTableElement 5 of *mydbdata
+evaluate unFormatDate(str({LASTRESULT}))
+SetVar *state.date LASTRESULT
+
+GetTableElement 3 of *mydbdata
+SetVar *state.description LASTRESULT
+
+evaluate unFormatDate(get_today())
+SetVar *today LASTRESULT
+
+evaluate {*mydbdata}[7]+' '+{*mydbdata}[8]
+SetVar *state_worker LASTRESULT
+
+execute app/scripts/db/get-documentByFolder.gcs
+ForEach *document in LASTLIST write
+
+
+ReadFile app/res/default.dat
+evaluate {LASTRESULT}.replace('%DOCUMENTS%', {*rows})
+evaluate {LASTRESULT}.replace('%TITLE%', {*state.label})
+evaluate {LASTRESULT}.replace('%DATE%', {*state.date})
+evaluate {LASTRESULT}.replace('%DATE%', {*state.description})
+evaluate {LASTRESULT}.replace('%DATE%', {*state.description})
+write LASTRESULT => state.html
+
+
+SetVar *platform PLATFORM
+compare *platform win32
+if 0 then
+	evaluate system("start state.html")
+	end
+evaluate system('xdg-open state.html')
+end
+[/@create]
+
+[MySTATE]
+TEL: 56 52 15 32
+MAIL: gcenterburkina@gmail.com
+ADRESS: *userAdress
+REFERENCE: ---
+TITLE: WORKERS SUMMARY
+HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE
+ROWS: *mydbdata
+FOOTER: ("TOTAL",5,'*total'),("PRINT DATE",5,'*today')
+LOGO: app/res/worker.png
+COMPANY: G. CENTER
+[/MySTATE]
+
+
+[write]
+SetVar *rows
+GetTableElement 2 of *document
+SetVar *d_label LASTRESULT
+GetTableElement 3 of *document
+SetVar *d_path LASTRESULT
+add *rows <div class="piece"><a href="
+add LASTRESULT *d_path
+add LASTRESULT " target="_blank">
+add LASTRESULT *d_label
+add LASTRESULT target="_blank">
+add LASTRESULT *d_label
+add LASTRESULT </a></div>
+SetVar *rows LASTRESULT
+[/write]
