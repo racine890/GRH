@@ -16,5 +16,5 @@ close database
 end
 
 [status]
-Select * from grh_document, grh_document_folder_assoc where grh_document.statut=1 and grh_document_folder_assoc.id_document = grh_document.id and grh_document_folder_assoc.id_folder = *arg_id and grh_document.statut = 1;
+Select * from grh_document, grh_document_folder_assoc where grh_document.statut=1 and grh_document_folder_assoc.id_document = grh_document.id and grh_document_folder_assoc.id_folder = *arg_id ;
 [/status]

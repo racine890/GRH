@@ -148,9 +148,6 @@
         <div class="pieces">
             <h2>Pièces Jointes</h2>
 
-            <div class="piece">
-                <a href="piece1.pdf" target="_blank">Contrat de vente (PDF)</a>
-            </div>
 			%DOCUMENTS%
 
         </div>

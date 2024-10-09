@@ -1,9 +1,17 @@
 evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
-#print var LASTFILE
+
 GetTableElement 5 of *session_user
 SetVar *workerstation_id LASTRESULT
+
+compare *workerstation_id 0
+if 0 then
+	execute query insertLess
+	commit
+	close database
+	end
+
 execute query insert
 commit
 close database
@@ -12,3 +20,7 @@ end
 [insert]
 insert into grh_folder(id_worker, label, description,workerstation_id) values ( *idworker_selected , *label , *description, *workerstation_id );
 [/insert]
+
+[insertLess]
+insert into grh_folder(id_worker, label, description) values ( *idworker_selected , *label , *description );
+[/insertLess]

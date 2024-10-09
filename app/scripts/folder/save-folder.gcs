@@ -23,6 +23,8 @@ SetVar *idworker_selected LASTRESULT
 # Et créer le dossier
 execute app/scripts/db/insert-workerfolder.gcs
 
+SetVar SELECTED
+
 # Notifier et quitter
 MessageBox done.. Operation success
 end

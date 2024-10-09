@@ -4,34 +4,42 @@ SetVar *arg_id *wfds.folderToDisplay.id
 execute app/scripts/db/get-folderById.gcs
 SetVar *mydbdata LASTTUPLE
 
-GetTableElement 2 of *mydbdata
+GetTableElement 3 of *mydbdata
 SetVar *state.label LASTRESULT
 
-GetTableElement 5 of *mydbdata
+GetTableElement 6 of *mydbdata
 evaluate unFormatDate(str({LASTRESULT}))
 SetVar *state.date LASTRESULT
 
-GetTableElement 3 of *mydbdata
+GetTableElement 4 of *mydbdata
 SetVar *state.description LASTRESULT
 
 evaluate unFormatDate(get_today())
 SetVar *today LASTRESULT
 
-evaluate {*mydbdata}[7]+' '+{*mydbdata}[8]
-SetVar *state_worker LASTRESULT
+print var *mydbdata
+evaluate {*mydbdata}[8]+' '+{*mydbdata}[9]
+SetVar *state.worker LASTRESULT
 
 execute app/scripts/db/get-documentByFolder.gcs
+print val +++++
+print var LASTLIST
+SetVar *rows
 ForEach *document in LASTLIST write
 
+ReadFile app/res/folder.dat
 
-ReadFile app/res/default.dat
-evaluate {LASTRESULT}.replace('%DOCUMENTS%', {*rows})
-evaluate {LASTRESULT}.replace('%TITLE%', {*state.label})
-evaluate {LASTRESULT}.replace('%DATE%', {*state.date})
-evaluate {LASTRESULT}.replace('%DATE%', {*state.description})
-evaluate {LASTRESULT}.replace('%DATE%', {*state.description})
-write LASTRESULT => state.html
+evaluate {LASTRESULT}.replace('%DOCUMENTS%', str({*rows}))
+evaluate {LASTRESULT}.replace('%TITLE%', str({*state.label}))
+evaluate {LASTRESULT}.replace('%DATE%', str({*state.date}))
+evaluate {LASTRESULT}.replace('%WORKER%', str({*state.worker}))
+evaluate {LASTRESULT}.replace('%DESC%', str({*state.description}))
+SetVar *output LASTRESULT
 
+evaluate open("state.html", "w")
+SetVar *fh LASTRESULT
+evaluate {*fh}.write({*output})
+evaluate {*fh}.close()
 
 SetVar *platform PLATFORM
 compare *platform win32
@@ -56,18 +64,7 @@ COMPANY: G. CENTER
 [/MySTATE]
 
 
-[write]
-SetVar *rows
-GetTableElement 2 of *document
-SetVar *d_label LASTRESULT
-GetTableElement 3 of *document
-SetVar *d_path LASTRESULT
-add *rows <div class="piece"><a href="
-add LASTRESULT *d_path
-add LASTRESULT " target="_blank">
-add LASTRESULT *d_label
-add LASTRESULT target="_blank">
-add LASTRESULT *d_label
-add LASTRESULT </a></div>
+[@write]
+evaluate {*rows}+'<div class="piece"><a href="'+str({*document}[3]).replace(';','')+'" target="_blank">'+str({*document}[2])+'</a></div>'
 SetVar *rows LASTRESULT
-[/write]
+[/@write]
