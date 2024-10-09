@@ -1,0 +1,17 @@
+check var *arg_id
+if 0 then
+	print val *arg_id is missing
+	end
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_one with get
+
+close database
+end
+
+[get]
+Select * from grh_folder, grh_worker where grh_worker.id = grh_folder.id_worker and grh_folder.statut=1 and grh_folder.id = *arg_id limit 1;
+[/get]

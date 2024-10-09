@@ -1,3 +1,7 @@
+#
+#	Consult-folder
+#
+
 Background: app/res/bgpost.png
 
 Text.nb: 5
@@ -75,6 +79,7 @@ Button8: Print
 Button8.id: 9
 9.x: 560
 9.y: 380
+9.link: app/scripts/states/folder.gcs
 
 edit_background: #ADD2CA
 Edit.width:300

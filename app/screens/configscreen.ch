@@ -1,6 +1,8 @@
+#
 #	configscreen
 # 	tache: formulaire qui prend les information de la base de donnee
 # 	nom de la base, l'utilisateur mysql(root), le mot de passe(), ladresse ip de la base(le localhost)
+#
 
 Buttons.nb: 2
 Button.size: 50

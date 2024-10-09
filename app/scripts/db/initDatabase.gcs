@@ -3,12 +3,12 @@ evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
+create table grh_worker with q9
 create table grh_user with q1
 create table grh_right with q2
 create table grh_user_right_assoc with q3
 create table grh_workerstation with q4
 create table grh_status with q5
-create table grh_worker  with q9
 create table grh_worker_status_assoc with q6
 create table grh_badge with q7
 create table grh_event with q8
