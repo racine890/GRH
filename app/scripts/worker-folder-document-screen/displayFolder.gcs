@@ -1,12 +1,11 @@
 # Obligatoire de sélectionner un dossier
 if evaluate({SELECTED} == "") then
-	MessageBox Wait.. Please select a worker
+	MessageBox Wait.. Please select a folder
 	end
 
+# On garde l'id avant de passer à l'écran de consultation
 GetTableElement 0 of SELECTED
 SetVar *wfds.folderToDisplay.id LASTRESULT
- 
-
 
 load app/screens/consult-folder.ch
 end
