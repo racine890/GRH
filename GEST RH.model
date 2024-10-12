@@ -46,3 +46,14 @@ Done :
 	- Avant même l'initialisation de la base de données, Il est important d'afficher une fenêtre de Config exigeant de spécifier les paramètres par défaut. Les stocker par la suite pour les utiliser ( dbName, userName, host, password ) - Peut-être simplifier ça avec juste un fichier de Configuration?? Non ?. L'écran exécutera initDatabase. Il ne s'affiche que si la Configuration n'est pas faite. (ok)
 	- Afficher l'écran de connexion, et tester avec l'utilisateur par défaut. (ok)
 - Gérer les employés ( Création, Modification, Suppression ) (ok)
+
+
+: Conventions sur les etats des dossiers
+	- Deleted 0
+	- Active 1
+	- Rejected 2
+	- Validated 3
+
+: Conventions sur les etats en general
+	- Deleted 0
+	- Active 1
