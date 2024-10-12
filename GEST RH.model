@@ -7,6 +7,10 @@ Conventions :
 	- Pour chaque écran ch, on va créer 3 droits : read, write, et remove.
 	- Les tables de liaisons doivent etre nommées dans le genre grh_table1_table2_assoc. Exemple, une liaison entre la table grh_user et la table grh_worker aura le nom grh_user_worker_assoc.
 	- On utilisera des constantes d'état. ( Par exemple 0 pour désactivé, 1 pour actif, 2 pour en état brouillon , etc )
+	- Bouton supprimer toutes affectations badges
+	- Events form
+	- Events Folder automatic creation
+	- General events (For everyone)
 
  Todo :
 	- Optimiser
@@ -23,6 +27,15 @@ Conventions :
 		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin" (ok)
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
+
+	- Notifications
+	- Afficher les badges si le worker connecté en a
+	- Dossiers : La consultation concerne par défaut les dossiers actifs : Permettre de voir les dossiers validés, rejettés, ou tous les dossiers
+	- Etat des workers : Ajouter leurs statuts
+	- Notifier les dates d'anniversaire des workers
+	- Edit / Delete de Documents
+	- Set Documents : Pas deux fois le même document
+	- 
 
 Done :
 - Créer la table des Employés. (ok)

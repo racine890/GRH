@@ -1,0 +1,15 @@
+GetInput 11 LASTRESULT
+SetVar *form_nom LASTRESULT
+
+GetInput 12 LASTRESULT
+SetVar *form_ifu LASTRESULT
+
+GetInput 5 LASTRESULT
+SetVar *form_tel LASTRESULT
+
+GetInput 6 LASTRESULT
+SetVar *form_mail LASTRESULT
+
+execute app/scripts/db/updateConfig.gcs
+MessageBox ok Configurations have been updated !
+end

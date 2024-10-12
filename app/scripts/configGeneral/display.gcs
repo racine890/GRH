@@ -1,0 +1,11 @@
+execute app/scripts/config-1/loadimag.gcs
+execute app/scripts/db/getConfig.gcs
+GetTableElement 1 of LASTTUPLE
+SetInputText 11 LASTRESULT
+GetTableElement 2 of LASTTUPLE
+SetInputText 12 LASTRESULT
+GetTableElement 3 of LASTTUPLE
+SetInputText 5 LASTRESULT
+GetTableElement 4 of LASTTUPLE
+SetInputText 6 LASTRESULT
+end
