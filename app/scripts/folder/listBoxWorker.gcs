@@ -1,6 +1,10 @@
-evaluate self.boxes.clear()
+# Showing a listbox of workers
+
+evaluate self.page.boxes.clear()
 SetVar SELECTED
+
 execute app/scripts/db/get-worker.gcs
 SetVar *all_workers LASTLIST
+
 create ListBox with *all_workers at 250-300
 end

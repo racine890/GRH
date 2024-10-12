@@ -55,7 +55,7 @@ Button3.id: 4
 4.y: 70
 4.link: app/screens/post_workerstation.ch
 
-Button4: ......
+Button4: Reject
 Button4.id: 5
 5.x: 560
 5.y: 130
@@ -65,7 +65,7 @@ Button5.id: 6
 6.x: 560
 6.y: 200
 
-Button6: .....
+Button6: Edit
 Button6.id: 7
 7.x: 560
 7.y: 260

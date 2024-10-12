@@ -1,15 +1,15 @@
-#
-#	config-1
-#		Paramétrages globaux
-#
-
 Background: app/res/bgcongig1.png
 
-Text.nb: 5
+Text.nb: 2
 Text1: User Management
 Text1.id: 0
 0.x: 70
 0.y: 50
+
+Text2: General Settings
+Text2.id: 1
+1.x: 70
+1.y: 130
 
 Text2: Username
 Text2.id: 2
@@ -26,12 +26,7 @@ Text4.id: 4
 4.x: 250
 4.y: 230
 
-Text5: General Settings
-Text5.id: 7
-7.x: 70
-7.y: 130
-
-Input.nb: 2
+Input.nb: 0
 Input.Background: #ADD2CA
 
 Input1.id: 5
@@ -42,7 +37,7 @@ Input2.id: 6
 6.x: 350
 6.y:  200
 
-Buttons.nb: 2
+Buttons.nb: 1
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
@@ -60,7 +55,7 @@ Button2.id: 9
 9.x: 360
 9.y: 320
 
-OnDisplay: app/scripts/config-1/config-init.gcs
+OnDisplay: app/scripts/config-1/loadimag.gcs
 
 # On executera le script contenu dans le fichier switch-config1.gcs
 [events]
