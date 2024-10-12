@@ -20,6 +20,7 @@ create table grh_worker_event_assoc with q14
 create table grh_worker_workerstation_assoc with q15
 create table grh_document with q16
 create table grh_document_folder_assoc with q17
+create table grh_config with q18
 execute query ir1
 execute query ir2
 execute query ir3
@@ -33,6 +34,7 @@ execute query status3
 execute query badge1
 execute query badge2
 execute query badge3
+execute query ic
 commit
 close database
 #initialisation d'un utilisateur
@@ -215,7 +217,7 @@ id integer PRIMARY KEY AUTO_INCREMENT,
 id_worker integer,
 id_event integer,
 start timestamp,
-end  timestamp DEFAULT CURRENT_TIMESTAMP,
+end timestamp DEFAULT CURRENT_TIMESTAMP,
 justify varchar(60),
 foreign key (id_worker) references grh_worker(id),
 foreign key (id_event) references grh_event(id),
@@ -263,6 +265,17 @@ foreign key (id_folder) references grh_folder(id),
 create_date timestamp DEFAULT CURRENT_TIMESTAMP
 )
 [/q17]
+
+[q18]
+ create table if not exists  grh_config(
+id integer PRIMARY KEY AUTO_INCREMENT,
+company_name varchar(60),
+company_ifu varchar(30),
+company_phone varchar(16),
+company_mail varchar(30)
+)
+[/q18]
+
 #L'enregistrement des droit par defaut
 [ir1]
 insert into grh_right(name_right) value ("Admin");
@@ -318,7 +331,9 @@ insert into grh_badge(description,icon) value ("Employe le plus ponctuelle","app
 insert into grh_badge(description,icon) value ("Employe avec tableau d'honneur","app/res/tableau_d'honneur.png");
 [/badge3]
 
-
+[ic]
+insert into grh_config(company_name, company_ifu, company_mail, company_phone) value ("G. Center Burkina","-", "contact@gcenterburkina.com", "+226 74 91 21 62");
+[/ic]
 
 
 #	role:

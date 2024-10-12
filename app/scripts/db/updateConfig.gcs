@@ -1,0 +1,13 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+execute query insert
+
+commit
+close database
+end
+
+[insert]
+Update grh_config set  company_ifu = *form_ifu , company_mail = *form_mail , company_name = *form_nom , company_phone = *form_tel ;
+[/insert]
