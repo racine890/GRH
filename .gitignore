@@ -4,5 +4,4 @@ accepted.txt
 Config.ch
 GEST RH.model
 *.html
-./modules/__pycache__
-./modules/tkintertable/__pycache__
+*.pyd
