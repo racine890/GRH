@@ -1,0 +1,22 @@
+# Attend un paramètre *arg_id
+check var *arg_id
+if 0 then
+	print val missing param : *arg_id
+	end
+
+compare *arg_id None
+if 0 then
+	SetVar *arg_id 0
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_all with badge
+
+close database
+end
+
+[badge]
+	Select * from grh_badge, grh_worker_badge_assoc where grh_worker_badge_assoc.statut=1 and grh_badge.id = grh_worker_badge_assoc.id_badge and grh_worker_badge_assoc.id_worker = *arg_id ;
+[/badge]

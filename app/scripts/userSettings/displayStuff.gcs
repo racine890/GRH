@@ -4,4 +4,31 @@ SetInputText 5 LASTRESULT
 ConfigInput 6 show="*"
 ConfigInput 11 show="*"
 ConfigInput 10 show="*"
+
+# Display badges icon
+count *session_badges
+SetVar *badges_count LASTRESULT
+compare *badges_count 1
+if 1 then
+	GetTableElement 0 of *session_badges
+	SetVar *c_badge LASTRESULT
+	GetTableElement 2 of *c_badge
+	LoadPic LASTRESULT at 200-350
+compare *badges_count 2
+if 1 then
+	GetTableElement 1 of *session_badges
+	SetVar *c_badge LASTRESULT
+	GetTableElement 2 of *c_badge
+	LoadPic LASTRESULT at 350-350
+compare *badges_count 3
+if 1 then
+	GetTableElement 2 of *session_badges
+	SetVar *c_badge LASTRESULT
+	GetTableElement 2 of *c_badge
+	LoadPic LASTRESULT at 500-350
+compare *badges_count 4
+if 1 then
+	substract *badges_count 3
+	add LASTRESULT more...
+	CreateText 13 LASTRESULT
 end
