@@ -2,7 +2,7 @@ Background: app/res/bgcongig1.png
 
 OnDisplay: app/scripts/userSettings/displayStuff.gcs
 
-Text.nb: 5
+Text.nb: 6
 Text1: User Settings
 Text1.id: 0
 0.x: 70
@@ -27,6 +27,10 @@ Text5: Confirm
 Text5.id: 7
 7.x: 250
 7.y: 180
+
+Text6.id: 13
+13.x: 350
+13.y: 380
 
 Input.nb: 4
 Input.Background: #ADD2CA

@@ -23,7 +23,6 @@ if evaluate( {*passw} == ""  ) then
 	end
 
 execute app/scripts/db/getusername-for-login.gcs
-print var LASTTUPLE
 compare LASTTUPLE None
 if 0 then
 	MessageBox Error this account does not exists
@@ -38,9 +37,18 @@ SetVar *check-salt LASTRESULT
 evaluate crypt_pass({*passw}, {*check-salt})
 SetVar *passw LASTRESULT
 
+print val ---------- Session user ---------------
+print var *session_user
+
 compare *passw *passw-db
 if 0 then
 	SetVar *session_user LASTTUPLE
+	GetTableElement 4 of LASTTUPLE
+	SetVar *arg_id LASTRESULT
+	execute app/scripts/db/get-badge-by-worker-id.gcs
+	SetVar *session_badges LASTLIST
+	print val ----------- BADGES :
+	print var *session_badges
 	load app/screens/main.ch
 	end
 
