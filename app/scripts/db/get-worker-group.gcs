@@ -1,0 +1,25 @@
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_all with worker
+
+close database
+end
+
+[worker]
+	SELECT 
+    grh_worker.*, 
+    grh_status.*
+FROM 
+    grh_worker
+LEFT JOIN 
+    grh_worker_status_assoc 
+    ON grh_worker.id = grh_worker_status_assoc.id_worker
+LEFT JOIN 
+    grh_status 
+    ON grh_status.id = grh_worker_status_assoc.id_status
+WHERE 
+    grh_worker.statut = 1;
+[/worker]
