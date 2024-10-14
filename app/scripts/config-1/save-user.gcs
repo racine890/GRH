@@ -22,7 +22,7 @@ if evaluate(  1 in {SELECTED} ) then
 	SetVar *worker_id LASTRESULT
 	print val -----------------id du worker--------------------
 	print var *worker_id 
-	end
+	
 
 if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
 	MessageBox Wait.. Please select the right
@@ -73,7 +73,7 @@ SetVar *param_age_maximal 17
 print val ----------------- ???? ---------------------
 print var *form_password
 print var *form_username
-print var *form_right_id
+print var *right
 print var *passw_salt
 execute app/scripts/db/insert-user.gcs
 SetVar *worker_id

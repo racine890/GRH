@@ -4,8 +4,8 @@ connect MySQL with $TMP
 check var *worker_id
 if 1 then
 	evaluate self.connect.cursor.execute("insert into grh_user(user_name, passw, salt, worker_id) values ( %s , %s , %s , %s );", ({*form_username}, {*form_password}, {*passw_salt}, {*worker_id}))
-if 5 then 
-	evaluate self.connect.cursor.execute("insert into grh_user(user_name, passw, salt, worker_id) values ( %s , %s , %s );", ({*form_username}, {*form_password}, {*passw_salt}))
+if 0 then 
+	evaluate self.connect.cursor.execute("insert into grh_user(user_name, passw, salt) values ( %s , %s , %s );", ({*form_username}, {*form_password}, {*passw_salt}))
 execute query insert
 #Et on insère cet id dans grh_user_right_assoc. Comme c'est le dernier utilisateur qu'on a inséré, son id est le dernier dans la liste.
 
