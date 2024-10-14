@@ -13,23 +13,24 @@ SetVar *form_password LASTRESULT
 	#MessageBox Wait.. Please select a right
 	#end
 #SetVar *form_right SELECTED
-
+print val --------------- contenu de seleted-------------------
 print var SELECTED
+
+if evaluate(  1 in {SELECTED} ) then
+	GetTableElement 1 of SELECTED
+	GetTableElement 0 of LASTRESULT 
+	SetVar *worker_id LASTRESULT
+	print val -----------------id du worker--------------------
+	print var *worker_id 
+	end
+
 if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
 	MessageBox Wait.. Please select the right
 	end
-if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
-	MessageBox Wait.. Please select the worker
-	end
+
 GetTableElement 0 of SELECTED
 GetTableElement 0 of LASTRESULT 
 SetVar *right LASTRESULT
-
-GetTableElement 1 of SELECTED
-GetTableElement 0 of LASTRESULT 
-SetVar *worker_id LASTRESULT
-
-
 
 
 if evaluate( {*form_username} == ""  ) then
@@ -75,6 +76,8 @@ print var *form_username
 print var *form_right_id
 print var *passw_salt
 execute app/scripts/db/insert-user.gcs
+SetVar *worker_id
+
 
 MessageBox success operation succeeded
 
