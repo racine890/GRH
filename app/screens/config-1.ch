@@ -16,12 +16,12 @@ Text2.id: 2
 2.x: 250
 2.y: 125
 
-Text3: password
+Text3: Password
 Text3.id: 3
 3.x: 250
 3.y: 180
 
-Text4: choose the right
+Text4: Choose the right
 Text4.id: 4
 4.x: 250
 4.y: 230
@@ -58,7 +58,12 @@ Button2: Save
 Button2.id: 9
 9.link: app/scripts/config-1/save-user.gcs
 9.x: 360
-9.y: 320
+9.y: 400
+
+Text5: Choose a woker
+Text5.id: 10
+10.x: 250
+10.y: 300
 
 OnDisplay: app/scripts/config-1/config-init.gcs
 

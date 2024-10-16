@@ -1,0 +1,13 @@
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_all with worker
+
+close database
+end
+
+[worker]
+	select id, firstname,lastname,date_birth,address from grh_worker where id not in (select worker_id from grh_user where worker_id is not null) and statut=1
+[/worker]

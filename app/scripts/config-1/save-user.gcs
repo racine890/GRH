@@ -9,10 +9,29 @@ GetInput 6
 SetVar *form_password LASTRESULT
 
 # verifier que selected(la listBox) nest pas vide
-if evaluate( {SELECTED} == ""  ) then
-	MessageBox Wait.. Please select a right
+#if evaluate( {SELECTED} == ""  ) then
+	#MessageBox Wait.. Please select a right
+	#end
+#SetVar *form_right SELECTED
+print val --------------- contenu de seleted-------------------
+print var SELECTED
+
+if evaluate(  1 in {SELECTED} ) then
+	GetTableElement 1 of SELECTED
+	GetTableElement 0 of LASTRESULT 
+	SetVar *worker_id LASTRESULT
+	print val -----------------id du worker--------------------
+	print var *worker_id 
+	
+
+if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the right
 	end
-SetVar *form_right SELECTED
+
+GetTableElement 0 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *right LASTRESULT
+
 
 if evaluate( {*form_username} == ""  ) then
 	MessageBox Wait.. Please Enter Username
@@ -47,16 +66,18 @@ SetVar *form_password LASTRESULT
 #Et la seconde c'est d'insérer le droit de l'utilisateur
 #Regardes dans le listbox : Il y'a plusieurs éléments. C'est parceque SELECTED est un tuple ( LASTLIST contient des tuples ). L'id c'est le premier élément du tuple, donc on le récupère :
 
-GetTableElement 0 of *form_right
-SetVar *form_right_id LASTRESULT
+#GetTableElement 0 of *form_right
+#SetVar *form_right_id LASTRESULT
 SetVar *param_age_minimal 14
 SetVar *param_age_maximal 17
 print val ----------------- ???? ---------------------
 print var *form_password
 print var *form_username
-print var *form_right_id
+print var *right
 print var *passw_salt
 execute app/scripts/db/insert-user.gcs
+SetVar *worker_id
+
 
 MessageBox success operation succeeded
 
