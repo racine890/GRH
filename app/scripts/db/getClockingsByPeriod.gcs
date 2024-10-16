@@ -1,0 +1,34 @@
+check var *arg_from
+if 0 then
+	print val *arg_from not set
+	end
+
+check var *arg_to
+if 0 then
+	print val *arg_to not set
+	end
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_all with clock
+close database
+end
+
+[clock]
+	SELECT 
+	grh_worker.id,
+    grh_worker.firstname, 
+    grh_worker.lastname, 
+    COALESCE(grh_clockingtime.arrive_timing, CURRENT_TIMESTAMP) AS arrive_timing, 
+    COALESCE(grh_clockingtime.depart_timing, CURRENT_TIMESTAMP) AS depart_timing
+FROM 
+    grh_worker
+INNER JOIN 
+    grh_clockingtime 
+    ON grh_worker.id = grh_clockingtime.id_worker 
+    AND grh_clockingtime.statut = 1 
+    AND date(grh_clockingtime.create_date) <= *arg_to
+    AND date(grh_clockingtime.create_date) >= *arg_from ;
+[/clock]

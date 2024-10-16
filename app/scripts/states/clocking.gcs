@@ -1,0 +1,43 @@
+SetVar *userAdress Ouagadougou
+
+GetInput 4
+evaluate formatDate({LASTRESULT})
+SetVar *arg_from LASTRESULT
+
+GetInput 5
+evaluate formatDate({LASTRESULT})
+SetVar *arg_to LASTRESULT
+
+execute app/scripts/db/getClockingsByPeriod.gcs
+
+evaluate [(str(el[0]), str(el[1]), str(el[2]), unFormatDate(str(el[3]).split(' ')[0]), unFormatDate(str(el[3]).split(' ')[0])) for el in {LASTLIST}]
+SetVar *mydbdata LASTRESULT
+
+count LASTLIST
+SetVar *total LASTRESULT
+
+evaluate unFormatDate(get_today())
+SetVar *today LASTRESULT
+
+PrintState MySTATE as state.html use app/res/default.dat
+
+if evaluate(platform.system() != "Linux") then
+	evaluate system('state.html')
+	end
+
+evaluate system('xdg-open state.html')
+end
+[/@create]
+
+[MySTATE]
+TEL: 56 52 15 32
+MAIL: gcenterburkina@gmail.com
+ADRESS: *userAdress
+REFERENCE: ---
+TITLE: CLOCKINGS SUMMARY
+HEAD: ID, FIRSTNAME, LASTNAME, ARRIVAL, DEPART
+ROWS: *mydbdata
+FOOTER: ("TOTAL",4,'*total'),("PRINT DATE",4,'*today')
+LOGO: app/res/worker.png
+COMPANY: G. CENTER
+[/MySTATE]
