@@ -10,7 +10,7 @@ SetVar *arg_to LASTRESULT
 
 execute app/scripts/db/getClockingsByPeriod.gcs
 
-evaluate [(str(el[0]), str(el[1]), str(el[2]), unFormatDate(str(el[3]).split(' ')[0]), unFormatDate(str(el[3]).split(' ')[0])) for el in {LASTLIST}]
+evaluate [(str(el[0]), str(el[1]), str(el[2]), unFormatDate(str(el[3])), unFormatDate(str(el[3]))) for el in {LASTLIST}]
 SetVar *mydbdata LASTRESULT
 
 count LASTLIST
