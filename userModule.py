@@ -31,7 +31,7 @@ dateCheck = lambda strdate : ( strdate.replace('/', '').isdigit() and len(strdat
 formatDate = lambda strdate : '-'.join(strdate.split('/')[::-1])
 
 # Pour transformer la date traitable en date lisible
-unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1])
+unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1]) if not ' ' in dbDate else unFormatDate(dbDate.split(' ')[0])+' '+dbDate.split(' ')[1]
 
 # Récupère la date d'aujourd'hui
 get_today = lambda : datetime.today().strftime('%Y-%m-%d')
