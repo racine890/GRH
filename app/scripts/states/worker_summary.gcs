@@ -1,7 +1,8 @@
 SetVar *userAdress Ouagadougou
 
-execute app/scripts/db/get-worker.gcs
-evaluate [(str(el[1]), str(el[2]), unFormatDate(str(el[3]).split(' ')[0]), str(el[5]), str(el[6]), unFormatDate(str(el[8]).split(' ')[0])) for el in {LASTLIST}]
+execute app/scripts/db/get-worker-group.gcs
+print var LASTLIST
+evaluate [(str(el[1]), str(el[2]), unFormatDate(str(el[3]).split(' ')[0]), str(el[5]), str(el[6]), unFormatDate(str(el[8]).split(' ')[0]), str(el[10])) for el in {LASTLIST}]
 SetVar *mydbdata LASTRESULT
 
 count LASTLIST
@@ -11,7 +12,6 @@ evaluate unFormatDate(get_today())
 SetVar *today LASTRESULT
 
 PrintState MySTATE as state.html use app/res/default.dat
-
 
 if evaluate(platform.system() != "Linux") then
 	evaluate system('state.html')
@@ -27,9 +27,9 @@ MAIL: gcenterburkina@gmail.com
 ADRESS: *userAdress
 REFERENCE: ---
 TITLE: WORKERS SUMMARY
-HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE
+HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE, STATUS
 ROWS: *mydbdata
-FOOTER: ("TOTAL",5,'*total'),("PRINT DATE",5,'*today')
+FOOTER: ("TOTAL",6,'*total'),("PRINT DATE",6,'*today')
 LOGO: app/res/worker.png
 COMPANY: G. CENTER
 [/MySTATE]
