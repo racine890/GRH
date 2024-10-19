@@ -17,9 +17,10 @@ Conventions :
 	
 	- Evènements
 	- Etats html / pdf
+	- Disable a user account
 	- Paramétrage entreprise
 	- Pointage des absences
-	- Voir mon statut (Mes badges, etc) - x (Un worker n'est pas un user.. Peut-être que ça devrait changer)
+	
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
 
@@ -35,7 +36,9 @@ Conventions :
 	- Notifier les dates d'anniversaire des workers
 	- Edit / Delete de Documents
 	- Set Documents : Pas deux fois le même document
-	- 
+	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
+	- Paramétrage age légal (min-max), utiliser paramètres
+	- Utiliser paramètres config sur les états
 
 Done :
 - Créer la table des Employés. (ok)
@@ -56,6 +59,7 @@ Done :
 - Choisir un SGBD (ok)
 - Créer la table des utilisateurs, et la table des droits (ok)
 - Un utilisateur doit avoir un ou plusieurs droits (ok)
+- Voir mon statut (Mes badges, etc) - x (Un worker n'est pas un user.. Peut-être que ça devrait changer) (ok)
 - Créer la table pour associer les utilisateurs et les droits (ok)
 - Créer la fenêtre de Configuration globale (ok)
 	- Avant même l'initialisation de la base de données, Il est important d'afficher une fenêtre de Config exigeant de spécifier les paramètres par défaut. Les stocker par la suite pour les utiliser ( dbName, userName, host, password ) - Peut-être simplifier ça avec juste un fichier de Configuration?? Non ?. L'écran exécutera initDatabase. Il ne s'affiche que si la Configuration n'est pas faite. (ok)

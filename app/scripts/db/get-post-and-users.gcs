@@ -1,0 +1,12 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_all with guas
+
+close database
+end
+
+[guas]
+select * from grh_worker, grh_workerstation, grh_worker_workerstation_assoc where grh_worker.id = grh_worker_workerstation_assoc.id_worker and grh_worker_workerstation_assoc.id_workerstation = grh_workerstation.id and grh_workerstation.statut = 1 order by label asc;
+[/guas]
