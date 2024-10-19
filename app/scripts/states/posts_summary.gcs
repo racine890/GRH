@@ -1,0 +1,44 @@
+SetVar *userAdress Ouagadougou
+
+execute app/scripts/db/get-post-and-users.gcs
+SetVar *html
+SetVar *last 0
+ForEach *element of LASTLIST process
+
+count LASTLIST
+SetVar *total LASTRESULT
+
+evaluate unFormatDate(get_today())
+SetVar *today LASTRESULT
+
+PrintState MySTATE as state.html use app/res/alt.dat
+
+if evaluate(platform.system() != "Linux") then
+	evaluate system('state.html')
+	end
+
+evaluate system('xdg-open state.html')
+end
+[/@create]
+
+[MySTATE]
+TEL: 56 52 15 32
+MAIL: gcenterburkina@gmail.com
+ADRESS: *userAdress
+REFERENCE: ---
+TITLE: WORKERS SUMMARY
+HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE
+ALTROWS: *html
+FOOTER: ("TOTAL",5,'*total'),("PRINT DATE",5,'*today')
+LOGO: app/res/worker.png
+COMPANY: G. CENTER
+[/MySTATE]
+
+[@process]
+evaluate print({*html}+'<tr><td colspan="6">'+{*element}[10]+'<td></tr>')
+if evaluate({*element}[9] != {*last}) then
+	evaluate {*html}+'<tr><td colspan="6">'+{*element}[10]+'</td></tr>' =>*html
+evaluate {*html}+'<tr><td>'+{*element}[1]+'</td><td>'+{*element}[2]+'</td><td>'+unFormatDate(str({*element}[3]))+'</td><td>'+str({*element}[5])+'</td><td>'+str({*element}[6])+'</td><td>'+unFormatDate(str({*element}[8]))+'</td></tr>' =>*html
+GetTableElement 9 of *element
+SetVar *last LASTRESULT
+[/@process]

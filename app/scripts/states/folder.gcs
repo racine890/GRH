@@ -50,20 +50,6 @@ evaluate system('xdg-open state.html')
 end
 [/@create]
 
-[MySTATE]
-TEL: 56 52 15 32
-MAIL: gcenterburkina@gmail.com
-ADRESS: *userAdress
-REFERENCE: ---
-TITLE: WORKERS SUMMARY
-HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE
-ROWS: *mydbdata
-FOOTER: ("TOTAL",5,'*total'),("PRINT DATE",5,'*today')
-LOGO: app/res/worker.png
-COMPANY: G. CENTER
-[/MySTATE]
-
-
 [@write]
 evaluate {*rows}+'<div class="piece"><a href="'+str({*document}[3]).replace(';','')+'" target="_blank">'+str({*document}[2])+'</a></div>'
 SetVar *rows LASTRESULT

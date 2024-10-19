@@ -1,0 +1,102 @@
+	<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .logo img {
+    max-width: 100%;
+  }
+  .logo h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+  th, td {
+    border: 1px solid #CCAAF9;
+    padding: 8px;
+    text-align: center;
+  }
+  fieldset, hr {
+    border: 1px solid #CCAAF9;
+  }
+  th {
+    background-color: #FAFFFC;
+  }
+  tr:nth-child(even) {
+    background-color: #FFFFFA;
+  }
+  .info {
+    border: none;
+    text-align: center;
+    background-color: #FFFFFF;
+    margin-left: auto; 
+    margin-right: 0;
+	width: 50%;
+    max-width: 400px;
+	text-align: left;
+  }
+</style>
+
+	<div class="container">
+		<div class="logo">
+			<img src="%LOGO%" alt='logo'>
+			<h3>%COMPANY%</h3>
+		</div>
+		<table class="info" width="100px">
+		  <tr>
+			<th class="info">TEL</th>
+			<td class="info">%TEL%</td>
+		  </tr>
+		  <tr>
+			<th class="info">MAIL</th>
+			<td class="info">%MAIL%</td>
+		  </tr>
+		  <tr>
+			<th class="info">ADRESS</th>
+			<td class="info">%ADRESS%</td>
+		  </tr>
+		  <tr>
+			<th class="info">REFERENCE</th>
+			<td class="info">%REFERENCE%</td>
+		  </tr>
+		</table>
+	</div>
+
+	<center>
+		<h3>
+			<hr width="500px"> %TITLE% <hr width="500px">
+		</h3>
+	</center>
+
+	<table>
+	  <tr>
+		%HEAD%
+	  </tr>
+		%ALTROWS%
+		%FOOTER%
+	</table>
+	
+	<fieldset id="signature" style="margin-top:10px;margin-right:0px;margin-left:auto;border-color: silver;width: 200px;height: 100px;">
+		<center>
+			Signature and validation
+			<hr/>
+		</center>
+	</fieldset>
+
+<script>
+	alert("Please type Ctrl + p or right click and print to print this report.")
+</script>

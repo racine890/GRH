@@ -5,11 +5,9 @@ Text1.id: 0
 0.x: 100
 0.y: 200
 
-
-
-Buttons.nb: 3
+Buttons.nb: 4
 Button.size: 30
-Button.width: 100
+Button.width: 150
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
 Button1: Return
@@ -31,14 +29,17 @@ Input1.id: 3
 3.x: 250
 3.y: 220
 
-
-
-Button3: Attribute post
+Button3: Attribute Station
 Button3.id: 4
 4.link: app/screens/worker-post-screen.ch
 4.x: 550
 4.y: 2
 
+Button4: Stations Summary
+Button4.id: 5
+5.link: app/scripts/states/posts_summary.gcs
+5.x: 550
+5.y: 50
 
 [events]
 Button-1: @[end]
