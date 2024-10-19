@@ -14,5 +14,5 @@ close database
 end
 
 [insert]
-insert into grh_user_right_assoc(id_right, id_user) values ( *right, (select max(id) from grh_user));
+insert into grh_user_right_assoc(id_right, id_user) values ( *form_right_id , (select max(id) from grh_user));
 [/insert]
