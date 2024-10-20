@@ -1,5 +1,5 @@
 print var LASTCLICKEDID
-#1=user,11=configuration,12=worker,13=post,14=badge,15=events,16=clocking,17=status	
+#1=user,11=configuration,12=worker,13=post,14=badge,15=events,16=clocking,17=status
 #print val Hello world!
 #print var
 #print file
@@ -35,13 +35,4 @@ if 16 then
 if 17 then
 	load app/screens/states.ch
 	end
-
 end
-
-
-
-
-
-
-
-
