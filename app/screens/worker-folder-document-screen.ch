@@ -11,7 +11,7 @@ Text1.id: 0
 0.x: 200
 0.y: 100
 
-Buttons.nb: 4
+Buttons.nb: 5
 
 Button.size: 30
 Button.width: 150
@@ -42,6 +42,12 @@ Button4.id: 6
 6.x: 120
 6.y: 430
 
+Button5: Consult-folder
+Button5.id: 7
+7.link: app/screens/consult-folder.ch
+7.x: 120
+7.y: 230
+
 Input.nb: 1
 
 Input.Background: #ADD2CA
@@ -56,3 +62,11 @@ Key: app/scripts/folder/search-folder.gcs
 [/events]
 
 OnDisplay: app/scripts/folder/listBoxWorkerFolder.gcs
+
+
+
+
+
+
+
+

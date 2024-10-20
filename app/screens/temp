@@ -1,0 +1,44 @@
+# Bash Maker III Config File
+
+# The user BM installation Path (!! Delete value before deployment)
+Installation_dir: C:\bm
+
+# The user current langage
+langage: eng 
+
+# Colorations themes
+keywords_color: #CA0D09 
+comments_color: #C00BA0 
+strings_color: #30A640 
+misc_color: #0CAC12 
+
+# Accessibility
+font_size: 15
+font: Z003 
+
+# Theme
+theme: Dark 
+
+# Quick access chars
+quick_chars: <,>,<=,>=,!=,=>,->,{},(),[] 
+
+# Quick icons. 5 Max.
+quick_icons: 1,2,3
+
+# show widgets by default
+show_quick_chars: no 
+show_terminal: no 
+
+# files formats used for text formatting
+text_format: xtxt 
+
+# Set to yes if you want bash maker to run it in the integrated terminal.
+run_in_terminal: no 
+
+# Calls the save action by X seconds if set different value than zero
+auto_save: 0 
+
+# By default, open a normal window. Change it to fullscreen if you want it to start in fullscreen.
+window_mode: normal 
+
+#END
