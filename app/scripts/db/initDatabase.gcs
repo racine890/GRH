@@ -47,6 +47,7 @@ evaluate crypt_pass({*form_password}, {*passw_salt})
 SetVar *form_password LASTRESULT
 SetVar *form_right_id 1
 execute app/scripts/db/insert-user.gcs
+execute app/scripts/db/make-last-user-admin.gcs
 
 end
 

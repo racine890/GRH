@@ -1,0 +1,14 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+#Et on insère cet id dans grh_user_right_assoc. Comme c'est le dernier utilisateur qu'on a inséré, son id est le dernier dans la liste.
+execute query insert
+
+commit
+close database
+end
+
+[insert]
+insert into grh_user_right_assoc(id_right, id_user) values ( *form_right_id, (select max(id) from grh_user));
+[/insert]

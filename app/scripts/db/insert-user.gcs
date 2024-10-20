@@ -1,18 +1,13 @@
 evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
+
 check var *worker_id
 if 1 then
 	evaluate self.connect.cursor.execute("insert into grh_user(user_name, passw, salt, worker_id) values ( %s , %s , %s , %s );", ({*form_username}, {*form_password}, {*passw_salt}, {*worker_id}))
 if 0 then 
 	evaluate self.connect.cursor.execute("insert into grh_user(user_name, passw, salt) values ( %s , %s , %s );", ({*form_username}, {*form_password}, {*passw_salt}))
-execute query insert
-#Et on insère cet id dans grh_user_right_assoc. Comme c'est le dernier utilisateur qu'on a inséré, son id est le dernier dans la liste.
 
 commit
 close database
 end
-
-[insert]
-insert into grh_user_right_assoc(id_right, id_user) values ( *form_right_id, (select max(id) from grh_user));
-[/insert]
