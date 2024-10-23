@@ -45,7 +45,7 @@ Button2: Update
 Button2.id:4
 4.x: 270
 4.y: 400
-4.link:app/scripts/folder/update.gcs
+4.link:app/scripts/folder/updatefolder.gcs
 
 Input.nb: 1
 
@@ -65,6 +65,7 @@ Edit.id: 8
 Button-1: @[end]
 Key: @[end]
 [/events]
+
 
 
 
