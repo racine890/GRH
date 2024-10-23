@@ -22,7 +22,7 @@ Text3.id: 2
 2.x: 100
 2.y: 280
 
-Text4: FOLDER-SCREEN-2
+Text4: EDIT-FOLDER
 Text4.id: 7
 7.x: 100
 7.y: 100
@@ -41,17 +41,11 @@ Button1.id: 3
 3.x: 100
 3.y: 400
 
-Button2: Save
+Button2: Update
 Button2.id:4
 4.x: 270
 4.y: 400
-4.link:app/scripts/folder/save-folder.gcs
-
-Button3: Choose document
-Button3.id: 5
-5.link: app/screens/folder_document_assoc_screen.ch
-5.x: 550
-5.y: 2
+4.link:app/scripts/folder/update.gcs
 
 Input.nb: 1
 
@@ -65,11 +59,26 @@ Edit.BeginX: 270
 Edit.BeginY: 200
 Edit.width: 200
 Edit.size: 50
+Edit.id: 8
 
 [events]
 Button-1: @[end]
 Key: @[end]
 [/events]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
