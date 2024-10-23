@@ -9,4 +9,10 @@ end
 
 [insert]
 insert into grh_worker(firstname, lastname, date_birth,address,mail) values ( *worker_name,*lastname,*birthday,*address,*mail );
+
 [/insert]
+
+
+
+
+

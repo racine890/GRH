@@ -71,7 +71,7 @@ Button6: Edit
 Button6.id: 7
 7.x: 560
 7.y: 260
-7.link: app/screens/folder-screen-2.ch
+7.link: app/screens/edit-folder-screen.ch
 
 Button7: Add
 Button7.id: 8
@@ -97,6 +97,7 @@ Button-1: @[end]
 [/events]
 
 OnDisplay: app/scripts/consult-folder/update.gcs
+
 
 
 
