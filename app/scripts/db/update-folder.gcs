@@ -1,0 +1,30 @@
+
+# Attend un paramètre *arg_id
+check var *idworker_selected 
+if 0 then
+	print val missing param : *idworker_selected
+	end
+
+print *idworker_selected
+
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+execute query update
+commit
+close database
+end
+
+[update]
+update grh_folder set label= *label, description = *description where id_worker = *idworker_selected 
+[/update]
+
+
+
+
+
+
+
+
