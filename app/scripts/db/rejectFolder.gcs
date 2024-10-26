@@ -4,12 +4,26 @@ if 0 then
 	print val --- La variable *arg_id est manquante. Impossible de continuer!
 	end
 
+check var *arg_worker_id
+if 0 then
+	print val --- La variable *arg_worker_id est manquante. Impossible de continuer!
+	end
+
+check var *arg_label
+if 0 then
+	print val --- La variable *arg_label est manquante. Impossible de continuer!
+	end
+
 # Connexion
 evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
+evaluate "Your "+{*arg_label}+" folder has been rejected."
+SetVar *msg LASTRESULT
+
 execute query update
+execute query insert
 commit
 
 close database
@@ -18,3 +32,7 @@ end
 [update]
 update grh_folder set statut = 2 where id = *arg_id ;
 [/update]
+
+[insert]
+insert into grh_notification(worker_id, message) values ( *arg_worker_id, *msg );
+[/insert]

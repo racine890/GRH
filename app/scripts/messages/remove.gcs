@@ -1,6 +1,7 @@
 evaluate {*session_notifications}.pop({*current})
+GetTableElement 0 of LASTRESULT
+SetVar *arg_id LASTRESULT
 
-SetVar *arg_id *current
 execute app/scripts/db/delete-notification.gcs
 
 execute app/scripts/messages/init.gcs

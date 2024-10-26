@@ -11,7 +11,7 @@ Text1.id: 0
 0.x: 200
 0.y: 100
 
-Buttons.nb: 4
+Buttons.nb: 7
 
 Button.size: 30
 Button.width: 150
@@ -41,6 +41,24 @@ Button4.id: 6
 6.link: app/scripts/worker-folder-document-screen/displayFolder.gcs
 6.x: 120
 6.y: 430
+
+Button5: New
+Button5.id: 7
+7.link: @[SetVar *filter 1;load app/screens/worker-folder-document-screen.ch;end]
+7.x: 150
+7.y: 50
+
+Button6: Validated
+Button6.id: 8
+8.link: @[SetVar *filter 3;load app/screens/worker-folder-document-screen.ch;end]
+8.x: 300
+8.y: 50
+
+Button7: Rejected
+Button7.id: 9
+9.link: @[SetVar *filter 2;load app/screens/worker-folder-document-screen.ch;end]
+9.x: 450
+9.y: 50
 
 Input.nb: 1
 

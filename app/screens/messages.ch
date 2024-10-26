@@ -6,6 +6,9 @@ use tk
 Onload: app/scripts/messages/init.gcs
 OnDisplay: app/scripts/messages/display.gcs
 
+Background: app/res/bgcongig1.png
+#Background.x: 400
+
 Edit.nb: 1
 Edit1.id: 0
 0.x: 250
@@ -16,7 +19,7 @@ Edit1.id: 0
 Text.nb: 1
 Text1: Notifications
 Text1.id: 1
-1.x: 50
+1.x: 400
 
 Buttons.nb: 3
 Button1: Next
