@@ -1,12 +1,21 @@
 # Récupérer les dossiers
+switch *filter
+if 1 then
+	ConfigButton 7 bg='#55968F', fg='white'
+if 2 then
+	ConfigButton 9 bg='#55968F', fg='white'
+if 3 then
+	ConfigButton 8 bg='#55968F', fg='white'
+
+SetVar *arg_statut *filter
 execute app/scripts/db/get-worker-folder.gcs
 
 # Filtre pour la recherche
 SetVar *all_worker_folder LASTLIST
-SetVar *disp *all_worker_folder 
+SetVar *disp *all_worker_folder
 
 # Suppression du contenu de SELECTED
-SetVar SELECTED
+free var SELECTED
 
 # Affichage de la listbox
 create ListBox with *disp at 200-173

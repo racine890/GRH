@@ -30,12 +30,9 @@ Conventions :
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 
-	- Notifications
 	- Forcer saisie de période dans form d'attribution badges
 	- Badges : Pas deux fois le même au même worker.
 	- Retirer badges
-	
-	- Dossiers : La consultation concerne par défaut les dossiers actifs : Permettre de voir les dossiers validés, rejettés, ou tous les dossiers
 	
 	- Notifier les dates d'anniversaire des workers
 	- Edit / Delete de Documents
@@ -49,10 +46,12 @@ Done :
 - Pointage des absences (ok)
 - Créer la table dossier. (ok)
 - Paramétrage entreprise (ok)
+- Notifications (ok)
 - Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
 - Créer la table d'association des Employés aux dossiers. Un employé a un dossier. (ok)
 - Créer la table des statuts par poste. Chaque statut doit avoir au moins un titre, et peut-etre un statut parent. Chaque employé doit avoir un statut. Par exemple, on pourra créer un statut "Stagiaire en développement logiciel" qui n'a aucun parent. Puis un statut "Employé en développement logiciel" qui aura pour parent "Stagiaire en développement logiciel", et tous les postes dans l'ordre ascendant. Ajouter toute colonne que vous jugerez utile. (ok)
 - Créer la table des badges avec des badges par défaut, puis les associer aux employés. (ok)
+- Dossiers : La consultation concerne par défaut les dossiers actifs : Permettre de voir les dossiers validés, rejettés, ou tous les dossiers (ok)
 - Afficher les badges si le worker connecté en a (ok)
 - Créer la table d'évènements. Elle doit au moins avoir les colonnes de titre, de temps accordé par an, et la lier à la table employé. (ok)
 - Etat des workers : Ajouter leurs statuts (ok)

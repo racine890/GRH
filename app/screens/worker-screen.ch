@@ -57,7 +57,7 @@ Button3.id: 13
 
 Button4: Manage files
 Button4.id: 14
-14.link: app/screens/worker-folder-document-screen.ch
+14.link: @[SetVar *filter 1;load app/screens/worker-folder-document-screen.ch;end]
 14.x: 550
 14.y: 40
 

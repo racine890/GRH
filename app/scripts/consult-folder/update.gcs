@@ -4,6 +4,7 @@ execute app/scripts/db/get-workerfolderById.gcs
 
 # Display each column
 GetTableElement 0 of LASTTUPLE
+SetVar *arg_label LASTRESULT
 CreateText 0 LASTRESULT
 
 GetTableElement 1 of LASTTUPLE
@@ -15,6 +16,9 @@ CreateText 10 LASTRESULT
 GetTableElement 4 of LASTTUPLE
 evaluate 'Created the '+unFormatDate(str({LASTRESULT})[:str({LASTRESULT}).index(' ')-1])
 CreateText 1 LASTRESULT
+
+GetTableElement 5 of LASTTUPLE
+SetVar *arg_worker_id LASTRESULT
 
 # Display a listbox of some folder
 execute app/scripts/db/get-documentByFolder.gcs

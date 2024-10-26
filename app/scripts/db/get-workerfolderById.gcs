@@ -16,5 +16,5 @@ close database
 end
 
 [q]
-select label, description, firstname, lastname, grh_folder.create_date from grh_folder, grh_worker where grh_folder.id_worker = grh_worker.id and grh_folder.id = *arg_id ;
+select label, description, firstname, lastname, grh_folder.create_date, grh_worker.id from grh_folder, grh_worker where grh_folder.id_worker = grh_worker.id and grh_folder.id = *arg_id ;
 [/q]
