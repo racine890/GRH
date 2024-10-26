@@ -18,8 +18,9 @@ Conventions :
 	- Evènements
 	- Etats html / pdf
 	- Disable a user account
-	- Paramétrage entreprise
-	- Pointage des absences
+	
+	- Configuration Heure de début - Heure de fin par jour de la semaine.
+	- Etat de pointage : Afficher les heures de retard et les heures supplémentaires.
 	
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
@@ -30,6 +31,9 @@ Conventions :
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 
 	- Notifications
+	- Forcer saisie de période dans form d'attribution badges
+	- Badges : Pas deux fois le même au même worker.
+	- Retirer badges
 	
 	- Dossiers : La consultation concerne par défaut les dossiers actifs : Permettre de voir les dossiers validés, rejettés, ou tous les dossiers
 	
@@ -42,7 +46,9 @@ Conventions :
 
 Done :
 - Créer la table des Employés. (ok)
+- Pointage des absences (ok)
 - Créer la table dossier. (ok)
+- Paramétrage entreprise (ok)
 - Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
 - Créer la table d'association des Employés aux dossiers. Un employé a un dossier. (ok)
 - Créer la table des statuts par poste. Chaque statut doit avoir au moins un titre, et peut-etre un statut parent. Chaque employé doit avoir un statut. Par exemple, on pourra créer un statut "Stagiaire en développement logiciel" qui n'a aucun parent. Puis un statut "Employé en développement logiciel" qui aura pour parent "Stagiaire en développement logiciel", et tous les postes dans l'ordre ascendant. Ajouter toute colonne que vous jugerez utile. (ok)

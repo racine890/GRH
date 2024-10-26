@@ -35,4 +35,9 @@ if 16 then
 if 17 then
 	load app/screens/states.ch
 	end
+
+if 18 then
+	create window app/screens/messages.ch
+	end
+
 end

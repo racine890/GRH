@@ -1,3 +1,8 @@
+#
+# ConfigGeneral.ch
+#    Ecran de paramétrage général
+#
+
 Background: app/res/bgcongig1.png
 
 Text.nb: 6
@@ -70,7 +75,6 @@ Button2.id: 9
 
 OnDisplay: app/scripts/configGeneral/display.gcs
 
-# On executera le script contenu dans le fichier switch-config1.gcs
 [events]
 Button-1: app/scripts/configGeneral/switch-config.gcs
 [/events]

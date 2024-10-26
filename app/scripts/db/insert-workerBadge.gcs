@@ -3,7 +3,7 @@ define $TMP LASTRESULT
 connect MySQL with $TMP
 
 execute query insert
-
+execute query insert2
 
 commit
 close database
@@ -12,3 +12,7 @@ end
 [insert]
 insert into grh_worker_badge_assoc(id_worker, id_badge,periods) values ( *worker_id, *badge_id, *period);
 [/insert]
+
+[insert2]
+insert into grh_notification(worker_id, message) values ( *worker_id, "You received a badge! Check your user account to see them!");
+[/insert2]

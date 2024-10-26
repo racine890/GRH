@@ -6,4 +6,11 @@ LoadPic app/res/badge.png at 475-50
 LoadPic app/res/event.png at 270-200
 LoadPic app/res/time.png at 370-200
 LoadPic app/res/preview.png at 470-200
+LoadPic app/res/notification.png at 38-390
+
+SetVar LASTRECT 100-400
+count *session_notifications
+CreateText 8 LASTRESULT
+config item 19 fill="white", font=("Arial Black", 19)
+
 end

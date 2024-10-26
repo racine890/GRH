@@ -1,0 +1,8 @@
+evaluate {*session_notifications}.pop({*current})
+
+SetVar *arg_id *current
+execute app/scripts/db/delete-notification.gcs
+
+execute app/scripts/messages/init.gcs
+execute app/scripts/messages/display.gcs
+end

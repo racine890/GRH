@@ -21,19 +21,11 @@ create table grh_worker_workerstation_assoc with q15
 create table grh_document with q16
 create table grh_document_folder_assoc with q17
 create table grh_config with q18
-execute query ir1
-execute query ir2
-execute query ir3
-execute query ir4
-execute query event1
-execute query event2
-execute query event3
-execute query status1
-execute query status2
-execute query status3
-execute query badge1
-execute query badge2
-execute query badge3
+create table grh_notification with q19
+execute query ir
+execute query event
+execute query status
+execute query badge
 execute query ic
 commit
 close database
@@ -277,60 +269,46 @@ company_mail varchar(30)
 )
 [/q18]
 
+[q19]
+ create table if not exists  grh_notification(
+id integer PRIMARY KEY AUTO_INCREMENT,
+worker_id integer,
+message text,
+statut integer (1) DEFAULT 1,
+create_date timestamp DEFAULT CURRENT_TIMESTAMP,
+foreign key (worker_id) references grh_worker(id)
+);
+[/q19]
+
 #L'enregistrement des droit par defaut
-[ir1]
-insert into grh_right(name_right) value ("Admin");
-[/ir1]
+[ir]
+insert into grh_right(name_right) values 
+("Admin"),
+("Hr Management"),
+("Invited User");
+[/ir]
 
-[ir2]
-insert into grh_right(name_right) value ("Hr Management");
-[/ir2]
- 
-[ir3]
-insert into grh_right(name_right) value ("Invited User");
-[/ir3]
+[status]
+insert into grh_status(type) values 
+("Intern"),
+("Employee"),
+("Appliant");
+[/status]
 
-[status1]
-insert into grh_status(type) value ("Intern");
-[/status1]
-
-
-[status2]
-insert into grh_status(type) value ("Employee");
-[/status2]
-
-[status3]
-insert into grh_status(type) value ("Appliant");
-[/status3]
-
-
-[event1]
-insert into grh_event(title) value ("Wedding");
-[/event1]
-
-[event2]
-insert into grh_event(title) value ("Burrial");
-[/event2]
-
-[event3]
-insert into grh_event(title) value ("Pregnancy");
-[/event3]
-
+[event]
+insert into grh_event(title) values 
+("Wedding"),
+("Burrial"),
+("Pregnancy");
+[/event]
 
 #enregistrement des badges
-[badge1]
-insert into grh_badge(description,icon) value ("Employe de l'annee","app/res/employe_annee.png");
-[/badge1]
-
-
-[badge2]
-insert into grh_badge(description,icon) value ("Employe le plus ponctuelle","app/res/employe_ponctuel.png");
-[/badge2]
-
-
-[badge3]
-insert into grh_badge(description,icon) value ("Employe avec tableau d'honneur","app/res/tableau_d'honneur.png");
-[/badge3]
+[badge]
+insert into grh_badge(description,icon) values 
+("Employe de l'annee","app/res/employe_annee.png"),
+("Employe le plus ponctuelle","app/res/employe_ponctuel.png"),
+("Employe avec tableau d'honneur","app/res/tableau_d'honneur.png");
+[/badge]
 
 [ic]
 insert into grh_config(company_name, company_ifu, company_mail, company_phone) value ("G. Center Burkina","-", "contact@gcenterburkina.com", "+226 74 91 21 62");

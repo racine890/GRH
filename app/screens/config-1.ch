@@ -67,7 +67,6 @@ Text5.id: 10
 
 OnDisplay: app/scripts/config-1/config-init.gcs
 
-# On executera le script contenu dans le fichier switch-config1.gcs
 [events]
 Button-1: app/scripts/config-1/switch-config1.gcs
 [/events]
