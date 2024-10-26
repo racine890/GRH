@@ -27,8 +27,6 @@ Button2.id: 3
 3.x: 280
 3.y: 330
 
-
-
 input.nb: 1
 input.Background: #ADD2CA
 entry.width: 200
@@ -42,7 +40,6 @@ Button3.id: 5
 5.link: app/scripts/document/openfile.gcs
 5.x: 200
 5.y: 250
-
 
 Text3: Select author 
 Text3.id: 6

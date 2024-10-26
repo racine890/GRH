@@ -1,0 +1,5 @@
+evaluate "Notification "+str({*current}+1)+" / "+str(len({*session_notifications}))
+CreateText 1 LASTRESULT
+
+SetEditText var *current_message
+end

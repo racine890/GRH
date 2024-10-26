@@ -29,6 +29,7 @@ if 1 then
 compare *badges_count 4
 if 1 then
 	substract *badges_count 3
+	turn LASTRESULT into int
 	add LASTRESULT more...
 	CreateText 13 LASTRESULT
 end

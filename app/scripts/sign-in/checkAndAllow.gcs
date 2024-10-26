@@ -47,8 +47,9 @@ if 0 then
 	SetVar *arg_id LASTRESULT
 	execute app/scripts/db/get-badge-by-worker-id.gcs
 	SetVar *session_badges LASTLIST
-	print val ----------- BADGES :
-	print var *session_badges
+	execute app/scripts/db/get-notifications.gcs
+	SetVar *session_notifications LASTLIST
+	turn *session_notifications into list
 	load app/screens/main.ch
 	end
 

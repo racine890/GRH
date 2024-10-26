@@ -1,0 +1,5 @@
+if evaluate(len({*session_notifications})>{*current}+1) then
+	evaluate {*current}+1=>*current
+	evaluate {*session_notifications}[{*current}][2]=>*current_message
+	execute app/scripts/messages/display.gcs
+end

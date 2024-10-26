@@ -1,0 +1,14 @@
+if evaluate(len({*session_notifications}) == 0) then
+	SetVar *current 0
+	turn *current into int
+	SetVar *current_message No notification !
+	end
+
+SetVar *current 0
+turn *current into int
+
+GetTableElement *current of *session_notifications
+GetTableElement 2 of LASTRESULT
+SetVar *current_message LASTRESULT
+
+end
