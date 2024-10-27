@@ -1,0 +1,21 @@
+check var *arg_id
+if 0 then
+	print val This script needs the var *arg_id
+	end
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_all with get
+
+close database
+end
+
+[get]
+select grh_worker_event_assoc.id, grh_event.title, grh_worker.firstname, grh_worker.lastname
+from grh_worker, grh_worker_event_assoc, grh_event
+where grh_worker_event_assoc.id_worker = grh_worker.id 
+and grh_worker_event_assoc.id_event = grh_event.id
+and grh_worker_event_assoc.statut = 1;
+[/get]

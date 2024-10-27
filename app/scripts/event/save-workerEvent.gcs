@@ -1,0 +1,48 @@
+print var SELECTED
+if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the worker
+	end
+if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the event
+	end
+GetTableElement 0 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *selected_worker_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *selected_event_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+GetTableElement 3 of LASTRESULT 
+# ecrire la date sous format sql
+evaluate formatDate({LASTRESULT})
+SetVar *dateStartEvent LASTRESULT
+
+GetEditText
+SetVar *justify LASTRESULT
+if evaluate( {*justify} == "" ) then
+	MessageBox Wait.. Please Enter Justification
+	end
+
+GetInput 7
+SetVar *end LASTRESULT
+if evaluate(not dateCheck({*end})) then
+	MessageBox Error the date Entered is incorrect !
+	end
+evaluate formatDate({*end})
+SetVar *end LASTRESULT
+#comparer la date entree a la date du jour
+evaluate comparer_dates({*end},{*dateStartEvent}.split(" ")[0])
+compare LASTRESULT 2
+if 0 then
+	execute app/scripts/db/insert-workerEventAssoc.gcs
+	MessageBox done.. Operation success
+	end
+
+
+MessageBox error.. future date expected
+end
+
+
+
