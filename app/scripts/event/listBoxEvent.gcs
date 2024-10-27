@@ -1,0 +1,5 @@
+
+execute app/scripts/db/collect-event.gcs
+SetVar *all_event LASTLIST
+create ListBox 1 with *all_event at 270-130
+end

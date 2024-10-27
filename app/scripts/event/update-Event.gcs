@@ -1,0 +1,36 @@
+
+
+# Travailleur obligatoire
+if evaluate({SELECTED} == "" or 1 not in {SELECTED}) then
+	MessageBox Wait.. Please select a Event
+	end
+
+# Récupérer l'id du travailleur sélectionné
+GetTableElement 1 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *idevent LASTRESULT
+
+print val -------------------id du event
+print var *idevent
+
+# Et créer le dossier
+execute app/scripts/db/updateEvent.gcs
+
+# Notifier et quitter
+MessageBox done.. Operation success
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

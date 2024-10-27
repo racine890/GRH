@@ -1,0 +1,11 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+# selection des badge dans la base de donnee
+query select_all with event
+close database
+end
+
+[event]
+	Select * from grh_event where statut=1
+[/event]

@@ -1,0 +1,34 @@
+# Récupération du titre
+GetInput 4
+SetVar *title LASTRESULT
+
+# titre obligatoire
+if evaluate( {LASTRESULT} == ""  ) then
+	MessageBox Wait.. Please enter title of event 
+	end
+
+GetInput 5
+SetVar *foresight LASTRESULT
+
+
+if evaluate( {*foresight} == "" ) then
+	MessageBox Wait.. Please Enter the date
+	end
+# vérifier que la date saisie est une vraie date ( pas si elle est correcte )
+if evaluate(not dateCheck({*foresight})) then
+	MessageBox Error the date Entered is incorrect !
+	end
+# ecrire la date sous format sql
+evaluate formatDate({*foresight})
+SetVar *foresight LASTRESULT
+#comparer la date entree a la date du jour
+evaluate comparer_dates({*foresight},get_today())
+compare LASTRESULT 2
+if 0 then
+	execute app/scripts/db/insert-event.gcs
+	MessageBox done.. Operation success
+	end
+MessageBox error.. future date expected
+end
+
+
