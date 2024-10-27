@@ -1,6 +1,4 @@
-# Mise à jour d'un worker
-
-MessageBox confirm Are you sure you want to delete this worker ?
+MessageBox confirm Are you sure you want to delete this Badge ?
 compare LASTRESULT True
 if 5 then
 	end

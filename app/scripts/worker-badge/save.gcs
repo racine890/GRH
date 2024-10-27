@@ -1,12 +1,18 @@
-print var SELECTED
+# Give a badge to a worker
+
+# Must select a badge
 if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
 	MessageBox Wait.. Please select the badge
 	end
+
+# Must select the worker
 if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
 	MessageBox Wait.. Please select the worker
 	end
+
+# Collecting needed vars
 GetTableElement 0 of SELECTED
-GetTableElement 0 of LASTRESULT 
+GetTableElement 0 of LASTRESULT
 SetVar *badge_id LASTRESULT
 
 GetTableElement 1 of SELECTED
@@ -16,13 +22,20 @@ SetVar *worker_id LASTRESULT
 GetInput 5
 SetVar *period LASTRESULT
 
+# Must fill period
 if evaluate( {*period} == ""  ) then
 	MessageBox Wait.. Please Enter period
 	end
 
+# Do not give the same badge twice to the same worker
+SetVar *arg_id *worker_id
+execute app/scripts/db/get-badge-by-worker-id.gcs
+if evaluate ({*badge_id} in (el[0] for el in {LASTLIST})) then
+	MessageBox Stop That worker already has that badge !
+	end
+
+# Run insert-workerBadge script and notify
 execute app/scripts/db/insert-workerBadge.gcs
+
 MessageBox done.. Operation success
 end
-
-
-
