@@ -30,7 +30,6 @@ Conventions :
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 
-	- Forcer saisie de période dans form d'attribution badges
 	- Badges : Pas deux fois le même au même worker.
 	- Retirer badges
 	

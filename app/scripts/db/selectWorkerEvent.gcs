@@ -17,6 +17,5 @@ select grh_worker_event_assoc.id, grh_event.title, grh_worker.firstname, grh_wor
 from grh_worker, grh_worker_event_assoc, grh_event
 where grh_worker_event_assoc.id_worker = grh_worker.id 
 and grh_worker_event_assoc.id_event = grh_event.id
-and grh_worker_event_assoc.id = *arg_id
 and grh_worker_event_assoc.statut = 1;
 [/get]

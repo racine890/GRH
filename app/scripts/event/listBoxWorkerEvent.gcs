@@ -1,7 +1,10 @@
-# self.page.boxes.clear() permet d'effacer les listBox
 evaluate  self.page.boxes.clear()
+
 execute app/scripts/db/get-worker.gcs
 SetVar *all_workers LASTLIST
 create ListBox 0 with *all_workers at 270-20
-execute app/scripts/event/listBoxEvent.gcs
+
+execute app/scripts/db/collect-event.gcs
+SetVar *all_event LASTLIST
+create ListBox 1 with *all_event at 270-130
 end
