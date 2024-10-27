@@ -39,6 +39,8 @@ Conventions :
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
 	- Paramétrage age légal (min-max), utiliser paramètres
 	- Utiliser paramètres config sur les états
+	- Bloquer création de badges, édition seulement
+	- Ajouter date prévue dans le formulaire d'association d'évènement
 
 Done :
 - Créer la table des Employés. (ok)
