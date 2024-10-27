@@ -1,4 +1,3 @@
-# Mise à jour d'un worker
 compare *badge_id  None
 if 0 then
 	MessageBox wait... Please select a badge .

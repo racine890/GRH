@@ -1,6 +1,6 @@
 #
-#	Worker-Screen.ch
-#		Ecran formulaire de création d'un travailleur
+#	Badge-Screen.ch
+#		Ecran formulaire de création d'un badge
 #
 
 Background: app/res/bgform.png
@@ -32,7 +32,7 @@ Button2: Save
 Button2.id:3
 3.x: 250
 3.y: 380
-3.link:app/scripts/badge/save-badge.gcs
+3.link:app/scripts/badge-screen/save-badge.gcs
 
 Button3: Attribute badge
 Button3.id: 4
@@ -42,7 +42,7 @@ Button3.id: 4
 
 Button4: Icon
 Button4.id: 5
-5.link: app/scripts/badge/select-icon.gcs
+5.link: app/scripts/badge-screen/select-icon.gcs
 5.x: 260
 5.y: 150
 

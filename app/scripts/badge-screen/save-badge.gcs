@@ -1,32 +1,34 @@
+# Save-badge.gcs
+
+# Gets all the text in an edit, works for only one edit in screen
 GetEditText
 
+# It must be filled
 if evaluate( {LASTRESULT} == "" ) then
 	MessageBox Wait.. Please Enter the description of this badge
 	end
 
+# Saved in a var
 SetVar *editcontent LASTRESULT 
-print val ---------  Edit content
-print var *editcontent
 
-
+# Chacks if a file has been opened
 if evaluate( {*openfile} == () ) then
 	MessageBox Wait.. Please choose a file
 	end
-print val --------- fichier selectionne
-print var *openfile
 
-
-SetVar *toUpload
-
+# adds data_dir/data/ to filename.ext without all the path before it
 evaluate basepath+"data/"+{*openfile}[{*openfile}.rindex("/")+1:]
 SetVar *process_file LASTRESULT
-add *toUpload *process_file
-SetVar *toUpload LASTRESULT
+SetVar *toUpload *process_file
+
+# Copy selected image to destination dir
 evaluate shutil.copy({*openfile}, {*process_file})
 
+# Run insert-badge script
 execute app/scripts/db/insert-badge.gcs
 MessageBox done.. Operation success
-SetVar *openfile evaluate(())
-end
-# fonction pour permettre de garder dans un fichier les chemins des fichier enregistree
 
+# Clean back the openfile var
+SetVar *openfile evaluate(())
+
+end

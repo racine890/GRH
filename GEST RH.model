@@ -29,16 +29,16 @@ Conventions :
 		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin" (ok)
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
-
 	- Badges : Pas deux fois le même au même worker.
 	- Retirer badges
-	
 	- Notifier les dates d'anniversaire des workers
 	- Edit / Delete de Documents
 	- Set Documents : Pas deux fois le même document
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
 	- Paramétrage age légal (min-max), utiliser paramètres
 	- Utiliser paramètres config sur les états
+	- Bloquer création de badges, édition seulement
+	- Ajouter date prévue dans le formulaire d'association d'évènement
 
 Done :
 - Créer la table des Employés. (ok)
