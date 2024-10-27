@@ -1,0 +1,17 @@
+check var *idevent
+if 0 then
+	print val This script needs the var *idevent
+	end
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+execute query update
+
+commit
+close database
+end
+
+[update]
+update grh_event set event_date = current_timestamp where id = *idevent;
+[/update]

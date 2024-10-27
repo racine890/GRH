@@ -22,11 +22,11 @@ if evaluate( {*worker_name} == ""  ) then
 	end
 
 if evaluate( {*lastname} == "" ) then
-	MessageBox Wait.. Please Enter Password
+	MessageBox Wait.. Please Enter lastname
 	end
 
 if evaluate( {*birthday} == "" ) then
-	MessageBox Wait.. Please Enter Password
+	MessageBox Wait.. Please Enter birthday
 	end
 # vérifier que la date saisie est une vraie date ( pas si elle est correcte )
 if evaluate(not dateCheck({*birthday})) then

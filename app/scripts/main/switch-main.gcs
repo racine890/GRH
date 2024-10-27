@@ -32,6 +32,10 @@ if 16 then
 	load app/screens/clocking.ch
 	end
 
+if 15 then
+	load app/screens/event.ch
+	end
+
 if 17 then
 	load app/screens/states.ch
 	end

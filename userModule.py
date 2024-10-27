@@ -60,3 +60,19 @@ else:
 
 prepareData = lambda List : [{"title": '', "icon": e[2] , "description": e[1][:7], "action": '@[SetVar *selected '+ str(e[0])+','+str(e[2]) +']'} for e in List ]
 
+
+
+
+def comparer_dates(date1_str, date2_str, format_date='%Y-%m-%d'):
+    # Conversion des chaînes de caractères en objets datetime
+    date1 = datetime.strptime(date1_str, format_date)
+    date2 = datetime.strptime(date2_str, format_date)
+    
+    # Comparaison des dates
+    if date1 > date2:
+        return 2
+    elif date1 < date2:
+        return 1
+    else:
+        return 0
+
