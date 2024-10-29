@@ -13,4 +13,18 @@ count *session_notifications
 CreateText 8 LASTRESULT
 config item 19 fill="white", font=("Arial Black", 19)
 
+CheckFlag *bdates_initiated
+if 1 then
+	end
+
+execute app/scripts/db/get-workers-born-today.gcs
+ForEach *worker in LASTLIST alert
+SetFlag *bdates_initiated
+
 end
+
+[@alert]
+evaluate "Today is "+{*worker}[1]+' '+{*worker}[2]+"'s birthday!"
+SetVar *arg_msg LASTRESULT
+execute app/scripts/db/insert-notification-public.gcs
+[/@alert]

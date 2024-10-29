@@ -1,5 +1,14 @@
 evaluate {*session_notifications}.pop({*current})
-GetTableElement 0 of LASTRESULT
+SetVar *deleted LASTRESULT
+
+GetTableElement 3 of *deleted
+compare LASTRESULT 1
+if 0 then
+	# Check authorization or end
+	MessageBox Stop Notification has been discarded, but you cannot permanently delete it because you are not authorized to!
+	end
+
+GetTableElement 0 of *deleted
 SetVar *arg_id LASTRESULT
 
 execute app/scripts/db/delete-notification.gcs
