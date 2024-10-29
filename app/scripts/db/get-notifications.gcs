@@ -14,5 +14,5 @@ close database
 end
 
 [notifications]
-	Select * from grh_notification where worker_id = *arg_id and statut = 1 order by statut desc;
+	Select distinct * from grh_notification where worker_id = *arg_id or shared = 1 and statut = 1 order by statut desc;
 [/notifications]

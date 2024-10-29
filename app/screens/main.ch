@@ -1,3 +1,6 @@
+#
+# main
+# 	display the menu
 
 Background: app/res/bgmain.png
 
@@ -50,8 +53,3 @@ OnDisplay: app/scripts/main/loadimg.gcs
 [events]
 Button-1: app/scripts/main/switch-main.gcs
 [/events]
-
-
-
-
-

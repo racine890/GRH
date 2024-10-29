@@ -31,7 +31,8 @@ Conventions :
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 	- Badges : Pas deux fois le même au même worker.
 	- Retirer badges
-	- Notifier les dates d'anniversaire des workers
+	- Notifier les dates d'anniversaire des workers (Messages multiples avant)
+	- Trouver une parade pour envoyer des Notifications à tout le monde (?)
 	- Edit / Delete de Documents
 	- Set Documents : Pas deux fois le même document
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.

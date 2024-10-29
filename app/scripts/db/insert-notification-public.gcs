@@ -1,0 +1,27 @@
+check var *arg_msg
+if 0 then
+	print val --- La variable *arg_msg est manquante. Impossible de continuer!
+	end
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_one with test
+compare LASTTUPLE None
+if 5 then
+	close database
+	end
+
+execute query insert
+commit
+close database
+end
+
+[test]
+select * from grh_notification where message = *arg_msg and statut = 1;
+[/test]
+
+[insert]
+insert into grh_notification(message, shared) values ( *arg_msg, 1 );
+[/insert]
