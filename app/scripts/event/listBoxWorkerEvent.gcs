@@ -2,7 +2,7 @@ evaluate  self.page.boxes.clear()
 
 execute app/scripts/db/get-worker.gcs
 SetVar *all_workers LASTLIST
-create ListBox 0 with *all_workers at 270-20
+create ListBox 0 with *all_workers at 270-40
 
 execute app/scripts/db/collect-event.gcs
 SetVar *all_event LASTLIST
