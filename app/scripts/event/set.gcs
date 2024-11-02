@@ -1,0 +1,13 @@
+# focus_get retourne un widget donc permettra de prendre uniquement la valeur du clique
+
+if evaluate( self.focus_get() != self.page.boxes[1][1] ) then
+	end
+GetTableElement 1 of SELECTED
+GetTableElement 3 of LASTRESULT
+SetVar *donnee LASTRESULT
+compare *donnee None
+if 0 then
+	end
+evaluate unFormatDate({*donnee}).split(' ')[0]
+SetInputText 10 LASTRESULT
+end
