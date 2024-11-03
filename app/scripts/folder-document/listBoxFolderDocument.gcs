@@ -1,8 +1,11 @@
 # self.page.boxes.clear() permet d'effacer les listBox
 evaluate self.page.boxes.clear()
 
+SetVar *arg_id *arg_worker_id
+SetVar *arg_folder_id *wfds.folderToDisplay.id
+
 # Récupération et initialisation des
-execute app/scripts/db/get-document.gcs
+execute app/scripts/db/get-document-by-worker.gcs
 SetVar *fda.all_document LASTLIST
 create ListBox 0 with *fda.all_document at 280-150
 

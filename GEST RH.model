@@ -29,7 +29,6 @@ Conventions :
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 	- Badges : Pas deux fois le même au même worker.
-	- Retirer badges
 
 	- Edit / Delete de Documents
 	- Set Documents : Pas deux fois le même document
@@ -43,6 +42,7 @@ Done :
 - Créer la table des Employés. (ok)
 - Pointage des absences (ok)
 - Créer la table dossier. (ok)
+- Retirer badges (ok)
 - Paramétrage entreprise (ok)
 - Notifications (ok)
 - Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
