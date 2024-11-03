@@ -1,3 +1,4 @@
+# Preparing vars for query
 GetInput 11 LASTRESULT
 SetVar *form_nom LASTRESULT
 
@@ -10,6 +11,7 @@ SetVar *form_tel LASTRESULT
 GetInput 6 LASTRESULT
 SetVar *form_mail LASTRESULT
 
+# And then, run it
 execute app/scripts/db/updateConfig.gcs
 MessageBox ok Configurations have been updated !
 end

@@ -14,7 +14,6 @@ Conventions :
 
  Todo :
 	- Optimiser
-	
 	- Evènements
 	- Etats html / pdf
 	- Disable a user account
@@ -31,8 +30,7 @@ Conventions :
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 	- Badges : Pas deux fois le même au même worker.
 	- Retirer badges
-	- Notifier les dates d'anniversaire des workers (Messages multiples avant)
-	- Trouver une parade pour envoyer des Notifications à tout le monde (?)
+
 	- Edit / Delete de Documents
 	- Set Documents : Pas deux fois le même document
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
@@ -52,6 +50,8 @@ Done :
 - Créer la table des statuts par poste. Chaque statut doit avoir au moins un titre, et peut-etre un statut parent. Chaque employé doit avoir un statut. Par exemple, on pourra créer un statut "Stagiaire en développement logiciel" qui n'a aucun parent. Puis un statut "Employé en développement logiciel" qui aura pour parent "Stagiaire en développement logiciel", et tous les postes dans l'ordre ascendant. Ajouter toute colonne que vous jugerez utile. (ok)
 - Créer la table des badges avec des badges par défaut, puis les associer aux employés. (ok)
 - Dossiers : La consultation concerne par défaut les dossiers actifs : Permettre de voir les dossiers validés, rejettés, ou tous les dossiers (ok)
+- Notifier les dates d'anniversaire des workers (Messages multiples avant) (ok)
+- Trouver une parade pour envoyer des Notifications à tout le monde (?) (ok)
 - Afficher les badges si le worker connecté en a (ok)
 - Créer la table d'évènements. Elle doit au moins avoir les colonnes de titre, de temps accordé par an, et la lier à la table employé. (ok)
 - Etat des workers : Ajouter leurs statuts (ok)

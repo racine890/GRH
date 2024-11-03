@@ -1,0 +1,29 @@
+check var *arg_id
+if 0 then
+	print val This script needs the var *arg_id
+	end
+
+check var *arg_type
+if 0 then
+	print val This script needs the var *arg_type
+	end
+
+check var *arg_path
+if 0 then
+	print val This script needs the var *arg_path
+	end
+
+check var *arg_worker_id
+if 0 then
+	print val This script needs the var *arg_worker_id
+	end
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+evaluate self.connect.cursor.execute("update grh_document set id_worker = %s, document_type = %s, document_store_path = %s where id = %s;", ({*arg_worker_id}, {*arg_type}, {*arg_path},{*arg_id}))
+
+commit
+close database
+end

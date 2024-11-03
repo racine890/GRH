@@ -8,4 +8,12 @@ if 11 then
 	load app/screens/config-1.ch
 	end
 
+# Now if it isn't the listbox, stop there.
+if evaluate( self.focus_get() != self.page.boxes[2][1] ) then
+	end
+
+GetTableElement 2 of SELECTED
+GetTableElement 0 of LASTRESULT
+SetVar *selected_user_id LASTRESULT
+
 end

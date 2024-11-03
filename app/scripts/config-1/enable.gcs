@@ -1,0 +1,10 @@
+SetVar *arg_id *selected_user_id
+SetVar *arg_status 1
+
+execute app/scripts/db/update-user.gcs
+
+ConfigButton 11 state='disabled'
+ConfigButton 12 state='normal'
+
+MessageBox Done Compte actif!
+end

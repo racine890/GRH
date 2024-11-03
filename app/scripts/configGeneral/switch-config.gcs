@@ -1,4 +1,4 @@
-print var LASTCLICKEDID
+# Launch a screen depending on LASTCLICKEDID
 switch LASTCLICKEDID
 
 if 14 then

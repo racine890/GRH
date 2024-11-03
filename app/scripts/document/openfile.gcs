@@ -1,7 +1,8 @@
-evaluate fd.askopenfilenames( title = "Chose file path",filetypes = ( ("jpg document","*.jpg"), ("pdf document","*.pdf"), ("jpeg document","*.jpeg"), ("doc document","*.doc"), ("docx document","*.docx"), ("odt document","*.odt")) )
-print var LASTRESULT
+evaluate fd.askopenfilename( title = "Chose file path",filetypes = ( ("jpg document","*.jpg"), ("pdf document","*.pdf"), ("jpeg document","*.jpeg"), ("doc document","*.doc"), ("docx document","*.docx"), ("odt document","*.odt")) )
+
 if evaluate ({LASTRESULT} == "" ) then
 	MessageBox Error No file provided 
+
 SetVar *openfile LASTRESULT
 
 end
