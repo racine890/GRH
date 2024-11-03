@@ -22,7 +22,7 @@ Text4.id: 7
 7.x: 100
 7.y: 40
 
-Buttons.nb: 3
+Buttons.nb: 4
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
@@ -45,6 +45,12 @@ Button3.id: 5
 5.link: app/scripts/document/openfile.gcs
 5.x: 200
 5.y: 250
+
+Button4: Delete
+Button4.id: 8
+8.link: app/scripts/editDocument/delete.gcs
+8.x: 400
+8.y: 50
 
 Input.nb: 1
 Input.Background: #ADD2CA

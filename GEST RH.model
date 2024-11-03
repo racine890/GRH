@@ -31,7 +31,7 @@ Conventions :
 	- Badges : Pas deux fois le même au même worker.
 
 	- Edit / Delete de Documents
-	- Set Documents : Pas deux fois le même document
+
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
 	- Paramétrage age légal (min-max), utiliser paramètres
 	- Utiliser paramètres config sur les états
@@ -53,6 +53,7 @@ Done :
 - Notifier les dates d'anniversaire des workers (Messages multiples avant) (ok)
 - Trouver une parade pour envoyer des Notifications à tout le monde (?) (ok)
 - Afficher les badges si le worker connecté en a (ok)
+- Set Documents : Pas deux fois le même document (ok)
 - Créer la table d'évènements. Elle doit au moins avoir les colonnes de titre, de temps accordé par an, et la lier à la table employé. (ok)
 - Etat des workers : Ajouter leurs statuts (ok)
 - Déconnexion (ok)
