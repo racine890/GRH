@@ -21,7 +21,7 @@ Text3.id: 4
 4.x: 200
 4.y: 50
 
-Buttons.nb: 2
+Buttons.nb: 3
 Button.size: 30
 Button.width: 150
 Button.Background: #FFFFFF
@@ -29,7 +29,7 @@ Button.Foreground: #55968F
 
 Button1: Turn back 
 Button1.id: 2
-2.link: app/screens/main.ch
+2.link: app/screens/badge-screen.ch
 2.x: 150
 2.y: 350
 
@@ -38,6 +38,12 @@ Button2.id: 3
 3.link: app/scripts/worker-badge/save.gcs
 3.x: 320
 3.y: 350
+
+Button3: Revoke all
+Button3.id: 6
+6.link: app/scripts/worker-badge/revoke.gcs
+6.x: 500
+6.y: 150
 
 Input.nb: 1
 Input.Background: #ADD2CA

@@ -1,0 +1,28 @@
+# Attendu : *arg_id
+check var *arg_id
+if 0 then
+	print val --- La variable *arg_id est manquante. Impossible de continuer!
+	end
+
+# Connexion
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+evaluate "All your badges have been revoked."
+SetVar *msg LASTRESULT
+
+execute query update
+execute query insert
+commit
+
+close database
+end
+
+[update]
+update grh_worker_badge_assoc set statut = 0 where id_worker = *arg_id ;
+[/update]
+
+[insert]
+insert into grh_notification(worker_id, message) values ( *arg_id, *msg );
+[/insert]
