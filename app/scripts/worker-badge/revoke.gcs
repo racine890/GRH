@@ -1,0 +1,13 @@
+# Must select the worker
+if evaluate( {SELECTED} == "" or 1 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the worker
+	end
+
+GetTableElement 1 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *arg_id LASTRESULT
+
+execute app/scripts/db/revokeBadges.gcs
+
+MessageBox Done Badges Revoked for that worker!
+end
