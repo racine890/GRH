@@ -1,0 +1,36 @@
+if evaluate(not 1 in {SELECTED}) then
+	MessageBox Please select the document to edit !
+	end
+
+GetInput 4
+SetVar *document_name LASTRESULT
+
+if evaluate( {*document_name} == ""  ) then
+	MessageBox Wait.. Please enter document name
+	end
+
+if evaluate({*openfile} == ()) then
+	SetVar *openfile *ed_document_path
+
+SetVar *idworker_selected ed_document_owner_id
+
+if evaluate(0 in {SELECTED}) then
+	GetTableElement 0 of SELECTED
+	GetTableElement 0 of LASTRESULT
+	SetVar *idworker_selected LASTRESULT
+
+evaluate basepath+"data/"+{*openfile}[{*openfile}.rindex("/")+1:]
+SetVar *toUpload LASTRESULT
+
+evaluate shutil.copy({*openfile}, {*toUpload})
+
+SetVar *arg_id *ed_document_id
+SetVar *arg_worker_id *idworker_selected
+SetVar *arg_type *document_name
+SetVar *arg_path *toUpload
+
+execute app/scripts/db/update-workerdocument.gcs
+
+MessageBox done.. Operation success
+end
+

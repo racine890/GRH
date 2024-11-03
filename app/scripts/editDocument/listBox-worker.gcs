@@ -1,0 +1,9 @@
+execute app/scripts/db/get-worker.gcs
+SetVar *all_workers LASTLIST
+create ListBox 0 with *all_workers at 200-180
+
+execute app/scripts/db/get-document.gcs
+create ListBox 1 with LASTLIST at 200-50
+print("After :",self.page.boxes)
+SetVar *openfile evaluate(tuple())
+end

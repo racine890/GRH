@@ -1,4 +1,8 @@
+# Display
+# Load general configuration pics
 execute app/scripts/config-1/loadimag.gcs
+
+# Get the actual configs to fill the fields
 execute app/scripts/db/getConfig.gcs
 GetTableElement 1 of LASTTUPLE
 SetInputText 11 LASTRESULT
@@ -8,4 +12,5 @@ GetTableElement 3 of LASTTUPLE
 SetInputText 5 LASTRESULT
 GetTableElement 4 of LASTTUPLE
 SetInputText 6 LASTRESULT
+
 end

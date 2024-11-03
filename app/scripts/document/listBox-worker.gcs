@@ -1,6 +1,5 @@
 execute app/scripts/db/get-worker.gcs
 SetVar *all_workers LASTLIST
-create ListBox with *all_workers at 180-180
-SetVar *openfile evaluate(tuple())
-
+create ListBox with *all_workers at 200-180
+SetVar *openfile evaluate("")
 end

@@ -5,18 +5,17 @@ if 0 then
 	MessageBox No element to set, choose some first!
 	end
 
+# The query below need this
 SetVar *selected_folder_id *wfds.folderToDisplay.id
 
 # Save each document inside the folder
-
 ForEach *choosen_document of *fda.choosen save
 
 MessageBox done.. Operation success
 end
 
+# Make insertion for each item of choosen_document
 [@save]
-print val -- Foreach element :
-print var *choosen_document
 GetTableElement 0 of *choosen_document
 SetVar *selected_doc_id LASTRESULT
 execute app/scripts/db/insert-folder-document.gcs

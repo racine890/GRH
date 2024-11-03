@@ -2,11 +2,11 @@ evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
-execute query insert
-commit
+query select_all with getUser
+
 close database
 end
 
-[insert]
-Update  grh_folder set  workerstation_id = *selected_post_id where id = *id_fold;
-[/insert]
+[getUser]
+select id, user_name from grh_user;
+[/getUser]

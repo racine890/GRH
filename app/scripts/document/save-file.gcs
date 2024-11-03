@@ -1,46 +1,26 @@
 GetInput 4
-print var LASTRESULT
+SetVar *inputcontent LASTRESULT
 
-if evaluate( {LASTRESULT} == ""  ) then
+if evaluate( {*inputcontent} == ""  ) then
 	MessageBox Wait.. Please enter document name
 	end
 
-SetVar *inputcontent LASTRESULT
-print val --------- type du fichier
-print var *inputcontent
-
-if evaluate( {*openfile} == () ) then
+if evaluate( {*openfile} == '' ) then
 	MessageBox Wait.. Please choose a file
 	end
-print val --------- fichier selectionne
-print var *openfile
 
 if evaluate({SELECTED} == "") then
 	MessageBox Wait.. Please select a worker
 	end
-print val --------- employe selectionne
-print var SELECTED
 
 GetTableElement 0 of SELECTED
 SetVar *idworker_selected LASTRESULT
-print val ------ id selectionne
-print var *idworker_selected
 
-SetVar *toUpload
+evaluate basepath+"data/"+{*openfile}[{*openfile}.rindex("/")+1:]
+SetVar *toUpload LASTRESULT
 
-ForEach *file in *openfile process
+evaluate shutil.copy({*openfile}, {*toUpload})
 
 execute app/scripts/db/insert-workerdocument.gcs
 MessageBox done.. Operation success
 end
-# fonction pour permettre de garder dans un fichier les chemins des fichier enregistree
-[@process]
-evaluate basepath+"data/"+{*file}[{*file}.rindex("/")+1:]
-SetVar *process_file LASTRESULT
-add *toUpload *process_file
-add LASTRESULT ;
-SetVar *toUpload LASTRESULT
-evaluate shutil.copy({*file}, {*process_file})
-
-[/@process]
-

@@ -42,7 +42,7 @@ Input2.id: 6
 6.x: 350
 6.y:  200
 
-Buttons.nb: 2
+Buttons.nb: 4
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
@@ -59,6 +59,18 @@ Button2.id: 9
 9.link: app/scripts/config-1/save-user.gcs
 9.x: 360
 9.y: 400
+
+Button3: Enable
+Button3.id: 11
+11.link: app/scripts/config-1/enable.gcs
+11.x: 380
+11.y: 40
+
+Button4: Disable
+Button4.id: 12
+12.link: app/scripts/config-1/disable.gcs
+12.x: 380
+12.y: 0
 
 Text5: Choose a woker
 Text5.id: 10

@@ -6,9 +6,11 @@ execute app/scripts/db/get-document.gcs
 SetVar *fda.all_document LASTLIST
 create ListBox 0 with *fda.all_document at 280-150
 
+# Créer une seconde liste vide
 evaluate []
 SetVar *fda.wanted_document LASTRESULT
 create ListBox 1 with *fda.wanted_document at 280-260
 
+# La liste des séléctionnés
 SetVar *fda.choosen evaluate([])
 end

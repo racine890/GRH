@@ -1,0 +1,23 @@
+if evaluate(len(self.page.boxes)<2) then
+	end
+
+if evaluate( self.focus_get() != self.page.boxes[1][1] ) then
+	end
+
+GetTableElement 1 of SELECTED
+GetTableElement 0 of LASTRESULT
+SetVar *ed_document_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+GetTableElement 1 of LASTRESULT
+SetVar *ed_document_owner_id LASTRESULT
+
+GetTableElement 1 of SELECTED
+GetTableElement 2 of LASTRESULT
+SetInputText 4 LASTRESULT
+
+GetTableElement 1 of SELECTED
+GetTableElement 3 of LASTRESULT
+SetVar *ed_document_path LASTRESULT
+
+end
