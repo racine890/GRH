@@ -16,4 +16,17 @@ GetTableElement 2 of SELECTED
 GetTableElement 0 of LASTRESULT
 SetVar *selected_user_id LASTRESULT
 
+GetTableElement 2 of SELECTED
+GetTableElement 2 of LASTRESULT
+SetVar *selected_user_status LASTRESULT
+
+switch *selected_user_status
+if 0 then
+	ConfigButton 11 state="normal"
+	ConfigButton 12 state="disabled"
+
+if 1 then
+	ConfigButton 11 state="disabled"
+	ConfigButton 12 state="normal"
+
 end

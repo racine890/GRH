@@ -19,5 +19,5 @@ close database
 end
 
 [upd]
-Update grh_user set active = *arg_status where id = *arg_id;
+Update grh_user set statut = *arg_status where id = *arg_id;
 [/upd]

@@ -3,8 +3,6 @@ SetVar *arg_status 0
 
 execute app/scripts/db/update-user.gcs
 
-ConfigButton 11 state='normal'
-ConfigButton 12 state='disabled'
-
 MessageBox Done Compte désactivé!
+load app/screens/config-1.ch
 end
