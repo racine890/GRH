@@ -3,14 +3,13 @@
 execute app/scripts/config-1/loadimag.gcs
 
 # Get the actual configs to fill the fields
-execute app/scripts/db/getConfig.gcs
-GetTableElement 1 of LASTTUPLE
+evaluate getConfig("company_name", {*session_config})
 SetInputText 11 LASTRESULT
-GetTableElement 2 of LASTTUPLE
+evaluate getConfig("company_ifu", {*session_config})
 SetInputText 12 LASTRESULT
-GetTableElement 3 of LASTTUPLE
+evaluate getConfig("company_phone", {*session_config})
 SetInputText 5 LASTRESULT
-GetTableElement 4 of LASTTUPLE
+evaluate getConfig("company_mail", {*session_config})
 SetInputText 6 LASTRESULT
 
 end

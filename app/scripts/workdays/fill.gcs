@@ -1,0 +1,31 @@
+execute app/scripts/config-1/loadimag.gcs
+
+evaluate getConfig("mon_mor", {*session_config})
+SetInputText 4 LASTRESULT
+evaluate getConfig("mon_eve", {*session_config})
+SetInputText 5 LASTRESULT
+evaluate getConfig("tue_mor", {*session_config})
+SetInputText 6 LASTRESULT
+evaluate getConfig("tue_eve", {*session_config})
+SetInputText 7 LASTRESULT
+evaluate getConfig("wed_mor", {*session_config})
+SetInputText 8 LASTRESULT
+evaluate getConfig("wed_eve", {*session_config})
+SetInputText 9 LASTRESULT
+evaluate getConfig("thu_mor", {*session_config})
+SetInputText 10 LASTRESULT
+evaluate getConfig("thu_eve", {*session_config})
+SetInputText 11 LASTRESULT
+evaluate getConfig("fri_mor", {*session_config})
+SetInputText 12 LASTRESULT
+evaluate getConfig("fri_eve", {*session_config})
+SetInputText 13 LASTRESULT
+evaluate getConfig("sat_mor", {*session_config})
+SetInputText 14 LASTRESULT
+evaluate getConfig("sat_eve", {*session_config})
+SetInputText 15 LASTRESULT
+evaluate getConfig("sun_mor", {*session_config})
+SetInputText 16 LASTRESULT
+evaluate getConfig("sun_eve", {*session_config})
+SetInputText 17 LASTRESULT
+end

@@ -3,7 +3,7 @@ evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
-query select_one with q
+query select_all with q
 
 close database
 end

@@ -1,3 +1,4 @@
 LoadPic app/res/user1.png at 38-30
 LoadPic app/res/configuration-small.png at 38-100
+LoadPic app/res/event-min.png at 38-180
 end

@@ -1,11 +1,14 @@
 switch LASTCLICKEDID
-
-if 12 then
+if 15 then
 	load app/screens/configGeneral.ch
 	end
 
-if 11 then
+if 14 then
 	load app/screens/config-1.ch
+	end
+
+if 16 then
+	load app/screens/workdays.ch
 	end
 
 # Now if it isn't the listbox, stop there.

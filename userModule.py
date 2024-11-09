@@ -36,6 +36,13 @@ unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1]) if not ' ' in d
 # Récupère la date d'aujourd'hui
 get_today = lambda : datetime.today().strftime('%Y-%m-%d')
 
+#getConfig = lambda configName, configList : [ config[1] for config in configList if config[0] == configName ][0]
+
+def getConfig(configName, configList):
+	for config in configList:
+		if config[1] == configName:
+			return config[2]
+
 # Fusionne des listes comme [[1,2], ["un", "deux"]] pour donner un truc comme [[1, "un"],[2, "deux"]]
 # Continue jusqu'au nombre d'éléments de la première sous liste
 def merge_lists(listOfLists: list) -> list:
@@ -61,14 +68,16 @@ else:
 prepareData = lambda List : [{"title": '', "icon": e[2] , "description": e[1][:7], "action": '@[SetVar *selected '+ str(e[0])+','+str(e[2]) +']'} for e in List ]
 
 
+def weekdayFromDate(dateStr):
+	dateStr = formatDate(dateStr) if not ' ' in dateStr else formatDate(dateStr.split(' ')[0])
+	date_obj = datetime.strptime(dateStr, "%Y-%m-%d")
+	jour_semaine = date_obj.strftime("%A")
+	return jour_semaine
 
-
-def comparer_dates(date1_str, date2_str, format_date='%Y-%m-%d'):
-    # Conversion des chaînes de caractères en objets datetime
+def compare_dates(date1_str, date2_str, format_date='%Y-%m-%d'):
     date1 = datetime.strptime(date1_str, format_date)
     date2 = datetime.strptime(date2_str, format_date)
     
-    # Comparaison des dates
     if date1 > date2:
         return 2
     elif date1 < date2:
@@ -76,3 +85,103 @@ def comparer_dates(date1_str, date2_str, format_date='%Y-%m-%d'):
     else:
         return 0
 
+def hours_diff(date, hour, isMorning=True):
+	dateHour = formatDate(date.split(' ')[0])
+	hours = date.split(' ')[1]
+
+	complateHour = dateHour+' '+hour+':00'
+	original = dateHour+' '+hours
+	factor = '+'
+
+	comparison = compare_dates(original, complateHour, "%Y-%m-%d %H:%M:%S")
+	if(comparison == 2):
+		if isMorning:
+			factor = '-'
+		return factor, dates_diff(original, complateHour)
+	else:
+		if not isMorning:
+			factor = '-'
+		return factor, dates_diff(complateHour, original)
+
+def getDelay(rows, configs):
+	mon_mor = getConfig('mon_mor', configs)
+	mon_eve = getConfig('mon_eve', configs)
+	tue_mor = getConfig('tue_mor', configs)
+	tue_eve = getConfig('tue_eve', configs)
+	wed_mor = getConfig('wed_mor', configs)
+	wed_eve = getConfig('wed_eve', configs)	
+	thu_mor = getConfig('thu_mor', configs)
+	thu_eve = getConfig('thu_eve', configs)	
+	fri_mor = getConfig('fri_mor', configs)
+	fri_eve = getConfig('fri_eve', configs)	
+	sat_mor = getConfig('sat_mor', configs)
+	sat_eve = getConfig('sat_eve', configs)
+	sun_mor = getConfig('sun_mor', configs)
+	sun_eve = getConfig('sun_eve', configs)
+	allDays = {
+		"Monday" : (mon_mor, mon_eve),
+		"Tuesday" : (tue_mor, tue_eve),
+		"Wednesday" : (wed_mor, wed_eve),
+		"Thursday" : (thu_mor, thu_eve),
+		"Friday" : (fri_mor, fri_eve),
+		"Saturday" : (sat_mor, sat_eve),
+		"Sunday" : (sun_mor, sun_eve)
+	}
+
+	result = []
+	for row in rows:
+		newRow = list(row)
+		mor = row[3]
+		eve = row[4]
+
+		dfactor, delay = hours_diff(mor, allDays[weekdayFromDate(mor)][0])
+		ofactor, overtime = hours_diff(eve, allDays[weekdayFromDate(eve)][1], False)
+
+		newRow+=[dfactor+ str(delay[0])+'h : '+str(delay[1])+' min']
+		newRow+=[ofactor+ str(overtime[0])+'h : '+str(overtime[1])+' min']
+
+		dsign = 1 if dfactor == '+' else -1
+		osign = 1 if ofactor == '+' else -1
+		total = addHours(delay, overtime, dsign, osign)
+
+		newRow+=[total[0]+str(total[1])+'h : '+str(total[2])+'min']
+		result.append(newRow)
+	
+	return result
+
+
+def dates_diff(date1_str, date2_str):
+	tpl1 = date1_str.split(' ')[1][:5].split(':')
+	h1, m1 = int(tpl1[0]), int(tpl1[1])
+	tpl2 = date2_str.split(' ')[1][:5].split(':')
+	h2, m2 = int(tpl2[0]), int(tpl2[1])
+
+	diff_heures = 0
+	diff_minutes = 0
+	if h1 > h2:
+		m1 = abs(h1-h2)*60 + m1
+		diff_minutes = m1-m2
+	else:
+		m2 = abs(h1-h2)*60 + m2
+		diff_minutes = m2-m1
+	
+	while diff_minutes >= 60:
+		diff_heures += 1
+		diff_minutes -= 60
+
+	return (abs(diff_heures), abs(diff_minutes))
+
+def addHours(d, o, sd, so):
+	mt = sd*(60*d[0]+d[1]) + so*(60*o[0]+o[1])
+	
+	rsign = '-'
+	if mt > 0:
+		rsign = '+'
+	
+	mt = abs(mt)
+
+	ht = 0
+	while mt >= 60:
+		ht += 1
+		mt -= 60
+	return (rsign, ht,mt)

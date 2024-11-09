@@ -14,23 +14,18 @@ Conventions :
 
  Todo :
 	- Optimiser
-	- Evènements
+
 	- Etats html / pdf
-	- Disable a user account
-	
+	- Disable a user account	
 	- Configuration Heure de début - Heure de fin par jour de la semaine.
-	- Etat de pointage : Afficher les heures de retard et les heures supplémentaires.
-	
+	- Etat de pointage : Afficher les heures de retard et les heures supplémentaires. 
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
-
 	- Gérer l'authentification ( Sécurité ) (ok)
 		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin" (ok)
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 	- Badges : Pas deux fois le même au même worker.
-
-	- Edit / Delete de Documents
 
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
 	- Paramétrage age légal (min-max), utiliser paramètres
@@ -44,9 +39,11 @@ Done :
 - Créer la table dossier. (ok)
 - Retirer badges (ok)
 - Paramétrage entreprise (ok)
+- Edit / Delete de Documents (ok)
 - Notifications (ok)
 - Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
 - Créer la table d'association des Employés aux dossiers. Un employé a un dossier. (ok)
+- Evènements (ok)
 - Créer la table des statuts par poste. Chaque statut doit avoir au moins un titre, et peut-etre un statut parent. Chaque employé doit avoir un statut. Par exemple, on pourra créer un statut "Stagiaire en développement logiciel" qui n'a aucun parent. Puis un statut "Employé en développement logiciel" qui aura pour parent "Stagiaire en développement logiciel", et tous les postes dans l'ordre ascendant. Ajouter toute colonne que vous jugerez utile. (ok)
 - Créer la table des badges avec des badges par défaut, puis les associer aux employés. (ok)
 - Dossiers : La consultation concerne par défaut les dossiers actifs : Permettre de voir les dossiers validés, rejettés, ou tous les dossiers (ok)

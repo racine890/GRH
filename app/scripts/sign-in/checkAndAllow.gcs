@@ -50,6 +50,8 @@ if 0 then
 	execute app/scripts/db/get-notifications.gcs
 	SetVar *session_notifications LASTLIST
 	turn *session_notifications into list
+	execute app/scripts/db/getConfig.gcs
+	SetVar *session_config LASTLIST
 	load app/screens/main.ch
 	end
 
