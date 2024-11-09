@@ -1,0 +1,77 @@
+evaluate lambda string : len(string.strip()) == 5 and string[2] == ':' and string.replace(':','').isdigit()
+SetVar *timecheck LASTRESULT
+
+GetInput 4
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *mon_mor LASTRESULT
+
+GetInput 5
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *mon_eve LASTRESULT
+
+GetInput 6
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *tue_mor LASTRESULT
+
+GetInput 7
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *tue_eve LASTRESULT
+
+GetInput 8
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *wed_mor LASTRESULT
+
+GetInput 9
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *wed_eve LASTRESULT
+
+GetInput 10
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *thu_mor LASTRESULT
+
+GetInput 11
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *thu_eve LASTRESULT
+
+GetInput 12
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *fri_mor LASTRESULT
+
+GetInput 13
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *fri_eve LASTRESULT
+
+GetInput 14
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *sat_mor LASTRESULT
+
+GetInput 15
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *sat_eve LASTRESULT
+
+GetInput 16
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *sun_mor LASTRESULT
+
+GetInput 17
+if evaluate(not {*timecheck}({LASTRESULT})) then
+	MessageBox Error Incorrect format for one or many fields!
+SetVar *sun_eve LASTRESULT
+
+execute app/scripts/db/updateWorkDays.gcs
+
+MessageBox Done Planning updated!
+end

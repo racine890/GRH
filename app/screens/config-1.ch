@@ -5,7 +5,7 @@
 
 Background: app/res/bgcongig1.png
 
-Text.nb: 5
+Text.nb: 6
 Text1: User Management
 Text1.id: 0
 0.x: 70
@@ -30,6 +30,11 @@ Text5: General Settings
 Text5.id: 7
 7.x: 70
 7.y: 130
+
+Text6: Work Planning
+Text6.id: 13
+13.x: 40
+13.y: 200
 
 Input.nb: 2
 Input.Background: #ADD2CA

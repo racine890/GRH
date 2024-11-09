@@ -1,23 +1,19 @@
-check var *arg_id 
+# Attend un paramètre *arg_id
+check var *arg_id
 if 0 then
 	print val missing param : *arg_id
-	end
-
-check var *arg_status 
-if 0 then
-	print val missing param : *arg_status
 	end
 
 evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
-execute query upd
+execute query update
 
 commit
 close database
 end
 
-[upd]
-Update grh_user set statut = *arg_status where id = *arg_id;
-[/upd]
+[update]
+update grh_document set statut = 0 where id = *arg_id ;
+[/update]

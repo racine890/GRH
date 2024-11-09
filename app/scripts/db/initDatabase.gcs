@@ -142,8 +142,8 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
 [q9]
  create table if not exists  grh_worker(
 id integer PRIMARY KEY AUTO_INCREMENT,
-firstname varchar(20),
-lastname varchar(20),
+firstname varchar(60),
+lastname varchar(60),
 date_birth timestamp,
 profile_picture varchar(200),
 address varchar(60),
@@ -262,10 +262,8 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
 [q18]
  create table if not exists  grh_config(
 id integer PRIMARY KEY AUTO_INCREMENT,
-company_name varchar(60),
-company_ifu varchar(30),
-company_phone varchar(16),
-company_mail varchar(30)
+config_name varchar(60),
+config_value text
 )
 [/q18]
 
@@ -312,7 +310,25 @@ insert into grh_badge(description,icon) values
 [/badge]
 
 [ic]
-insert into grh_config(company_name, company_ifu, company_mail, company_phone) value ("G. Center Burkina","-", "contact@gcenterburkina.com", "+226 74 91 21 62");
+insert into grh_config(config_name, config_value) values 
+	("company_name", "G. Center Burkina"),
+	("company_ifu", "-"),
+	("company_phone", "+226 74 91 21 62"),
+	("company_mail", "contact@gcenterburkina.com"),
+	("mon_mor", "08:00"),
+	("mon_eve", "17:00"),
+	("tue_mor", "08:00"),
+	("tue_eve", "17:00"),
+	("wed_mor", "08:00"),
+	("wed_eve", "17:00"),
+	("thu_mor", "08:00"),
+	("thu_eve", "17:00"),
+	("fri_mor", "08:00"),
+	("fri_eve", "17:00"),
+	("sat_mor", "08:00"),
+	("sat_eve", "17:00"),
+	("sun_mor", "08:00"),
+	("sun_eve", "17:00");
 [/ic]
 
 

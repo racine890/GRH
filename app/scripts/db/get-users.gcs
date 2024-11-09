@@ -8,5 +8,5 @@ close database
 end
 
 [getUser]
-select id, user_name from grh_user;
+select id, user_name, statut from grh_user;
 [/getUser]

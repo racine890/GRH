@@ -9,5 +9,8 @@ close database
 end
 
 [insert]
-Update grh_config set  company_ifu = *form_ifu , company_mail = *form_mail , company_name = *form_nom , company_phone = *form_tel ;
+Update grh_config set config_value = *form_ifu where config_name = "company_ifu";
+Update grh_config set config_value = *form_mail where config_name = "company_mail";
+Update grh_config set config_value = *form_nom where config_name = "company_name";
+Update grh_config set config_value = *form_tel where config_name = "company_phone";
 [/insert]

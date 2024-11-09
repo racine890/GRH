@@ -1,0 +1,26 @@
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+execute query update
+
+commit
+close database
+end
+
+[update]
+update grh_config set config_value = *mon_mor where config_name = "mon_mor";
+update grh_config set config_value = *mon_eve where config_name = "mon_eve";
+update grh_config set config_value = *tue_mor where config_name = "tue_mor";
+update grh_config set config_value = *tue_eve where config_name = "tue_eve";
+update grh_config set config_value = *wed_mor where config_name = "wed_mor";
+update grh_config set config_value = *wed_eve where config_name = "wed_eve";
+update grh_config set config_value = *thu_mor where config_name = "thu_mor";
+update grh_config set config_value = *thu_eve where config_name = "thu_eve";
+update grh_config set config_value = *fri_mor where config_name = "fri_mor";
+update grh_config set config_value = *fri_eve where config_name = "fri_eve";
+update grh_config set config_value = *sat_mor where config_name = "sat_mor";
+update grh_config set config_value = *sat_eve where config_name = "sat_eve";
+update grh_config set config_value = *sun_mor where config_name = "sun_mor";
+update grh_config set config_value = *sun_eve where config_name = "sun_eve";
+[/update]

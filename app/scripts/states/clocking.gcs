@@ -10,7 +10,7 @@ SetVar *arg_to LASTRESULT
 
 execute app/scripts/db/getClockingsByPeriod.gcs
 
-evaluate [(str(el[0]), str(el[1]), str(el[2]), unFormatDate(str(el[3])), unFormatDate(str(el[3]))) for el in {LASTLIST}]
+evaluate [(str(el[0]), str(el[1]), str(el[2]), unFormatDate(str(el[3])), unFormatDate(str(el[4]))) for el in {LASTLIST}]
 SetVar *mydbdata LASTRESULT
 
 count LASTLIST
@@ -18,6 +18,9 @@ SetVar *total LASTRESULT
 
 evaluate unFormatDate(get_today())
 SetVar *today LASTRESULT
+
+evaluate getDelay({*mydbdata}, {*session_config})
+SetVar *mydbdata LASTRESULT
 
 PrintState MySTATE as state.html use app/res/default.dat
 
@@ -27,7 +30,11 @@ if evaluate(platform.system() != "Linux") then
 
 evaluate system('xdg-open state.html')
 end
-[/@create]
+
+[@write]
+delay
+overtime
+[/@write]
 
 [MySTATE]
 TEL: 56 52 15 32
@@ -35,9 +42,9 @@ MAIL: gcenterburkina@gmail.com
 ADRESS: *userAdress
 REFERENCE: ---
 TITLE: CLOCKINGS SUMMARY
-HEAD: ID, FIRSTNAME, LASTNAME, ARRIVAL, DEPART
+HEAD: ID, FIRSTNAME, LASTNAME, ARRIVAL, DEPART, ADDITIONAL TIME (ARRIVAL), ADDITIONAL TIME (DEPART), CUMULATION
 ROWS: *mydbdata
-FOOTER: ("TOTAL",4,'*total'),("PRINT DATE",4,'*today')
+FOOTER: ("TOTAL",7,'*total'),("PRINT DATE",7,'*today')
 LOGO: app/res/worker.png
 COMPANY: G. CENTER
 [/MySTATE]
