@@ -29,5 +29,4 @@ SetInputText 16 LASTRESULT
 evaluate getConfig("sun_eve", {*session_config})
 SetInputText 17 LASTRESULT
 
-SetVar LASTFILE app/screens/workdays.ch
 end

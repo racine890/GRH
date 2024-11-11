@@ -15,17 +15,16 @@ Conventions :
  Todo :
 	- Optimiser
 	- Etats html / pdf
-	- Disable a user account	
+
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
 	- Gérer l'authentification ( Sécurité ) (ok)
 		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin" (ok)
 		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
-	- Badges : Pas deux fois le même au même worker.
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
-	- Paramétrage age légal (min-max), utiliser paramètres
 	- Utiliser paramètres config sur les états
+	- Gérer les erreurs de Button-1 sur les configurations
 
 Done :
 - Créer la table des Employés. (ok)
@@ -35,6 +34,7 @@ Done :
 - Retirer badges (ok)
 - Configuration Heure de début - Heure de fin par jour de la semaine. (ok)
 - Paramétrage entreprise (ok)
+- Disable a user account (ok)
 - Edit / Delete de Documents (ok)
 - Notifications (ok)
 - Afficher la page d'accueil, avec Sign-In et Read the docs (ok)
@@ -42,6 +42,8 @@ Done :
 - Evènements (ok)
 - Créer la table des statuts par poste. Chaque statut doit avoir au moins un titre, et peut-etre un statut parent. Chaque employé doit avoir un statut. Par exemple, on pourra créer un statut "Stagiaire en développement logiciel" qui n'a aucun parent. Puis un statut "Employé en développement logiciel" qui aura pour parent "Stagiaire en développement logiciel", et tous les postes dans l'ordre ascendant. Ajouter toute colonne que vous jugerez utile. (ok)
 - Créer la table des badges avec des badges par défaut, puis les associer aux employés. (ok)
+- Badges : Pas deux fois le même au même worker. (ok)
+- Paramétrage age légal (min-max), utiliser paramètres (ok)
 - Dossiers : La consultation concerne par défaut les dossiers actifs : Permettre de voir les dossiers validés, rejettés, ou tous les dossiers (ok)
 - Bloquer création de badges, édition seulement (ok)
 - Ajouter date prévue dans le formulaire d'association d'évènement (ok)
@@ -77,3 +79,37 @@ Done :
 : Conventions sur les etats en general
 	- Deleted 0
 	- Active 1
+
+
+								admin	HR.Director		Worker	Clocking Master		Boss			User	Events master	Archivist
+Create a user					yes		yes				no		no					no				no		no				no
+Enable / Disable a user			yes		yes				no		no					no				no		no				no
+Edit Settings					yes		yes				no		no					no				no		no				no
+Remove global Notifications		yes		yes				no		no					no				no		no				no
+Create a worker					no		yes				no		no					yes				no		no				no
+Attribute worker statuts		no		yes				no		no					yes				no		no				no
+Edit a worker					no		yes				no		no					yes				no		no				no
+Print workers summary			no		yes				no		no					yes				no		no				yes
+See my folders list				no		yes				yes		no					yes				yes		no				no
+See all new folders				no		yes				no		no					yes				no		no				no
+Create a folder					no		yes				yes		no					yes				yes		yes				yes
+Edit my folder					no		yes				yes		no					yes				yes		yes				yes
+Create a document				no		yes				no		no					no				no		no				yes
+Edit a document					no		yes				no		no					no				no		no				yes
+Consult a folder				no		yes				yes		no					yes				yes		yes				yes
+Set my folder documents			no		yes				yes		no					yes				yes		yes				yes
+Set all folder documents		no		yes				no		no					no				no		no				yes
+Send a folder					no		yes				yes		no					yes				yes		no				no
+Reject a folder					no		yes				no		no					yes				no		no				no
+Validate a folder				no		yes				no		no					yes				no		no				no
+Print my folder					no		yes				yes		no					yes				yes		no				yes
+Print all folders				no		yes				no		no					yes				no		no				yes
+Create a station				no		yes				no		no					yes				no		no				no
+Attribute a station				no		yes				no		no					yes				no		no				no
+Print stations summary			no		yes				no		no					yes				no		no				yes
+Attribute badges				no		yes				no		no					no				no		no				no
+Edit badges						no		yes				no		no					no				no		no				no
+Create, start events			no		yes				no		no					no				no		yes				no
+Attribute event					no		yes				no		no					no				no		yes				no
+Edit clockings					no		yes				no		yes					no				no		no				no
+Print clockings					no		yes				no		yes					no				no		no				yes

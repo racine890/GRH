@@ -65,10 +65,11 @@ Text12.id: 27
 27.y: 50
 
 Buttons.nb: 2
+
 Button1: Turn Back
 Button1.id: 2
-2.x: 250
-2.y: 400
+2.x: 20
+2.y: 250
 2.link: app/screens/main.ch
 
 Button2: Update
@@ -149,7 +150,7 @@ Input14.id: 17
 17.x: 350
 17.y: 230
 
-[@events]
+[events]
 Button-1: app/scripts/workdays/switch.gcs
-key: @[end]
-[/@events]
+Key: @[end]
+[/events]

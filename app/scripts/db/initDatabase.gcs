@@ -283,7 +283,9 @@ foreign key (worker_id) references grh_worker(id)
 [ir]
 insert into grh_right(name_right) values 
 ("Admin"),
-("Hr Management"),
+("Hr Director"),
+("Boss"),
+("Worker"),
 ("Invited User");
 [/ir]
 

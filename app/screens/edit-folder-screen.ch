@@ -1,6 +1,6 @@
-# Ce dossier est une copie du fichier folder-screen
 #
-
+# Edition de dossier
+#
 
 Background: app/res/bgform.png
 
@@ -65,20 +65,3 @@ Edit.id: 8
 Button-1: @[end]
 Key: @[end]
 [/events]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
