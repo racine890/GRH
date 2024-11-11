@@ -17,9 +17,9 @@ Text2.id: 1
 1.x: 110
 1.y: 350
 
-Text3: select the new badge
+Text3: select the new badge icon
 Text3.id: 5
-5.x: 260
+5.x: 290
 5.y: 4
 
 Buttons.nb: 3

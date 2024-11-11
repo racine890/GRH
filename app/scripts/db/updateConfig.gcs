@@ -13,4 +13,6 @@ Update grh_config set config_value = *form_ifu where config_name = "company_ifu"
 Update grh_config set config_value = *form_mail where config_name = "company_mail";
 Update grh_config set config_value = *form_nom where config_name = "company_name";
 Update grh_config set config_value = *form_tel where config_name = "company_phone";
+Update grh_config set config_value = *form_min_age where config_name = "age_min";
+Update grh_config set config_value = *form_max_age where config_name = "age_max";
 [/insert]

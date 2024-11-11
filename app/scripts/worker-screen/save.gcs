@@ -1,8 +1,5 @@
-
 GetInput 8
 SetVar *worker_name LASTRESULT
-print val --------------- Form workername Check 1 -----------------------
-print var *worker_name
 
 GetInput 9
 SetVar *lastname LASTRESULT
@@ -16,7 +13,6 @@ SetVar *address LASTRESULT
 GetInput 12
 SetVar *mail LASTRESULT
 
-
 if evaluate( {*worker_name} == ""  ) then
 	MessageBox Wait.. Please Enter workername
 	end
@@ -28,11 +24,11 @@ if evaluate( {*lastname} == "" ) then
 if evaluate( {*birthday} == "" ) then
 	MessageBox Wait.. Please Enter birthday
 	end
+
 # vérifier que la date saisie est une vraie date ( pas si elle est correcte )
 if evaluate(not dateCheck({*birthday})) then
 	MessageBox Error the date Entered is incorrect !
 	end
-print val -----------------Date----------------
 
 if evaluate( {*address} == "" ) then
 	MessageBox Wait.. Please Enter Password
@@ -41,20 +37,27 @@ if evaluate( {*address} == "" ) then
 if evaluate( {*mail} == "" ) then
 	MessageBox Wait.. Please Enter Password
 	end
+
 execute app/scripts/db/select-worker-mail.gcs
 
-print val -------------- WORKER CHECK ----------------
-print var LASTTUPLE
 SetVar *check-mail LASTTUPLE
 compare *check-mail None
+
 if 5 then
 	MessageBox Error This mail is already use
 	end
+
+evaluate int(get_today().split('-')[0]) - int({*birthday}.split(' ')[0].split('/')[-1])
+SetVar *age_gap LASTRESULT
+
+if evaluate({*age_gap} < int(getConfig("age_min", {*session_config})) or {*age_gap} > int(getConfig("age_max", {*session_config}))) then
+	MessageBox Error The birthdate does not match the company Standards. Please check the configuration.
+	end
+
 #convertir la date comme ceci :
 evaluate formatDate({*birthday})
 SetVar *birthday LASTRESULT
-print val ----------------------date after format
-print var *birthday
+
 #on pouvait egalement convertir la date comme ceci:
 #evaluate formatDate({*date_saisie}) =>*date_saisie
 

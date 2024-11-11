@@ -1,3 +1,2 @@
 print var LASTCLICKEDID
-switch LASTCLICKEDID
 end

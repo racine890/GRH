@@ -328,7 +328,9 @@ insert into grh_config(config_name, config_value) values
 	("sat_mor", "08:00"),
 	("sat_eve", "17:00"),
 	("sun_mor", "08:00"),
-	("sun_eve", "17:00");
+	("sun_eve", "17:00"),
+	("age_min", "18"),
+	("age_max", "50");
 [/ic]
 
 

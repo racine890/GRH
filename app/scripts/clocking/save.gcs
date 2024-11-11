@@ -1,14 +1,18 @@
-# Get All the data from the table
+# Deletes all the previous clockings of the current day
 execute app/scripts/db/disableTodayClockings.gcs
 
+# Gets all data from the table
 evaluate {*tableCanvas}.select_All()
 evaluate {*tableCanvas}.getSelectionValues()
 
+# Watch for merge_lists definition in userModule
 evaluate merge_lists({LASTRESULT})
 ForEach *row of LASTRESULT save
+
 MessageBox Done! Clockings have been updated for today !
 end
 
+# Will Get The worker id, arrival and depart just to run the insertTodayClockings.gcs script
 [@save]
 GetTableElement 0 of *row
 evaluate {LASTRESULT}.split('-')[0]

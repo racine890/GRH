@@ -1,8 +1,10 @@
+# Disable all the previous clockings for today
 evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
 execute query update
+
 commit
 close database
 end
