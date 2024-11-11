@@ -6,7 +6,6 @@ CreateText 1 LASTRESULT
 
 # Now get the clockings from the database
 execute app/scripts/db/getTodaysClocking.gcs
-print var LASTLIST
 
 # Initialise data dict
 evaluate dict()

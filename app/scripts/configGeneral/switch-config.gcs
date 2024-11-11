@@ -1,12 +1,17 @@
 # Launch a screen depending on LASTCLICKEDID
+print var LASTCLICKEDID
 switch LASTCLICKEDID
 
-if 14 then
+if 19 then
 	load app/screens/config-1.ch
 	end
 
-if 15 then
+if 20 then
 	load app/screens/configGeneral.ch
+	end
+
+if 21 then
+	load app/screens/workdays.ch
 	end
 
 end

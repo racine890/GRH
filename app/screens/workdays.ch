@@ -151,4 +151,5 @@ Input14.id: 17
 
 [@events]
 Button-1: app/scripts/workdays/switch.gcs
+key: @[end]
 [/@events]

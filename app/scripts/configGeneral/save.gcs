@@ -11,6 +11,12 @@ SetVar *form_tel LASTRESULT
 GetInput 6 LASTRESULT
 SetVar *form_mail LASTRESULT
 
+GetInput 16
+SetVar *form_min_age LASTRESULT
+
+GetInput 17
+SetVar *form_max_age LASTRESULT
+
 # And then, run it
 execute app/scripts/db/updateConfig.gcs
 MessageBox ok Configurations have been updated !

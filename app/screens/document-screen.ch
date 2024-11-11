@@ -1,3 +1,8 @@
+#
+#	DocumentScreen.ch
+#		Formulaire de document
+#
+
 Background: app/res/bgform.png
 Text.nb: 3
 

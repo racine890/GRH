@@ -5,7 +5,7 @@
 
 Background: app/res/bgcongig1.png
 
-Text.nb: 6
+Text.nb: 9
 Text1: User Management
 Text1.id: 0
 0.x: 70
@@ -36,7 +36,22 @@ Text6.id: 10
 10.x: 250
 10.y: 10
 
-Input.nb: 4
+Text7: Legal Age
+Text7.id: 15
+15.x: 250
+15.y: 230
+
+Text8: Retirement Age
+Text8.id: 13
+13.x: 250
+13.y: 280
+
+Text9: Work Planning
+Text9.id: 14
+14.x: 50
+14.y: 200
+
+Input.nb: 6
 Input.Background: #ADD2CA
 
 Input1.id: 5
@@ -54,6 +69,14 @@ Input3.id: 11
 Input4.id: 12
 12.x: 350
 12.y: 80
+
+Input5.id: 16
+16.x: 350
+16.y: 250
+
+Input6.id: 17
+17.x: 350
+17.y: 300
 
 Buttons.nb: 2
 Button.size: 30
@@ -77,4 +100,5 @@ OnDisplay: app/scripts/configGeneral/display.gcs
 
 [events]
 Button-1: app/scripts/configGeneral/switch-config.gcs
+Key: @[end]
 [/events]

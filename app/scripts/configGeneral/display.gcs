@@ -5,11 +5,20 @@ execute app/scripts/config-1/loadimag.gcs
 # Get the actual configs to fill the fields
 evaluate getConfig("company_name", {*session_config})
 SetInputText 11 LASTRESULT
+
 evaluate getConfig("company_ifu", {*session_config})
 SetInputText 12 LASTRESULT
+
 evaluate getConfig("company_phone", {*session_config})
 SetInputText 5 LASTRESULT
+
 evaluate getConfig("company_mail", {*session_config})
 SetInputText 6 LASTRESULT
+
+evaluate getConfig("age_min", {*session_config})
+SetInputText 16 LASTRESULT
+
+evaluate getConfig("age_max", {*session_config})
+SetInputText 17 LASTRESULT
 
 end

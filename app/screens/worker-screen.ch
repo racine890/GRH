@@ -47,7 +47,7 @@ Button2: Save
 Button2.id:7
 7.x: 300
 7.y: 380
-7.link:app/scripts/worker/data-worker.gcs
+7.link:app/scripts/worker-screen/save.gcs
 
 Button3: Attribute status
 Button3.id: 13
