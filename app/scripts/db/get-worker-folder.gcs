@@ -12,8 +12,7 @@ connect MySQL with $TMP
 GetTableElement 5 of *session_user
 SetVar *workerstation_id LASTRESULT
 
-compare *workerstation_id 0
-if 0 then
+if evaluate(hasRight('Hr Director', {*session_rights}) or hasRight('Boss', {*session_rights})) then
 	query select_all with upfile
 	close database
 	end

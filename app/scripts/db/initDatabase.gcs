@@ -260,7 +260,7 @@ create_date timestamp DEFAULT CURRENT_TIMESTAMP
 [/q17]
 
 [q18]
- create table if not exists  grh_config(
+ create table if not exists grh_config(
 id integer PRIMARY KEY AUTO_INCREMENT,
 config_name varchar(60),
 config_value text
@@ -268,7 +268,7 @@ config_value text
 [/q18]
 
 [q19]
- create table if not exists  grh_notification(
+ create table if not exists grh_notification(
 id integer PRIMARY KEY AUTO_INCREMENT,
 worker_id integer,
 message text,
@@ -283,7 +283,12 @@ foreign key (worker_id) references grh_worker(id)
 [ir]
 insert into grh_right(name_right) values 
 ("Admin"),
-("Hr Management"),
+("Hr Director"),
+("Boss"),
+("Worker"),
+("Clocking Master"),
+("Events Master"),
+("Archivist"),
 ("Invited User");
 [/ir]
 

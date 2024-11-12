@@ -2,12 +2,21 @@ evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
+query select_one with check
+compare LASTTUPLE 5
+if 0 then
+	end
+
 execute query insert
 execute query insert2
 
 commit
 close database
 end
+
+[check]
+select id from grh_worker_badge_assoc where id_worker = *worker_id and id_badge =  *badge_id and periods = *period and statut = 1;
+[/check]
 
 [insert]
 insert into grh_worker_badge_assoc(id_worker, id_badge,periods) values ( *worker_id, *badge_id, *period);

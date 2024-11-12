@@ -1,2 +1,13 @@
-print var LASTCLICKEDID
+switch LASTCLICKEDID
+if 31 then
+	load app/screens/configGeneral.ch
+	end
+
+if 30 then
+	load app/screens/config-1.ch
+	end
+
+if 32 then
+	load app/screens/workdays.ch
+	end
 end

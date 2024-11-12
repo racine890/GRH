@@ -36,6 +36,9 @@ unFormatDate = lambda dbDate : '/'.join(dbDate.split('-')[::-1]) if not ' ' in d
 # Récupère la date d'aujourd'hui
 get_today = lambda : datetime.today().strftime('%Y-%m-%d')
 
+# Checks if the required right exists in session_rights
+hasRight = lambda rightName, session_rights : rightName in (right[1] for right in session_rights)
+
 #getConfig = lambda configName, configList : [ config[1] for config in configList if config[0] == configName ][0]
 
 def getConfig(configName, configList):

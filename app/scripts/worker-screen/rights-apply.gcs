@@ -1,0 +1,9 @@
+if evaluate(not (hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+	ConfigButton 7 state="disabled"
+	ConfigButton 13 state="disabled"
+	ConfigButton 15 state="disabled"
+	if evaluate(not hasRight('Archivist', {*session_rights})) then
+		ConfigButton 16 state="disabled"
+if evaluate(not (hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}) or hasRight('Worker', {*session_rights}) or hasRight('Invited User', {*session_rights}) or hasRight('Archivist', {*session_rights}))) then
+	ConfigButton 14 state="disabled"
+end

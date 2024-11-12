@@ -8,14 +8,11 @@ if 1 then
 if 0 then 
 	evaluate self.connect.cursor.execute("insert into grh_user(user_name, passw, salt) values ( %s , %s , %s );", ({*form_username}, {*form_password}, {*passw_salt}))
 
+execute query insert
 commit
 close database
-<<<<<<< HEAD
 end
 
 [insert]
 insert into grh_user_right_assoc(id_right, id_user) values ( *form_right_id , (select max(id) from grh_user));
 [/insert]
-=======
-end
->>>>>>> d1ca70665dc14dd8f77f2e4eefac6f2d890eb234

@@ -5,6 +5,8 @@
 
 Background: app/res/bgform.png
 
+OnDisplay: app/scripts/worker-screen/rights-apply.gcs
+
 Text.nb: 5
 Text1: Enter name
 Text1.id: 0

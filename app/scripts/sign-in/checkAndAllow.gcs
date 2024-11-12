@@ -28,17 +28,14 @@ if 0 then
 	MessageBox Error this account does not exists
 	end
 
-GetTableElement 2 of  LASTTUPLE
+GetTableElement 2 of LASTTUPLE
 SetVar *passw-db LASTRESULT	
 
-GetTableElement 3 of  LASTTUPLE
+GetTableElement 3 of LASTTUPLE
 SetVar *check-salt LASTRESULT
 
 evaluate crypt_pass({*passw}, {*check-salt})
 SetVar *passw LASTRESULT
-
-print val ---------- Session user ---------------
-print var *session_user
 
 compare *passw *passw-db
 if 0 then
@@ -47,11 +44,18 @@ if 0 then
 	SetVar *arg_id LASTRESULT
 	execute app/scripts/db/get-badge-by-worker-id.gcs
 	SetVar *session_badges LASTLIST
+
 	execute app/scripts/db/get-notifications.gcs
 	SetVar *session_notifications LASTLIST
 	turn *session_notifications into list
 	execute app/scripts/db/getConfig.gcs
 	SetVar *session_config LASTLIST
+
+	GetTableElement 0 of *session_user
+	SetVar *arg_id LASTRESULT
+	execute app/scripts/db/getUserRights.gcs
+	SetVar *session_rights LASTLIST
+
 	load app/screens/main.ch
 	end
 
