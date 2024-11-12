@@ -1,10 +1,9 @@
-print var LASTCLICKEDID
-#1=user,11=configuration,12=worker,13=post,14=badge,15=events,16=clocking,17=status
-#print val Hello world!
-#print var
-#print file
-#print section 
-#PrintVars
+# 1=user,11=configuration,12=worker,13=post,14=badge,15=events,16=clocking,17=status
+# print val Hello world!
+# print var
+# print file
+# print section 
+# PrintVars
 switch LASTCLICKEDID
 
 if 10 then
@@ -12,31 +11,51 @@ if 10 then
 	end
 
 if 11 then
-	print val texte
+	if evaluate(not (hasRight('Admin', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+		MessageBox Denied You have not the required privilleges to access this menu.
+		end
 	load app/screens/config-1.ch
 	end
 
 if 12 then
+	if evaluate(hasRight('Admin', {*session_rights})) then
+		MessageBox Denied You have not the required privilleges to access this menu.
+		end
 	load app/screens/worker-screen.ch
 	end
 
 if 13 then
+	if evaluate(not (hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+		MessageBox Denied You have not the required privilleges to access this menu.
+		end
 	load app/screens/post.ch
 	end
 
 if 14 then
+	if evaluate(not hasRight('Hr Director', {*session_rights})) then
+		MessageBox Denied You have not the required privilleges to access this menu.
+		end
 	load app/screens/badge-screen.ch
 	end
 
 if 16 then
+	if evaluate(not (hasRight('Clocking Master', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+		MessageBox Denied You have not the required privilleges to access this menu.
+		end
 	load app/screens/clocking.ch
 	end
 
 if 15 then
+	if evaluate(not (hasRight('Events Master', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+		MessageBox Denied You have not the required privilleges to access this menu.
+		end
 	load app/screens/event.ch
 	end
 
 if 17 then
+	if evaluate(not (hasRight('Archivist', {*session_rights}) or hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+		MessageBox Denied You have not the required privilleges to access this menu.
+		end
 	load app/screens/states.ch
 	end
 

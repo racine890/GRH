@@ -15,7 +15,6 @@ Conventions :
  Todo :
 	- Optimiser
 	- Etats html / pdf
-
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
 	- Gérer l'authentification ( Sécurité ) (ok)
@@ -24,7 +23,6 @@ Conventions :
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
 	- Utiliser paramètres config sur les états
-	- Gérer les erreurs de Button-1 sur les configurations
 
 Done :
 - Créer la table des Employés. (ok)
@@ -35,6 +33,7 @@ Done :
 - Configuration Heure de début - Heure de fin par jour de la semaine. (ok)
 - Paramétrage entreprise (ok)
 - Disable a user account (ok)
+- Gérer les erreurs de Button-1 sur les configurations (ok)
 - Edit / Delete de Documents (ok)
 - Notifications (ok)
 - Afficher la page d'accueil, avec Sign-In et Read the docs (ok)

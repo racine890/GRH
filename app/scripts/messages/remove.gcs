@@ -1,18 +1,24 @@
+# Removes a message
 evaluate {*session_notifications}.pop({*current})
 SetVar *deleted LASTRESULT
 
+# Checks of the shared column.If true, it's a shared message. Not everyone can delete it.
 GetTableElement 3 of *deleted
 compare LASTRESULT 1
 if 0 then
 	# Check authorization or end
-	MessageBox Stop Notification has been discarded, but you cannot permanently delete it because you are not authorized to!
-	end
+	if evaluate(not (hasRight('Admin', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+		MessageBox Stop Notification has been discarded, but you cannot permanently delete it because you are not authorized to!
+		end
 
+# Get The id of deleted message
 GetTableElement 0 of *deleted
 SetVar *arg_id LASTRESULT
 
+# And disable it
 execute app/scripts/db/delete-notification.gcs
 
+# And just reload the popup
 execute app/scripts/messages/init.gcs
 execute app/scripts/messages/display.gcs
 end

@@ -26,4 +26,15 @@ create ListBox with LASTLIST at 200-400
 
 # Make the reject button look dangerous
 ConfigButton 5 bg='#FF100A', fg='white'
+
+if evaluate(hasRight('Admin', {*session_rights}) or hasRight('Clocking Master', {*session_rights})) then
+	ConfigButton 7 state="disabled"
+	ConfigButton 3 state="disabled"
+	ConfigButton 4 state="disabled"
+	ConfigButton 8 state="disabled"
+	ConfigButton 9 state="disabled"
+
+if evaluate(not(hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+	ConfigButton 5 state="disabled"
+	ConfigButton 6 state="disabled"
 end

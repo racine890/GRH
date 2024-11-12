@@ -1,0 +1,18 @@
+check var *arg_id
+if 0 then
+	print val *arg_id not set
+	end
+
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+# selection des droits dans la base de donnee
+query select_all with getUser
+
+close database
+end
+
+[getUser]
+select grh_right.id, grh_right.name_right, read_access, write_access, remove_access from grh_right, grh_user_right_assoc where grh_user_right_assoc.id_right = grh_right.id and grh_user_right_assoc.id_user = *arg_id and grh_user_right_assoc.statut = 1;
+[/getUser]
