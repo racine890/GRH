@@ -3,6 +3,8 @@
 #		Ecran formulaire de création d'un badge
 #
 
+OnDisplay: app/scripts/badge-screen/translate.gcs
+
 Background: app/res/bgform.png
 
 Buttons.nb: 3

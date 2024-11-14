@@ -19,7 +19,6 @@ Conventions :
 	- Permettre d'aggrandir (Evaluer faisabilité)
 	- Revoir les libellés (avec Leslie)
 	- Permettre à un employé de voir les clockings hors état, peut-être dans son compte.
-	- Evaluer faisabilité de traduction automatique
 
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
@@ -33,6 +32,7 @@ Done :
 		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord (ok)
 - Créer la table des Employés. (ok)
 - Ajouter les postes et ancienneté de l'employé dans l'état des employés (ok)
+- Evaluer faisabilité de traduction automatique (ok)
 - Pointage des absences (ok)
 - Etat de pointage : Afficher les heures de retard et les heures supplémentaires. (ok)
 - Créer la table dossier. (ok)

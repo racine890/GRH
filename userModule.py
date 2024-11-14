@@ -84,6 +84,11 @@ def migrate(currentVersion, dbObject):
 
 	return isPerfect
 
+def getWidgetById(widgets, _id):
+	for w in widgets:
+		if w[0] == _id:
+			return w[1]
+
 def getConfig(configName, configList):
 	for config in configList:
 		if config[1] == configName:
