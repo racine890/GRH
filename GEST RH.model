@@ -15,17 +15,25 @@ Conventions :
  Todo :
 	- Optimiser
 	- Etats html / pdf
+	- Amélioration graphique (Voir Leslie)
+	- Permettre d'aggrandir (Evaluer faisabilité)
+	- Revoir les libellés (avec Leslie)
+	- Permettre à un employé de voir les clockings hors état, peut-être dans son compte.
+	- Evaluer faisabilité de traduction automatique
+	- Ajouter version de base de données pour update en production
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
-	- Gérer l'authentification ( Sécurité ) (ok)
-		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin" (ok)
-		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
-		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord
+
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
 	- Utiliser paramètres config sur les états
 
 Done :
+	- Gérer l'authentification ( Sécurité ) (ok)
+		- Créer un utilisateur par défaut, "admin" avec le mot de passe "admin" (ok)
+		- Le mot de passe doit etre hashé avec bcrypt ( Il est possible de le faire avec Hashit ) (ok)
+		- Accorder le droit de voir ,de créer, et de supprimer des utilisateurs à l'utilisateur de base. - finir l'appli d'abord (ok)
 - Créer la table des Employés. (ok)
+- Ajouter les postes et ancienneté de l'employé dans l'état des employés (ok)
 - Pointage des absences (ok)
 - Etat de pointage : Afficher les heures de retard et les heures supplémentaires. (ok)
 - Créer la table dossier. (ok)

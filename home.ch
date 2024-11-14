@@ -1,9 +1,10 @@
 # HRM Home
-debug: yes
 use tk
 Width: 700
 Size: 500
 Title: HR Management Tool - By GC
+
+Onload: app/scripts/db/check-and-migrate.gcs
 
 Background: app/res/bg.png
 

@@ -39,7 +39,50 @@ get_today = lambda : datetime.today().strftime('%Y-%m-%d')
 # Checks if the required right exists in session_rights
 hasRight = lambda rightName, session_rights : rightName in (right[1] for right in session_rights)
 
-#getConfig = lambda configName, configList : [ config[1] for config in configList if config[0] == configName ][0]
+def isHigherVersion(current, other):
+	cn = current.split(".")
+	on = other.split(".")
+	for i in range(4):
+		if on[i] == cn[i]:
+			pass
+		else:
+			return int(on[i]) > int(cn[i])
+	return False
+
+# Get the migration files
+def migrate(currentVersion, dbObject):
+	isPerfect = True
+	availables = os.listdir("./migrations")
+	if len(availables) == 0:
+		return isPerfect
+
+	logs = "Started migrations ...\n\n"
+	
+	for migration in availables:
+		migration_code = migration[:migration.rindex('.')]
+		if isHigherVersion(currentVersion, migration_code):
+			logs+="\nPerforming migration : "+migration_code+"\n"
+
+			mf = open("./migrations/"+migration, 'r')
+			queries = mf.readlines()
+			mf.close
+
+			for query in queries:
+				if query.strip() != '' and not query.strip().startswith('--'):
+					try:
+						dbObject.cursor.execute(query)
+						logs+="\tSuccessfully executed : "+query+"\n"
+						dbObject.cursor.execute("commit;")
+					except Exception as e:
+						logs+="\tAn error occured : "+str(e)+"\n"
+						isPerfect = False
+			dbObject.cursor.execute("update grh_config set config_value = %s where config_name = 'db_version'", (migration_code,))
+	
+	logs_file = open("migrations.log.txt", "w")
+	logs_file.write(logs)
+	logs_file.close()
+
+	return isPerfect
 
 def getConfig(configName, configList):
 	for config in configList:
@@ -60,16 +103,13 @@ def merge_lists(listOfLists: list) -> list:
 
 	return newList
 
-
 # Le dossier d'installation du logiciel en cas de déploiement binaire
 if platform.system() =='Linux':
 	basepath= os.path.expanduser("~")+"/.gc_programms/tk/grh/"
 else:
 	basepath="C:/GC_PROGRAMMS/tk/grh/"
 
-
 prepareData = lambda List : [{"title": '', "icon": e[2] , "description": e[1][:7], "action": '@[SetVar *selected '+ str(e[0])+','+str(e[2]) +']'} for e in List ]
-
 
 def weekdayFromDate(dateStr):
 	dateStr = formatDate(dateStr) if not ' ' in dateStr else formatDate(dateStr.split(' ')[0])
@@ -151,7 +191,6 @@ def getDelay(rows, configs):
 		result.append(newRow)
 	
 	return result
-
 
 def dates_diff(date1_str, date2_str):
 	tpl1 = date1_str.split(' ')[1][:5].split(':')

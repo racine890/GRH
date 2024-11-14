@@ -316,6 +316,7 @@ insert into grh_badge(description,icon) values
 
 [ic]
 insert into grh_config(config_name, config_value) values 
+	("db_version", "0.0.0.0"),
 	("company_name", "G. Center Burkina"),
 	("company_ifu", "-"),
 	("company_phone", "+226 74 91 21 62"),

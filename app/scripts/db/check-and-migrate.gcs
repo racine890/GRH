@@ -1,0 +1,25 @@
+try @check else @fail
+end
+
+[@check]
+evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+query select_one with version
+compare LASTTUPLE None
+if 0 then
+	end
+
+GetTableElement 0 of LASTTUPLE
+SetVar *last_version LASTRESULT
+
+evaluate migrate({*last_version}, self.connect)
+
+close database
+end
+[/@check]
+
+[version]
+	Select config_value from grh_config where config_name="db_version" limit 1
+[/version]
