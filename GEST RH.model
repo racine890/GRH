@@ -20,10 +20,9 @@ Conventions :
 	- Revoir les libellés (avec Leslie)
 	- Permettre à un employé de voir les clockings hors état, peut-être dans son compte.
 	- Evaluer faisabilité de traduction automatique
-	- Ajouter version de base de données pour update en production
+
 	- Ecrire la documentation - Publier avant
 	- Publier - Finir la gestion des droits avant
-
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
 	- Utiliser paramètres config sur les états
 
@@ -37,6 +36,7 @@ Done :
 - Pointage des absences (ok)
 - Etat de pointage : Afficher les heures de retard et les heures supplémentaires. (ok)
 - Créer la table dossier. (ok)
+- Ajouter version de base de données pour update en production (ok)
 - Retirer badges (ok)
 - Configuration Heure de début - Heure de fin par jour de la semaine. (ok)
 - Paramétrage entreprise (ok)

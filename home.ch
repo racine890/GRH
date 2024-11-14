@@ -5,6 +5,7 @@ Size: 500
 Title: HR Management Tool - By GC
 
 Onload: app/scripts/db/check-and-migrate.gcs
+OnDisplay: app/scripts/home/translate.gcs
 
 Background: app/res/bg.png
 
