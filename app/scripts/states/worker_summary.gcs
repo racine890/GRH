@@ -1,8 +1,7 @@
 SetVar *userAdress Ouagadougou
 
 execute app/scripts/db/get-worker-group.gcs
-print var LASTLIST
-evaluate [(str(el[1]), str(el[2]), unFormatDate(str(el[3])), str(el[5]), str(el[6]), unFormatDate(str(el[8])), str(el[10])) for el in {LASTLIST}]
+evaluate [(str(el[0]), str(el[1]), unFormatDate(str(el[2])), str(el[3]), str(el[4]), unFormatDate(str(el[5])), str(el[6]), str(el[7])) for el in {LASTLIST}]
 SetVar *mydbdata LASTRESULT
 
 count LASTLIST
@@ -27,9 +26,9 @@ MAIL: gcenterburkina@gmail.com
 ADRESS: *userAdress
 REFERENCE: ---
 TITLE: WORKERS SUMMARY
-HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE, STATUS
+HEAD: FIRSTNAME, LASTNAME, BIRTHDATE, ADDRESS, MAIL, CREATION DATE, STATUS, STATION
 ROWS: *mydbdata
-FOOTER: ("TOTAL",6,'*total'),("PRINT DATE",6,'*today')
+FOOTER: ("TOTAL",7,'*total'),("PRINT DATE",7,'*today')
 LOGO: app/res/worker.png
 COMPANY: G. CENTER
 [/MySTATE]

@@ -10,8 +10,14 @@ end
 
 [worker]
 	SELECT 
-    grh_worker.*, 
-    grh_status.*
+    grh_worker.firstname, 
+    grh_worker.lastname, 
+    grh_worker.date_birth, 
+    grh_worker.address, 
+    grh_worker.mail, 
+    grh_worker.create_date, 
+    grh_status.type,
+	grh_workerstation.label
 FROM 
     grh_worker
 LEFT JOIN 
@@ -20,6 +26,12 @@ LEFT JOIN
 LEFT JOIN 
     grh_status 
     ON grh_status.id = grh_worker_status_assoc.id_status
+LEFT JOIN 
+    grh_worker_workerstation_assoc 
+    ON grh_worker.id = grh_worker_workerstation_assoc.id_worker
+LEFT JOIN 
+    grh_workerstation 
+    ON grh_workerstation.id = grh_worker_workerstation_assoc.id_workerstation
 WHERE 
     grh_worker.statut = 1;
 [/worker]
