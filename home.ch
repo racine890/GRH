@@ -6,7 +6,7 @@ Title: HR Management Tool - By GC
 
 Onload: app/scripts/db/check-and-migrate.gcs
 OnDisplay: app/scripts/home/translate.gcs
-
+UnFixed: True
 Background: app/res/bg.png
 
 Buttons.nb: 2

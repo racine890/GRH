@@ -1,3 +1,4 @@
+print var LASTCLICKEDID
 switch LASTCLICKEDID
 if 15 then
 	load app/screens/configGeneral.ch

@@ -7,3 +7,12 @@ badge_3 Editer
 clocking_1 Pointages
 clocking_2 Sauvegarder
 clocking_3 Imprimer liste
+config_1 Employe
+config_2 Desactiver
+config_3 Activer
+config_4 Planning
+config_5 Reglages generaux
+config_6 Droit
+config_7 Mot de passe
+config_8 Pseudonyme
+config_9 Gestion utilisateurs
