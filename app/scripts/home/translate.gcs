@@ -30,4 +30,6 @@ evaluate {*translateTitle}(self, "home_1")
 evaluate {*translateButton}(self, 0, "home_2")
 evaluate {*translateButton}(self, 1, "home_3")
 
+execute app/scripts/home/fillSpace.gcs
+
 end

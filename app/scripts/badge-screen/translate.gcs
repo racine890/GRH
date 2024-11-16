@@ -1,4 +1,6 @@
 evaluate {*translateButton}(self, 2, "badge_1")
 evaluate {*translateButton}(self, 4, "badge_2")
 evaluate {*translateButton}(self, 6, "badge_3")
+
+execute app/scripts/home/fillSpace.gcs
 end

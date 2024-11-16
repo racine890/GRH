@@ -1,0 +1,22 @@
+create frame with background="white", width=700, height=300
+SetVar *frame-left LASTRESULT
+place *frame-left at 0-500
+
+evaluate Label({*frame-left}, text="GRH NoteBook", bg="white", font=("Arial", 30))
+pack LASTRESULT side="top"
+
+evaluate Text({*frame-left}, bg='#55968F', fg='#FFFFFF', width="45", height="14", wrap="word", font=("Arial", 20))
+pack LASTRESULT side="top", expand=True, fill="x", padx=(10,10),pady=(0, 10)
+
+create frame with background="#55968F", width=1210, height=990
+SetVar *frame-right LASTRESULT
+place *frame-right at 700-0
+
+SetVar *img evaluate(PhotoImage(file="app/res/quote.png"))
+evaluate Label({*frame-right}, image={*img})
+place LASTRESULT at 100-10
+
+evaluate Label({*frame-right}, text="Made By GC Community.", bg="#55968F", fg="white", font=("Arial", 20))
+place LASTRESULT at 600-600
+
+end

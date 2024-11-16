@@ -1,0 +1,39 @@
+SetVar *userAdress Ouagadougou
+
+execute app/scripts/db/getAttributions.gcs
+
+evaluate [(str(el[2]), str(el[3]), str(el[4]), '<img src="'+str(el[1]))+'" width="50px" height="50px">' for el in {LASTLIST}]
+SetVar *mydbdata LASTRESULT
+
+count LASTLIST
+SetVar *total LASTRESULT
+
+evaluate unFormatDate(get_today())
+SetVar *today LASTRESULT
+
+PrintState MySTATE as state.html use app/res/default.dat
+
+if evaluate(platform.system() != "Linux") then
+	evaluate system('state.html')
+	end
+
+evaluate system('xdg-open state.html')
+end
+
+[@write]
+delay
+overtime
+[/@write]
+
+[MySTATE]
+TEL: 56 52 15 32
+MAIL: gcenterburkina@gmail.com
+ADRESS: *userAdress
+REFERENCE: ---
+TITLE: ATTRIBUTIONS SUMMARY
+HEAD: FIRSTNAME, LASTNAME, PERIOD, BADGES
+ROWS: *mydbdata
+FOOTER: ("TOTAL",7,'*total'),("PRINT DATE",7,'*today')
+LOGO: app/res/worker.png
+COMPANY: G. CENTER
+[/MySTATE]

@@ -32,6 +32,8 @@ evaluate {*translateButton}(self, 2, "badge_1")
 evaluate {*translateButton}(self, 3, "clocking_2")
 evaluate {*translateButton}(self, 4, "clocking_3")
 
+execute app/scripts/home/fillSpace.gcs
+
 end
 
 

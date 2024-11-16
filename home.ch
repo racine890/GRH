@@ -29,6 +29,7 @@ Button.Foreground: #FFFFFF
 
 [events]
 Control-q: @[exit]
+Control-r: @[load home.ch]
 [/events]
 
 # END

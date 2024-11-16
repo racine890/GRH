@@ -1,5 +1,7 @@
 ConfigInput 3 show='*'
 LoadPic app/res/login.png at 380-100
+
+execute app/scripts/home/fillSpace.gcs
 end
 
 # role :

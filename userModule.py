@@ -7,6 +7,8 @@ import shutil
 import platform
 import os
 from datetime import datetime
+from tkinter import PhotoImage
+
 try:
 	from sys import path
 	# On ajoute le dossier module au path pour pouvoir importer ce qui s'y trouve comme si c'était à la racine
