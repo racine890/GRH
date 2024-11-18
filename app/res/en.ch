@@ -16,3 +16,20 @@ config_6 Choose the right
 config_7 Password
 config_8 Username
 config_9 User Management
+configgeneral_1 Phone
+configgeneral_2 Email
+configgeneral_3 IFU
+configgeneral_4 Name
+configgeneral_5 Legal Age
+configgeneral_6 Retirement Age
+configscreen_1 Database name
+configscreen_2 User
+configscreen_3 Password
+configscreen_4 Ip adress
+consult_folder_1 Attached Documents
+consult_folder_2 Set Documents
+consult_folder_3 Transfer
+consult_folder_4 Reject
+consult_folder_5 Validate
+consult_folder_6 Add
+consult_folder_7 Print

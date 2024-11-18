@@ -5,6 +5,9 @@ if 1 then
 
 GetInput 2
 SetVar *data_base_name LASTRESULT
+if evaluate({LASTRESULT} == "") then
+	MessageBox Error Please Set the database db_name
+	end
 
 GetInput 3
 SetVar *user_base_name LASTRESULT

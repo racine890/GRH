@@ -45,4 +45,6 @@ Button3.id: 4
 [events]
 Key: @[end]
 Button-1: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]

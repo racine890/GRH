@@ -1,4 +1,3 @@
-print var SELECTED
 if evaluate( {SELECTED} == ""  ) then
 	MessageBox Wait.. Please select the Post
 	end
@@ -10,6 +9,3 @@ SetVar *id_fold *wfds.folderToDisplay.id
 execute app/scripts/db/update-postWorkerstation.gcs
 MessageBox done.. Operation success
 end
-
-
-

@@ -101,4 +101,6 @@ OnDisplay: app/scripts/configGeneral/display.gcs
 [events]
 Button-1: app/scripts/configGeneral/switch-config.gcs
 Key: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]

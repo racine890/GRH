@@ -35,5 +35,7 @@ OnDisplay: app/scripts/post-workerstation/listBoxPost.gcs
 
 [events]
 Button-1: @[end]
+BackSpace: @[end]
+Return: @[end]
 Key: @[end]
 [/events]

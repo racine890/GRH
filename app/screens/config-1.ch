@@ -5,7 +5,7 @@
 
 Background: app/res/bgcongig1.png
 
-Text.nb: 6
+Text.nb: 7
 Text1: User Management
 Text1.id: 0
 0.x: 70
@@ -77,13 +77,16 @@ Button4.id: 12
 12.x: 380
 12.y: 0
 
-Text5: Choose a woker
-Text5.id: 10
+Text7: Choose a woker
+Text7.id: 10
 10.x: 250
 10.y: 300
 
 OnDisplay: app/scripts/config-1/config-init.gcs
 
 [events]
+Key: @[end]
 Button-1: app/scripts/config-1/switch-config1.gcs
+BackSpace: @[end]
+Return: @[end]
 [/events]

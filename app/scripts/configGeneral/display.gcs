@@ -21,4 +21,18 @@ SetInputText 16 LASTRESULT
 evaluate getConfig("age_max", {*session_config})
 SetInputText 17 LASTRESULT
 
+evaluate {*translateText}(self, 10, "config_9")
+evaluate {*translateText}(self, 11, "config_5")
+evaluate {*translateText}(self, 14, "configgeneral_1")
+evaluate {*translateText}(self, 12, "configgeneral_2")
+evaluate {*translateText}(self, 13, "configgeneral_3")
+evaluate {*translateText}(self, 15, "configgeneral_4")
+evaluate {*translateText}(self, 16, "configgeneral_5")
+evaluate {*translateText}(self, 17, "configgeneral_6")
+evaluate {*translateText}(self, 18, "config_4")
+evaluate {*translateButton}(self, 8, "badge_1")
+evaluate {*translateButton}(self, 9, "clocking_2")
+
+execute app/scripts/home/fillSpace.gcs
+
 end

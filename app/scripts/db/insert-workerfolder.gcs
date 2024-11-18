@@ -5,6 +5,9 @@ connect MySQL with $TMP
 GetTableElement 5 of *session_user
 SetVar *workerstation_id LASTRESULT
 
+GetTableElement 4 of *session_user
+SetVar *creator LASTRESULT
+
 compare *workerstation_id 0
 if 0 then
 	execute query insertLess
@@ -18,9 +21,9 @@ close database
 end
 
 [insert]
-insert into grh_folder(id_worker, label, description,workerstation_id) values ( *idworker_selected , *label , *description, *workerstation_id );
+insert into grh_folder(id_worker, label, description,workerstation_id, creator) values ( *idworker_selected , *label , *description, *workerstation_id , *creator );
 [/insert]
 
 [insertLess]
-insert into grh_folder(id_worker, label, description) values ( *idworker_selected , *label , *description );
+insert into grh_folder(id_worker, label, description, creator) values ( *idworker_selected , *label , *description , *creator );
 [/insertLess]

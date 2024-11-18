@@ -1,5 +1,6 @@
 # self.page.boxes.clear() permet d'effacer les listBox
 evaluate  self.page.boxes.clear()
+
 execute app/scripts/db/allpost.gcs
 SetVar *all_post LASTLIST
 create ListBox  with *all_post at 180-60

@@ -1,14 +1,13 @@
-print var LASTCLICKEDID
 switch LASTCLICKEDID
-if 15 then
+if 16 then
 	load app/screens/configGeneral.ch
 	end
 
-if 14 then
+if 15 then
 	load app/screens/config-1.ch
 	end
 
-if 16 then
+if 17 then
 	load app/screens/workdays.ch
 	end
 

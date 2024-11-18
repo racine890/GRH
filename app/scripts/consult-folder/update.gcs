@@ -37,4 +37,16 @@ if evaluate(hasRight('Admin', {*session_rights}) or hasRight('Clocking Master', 
 if evaluate(not(hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
 	ConfigButton 5 state="disabled"
 	ConfigButton 6 state="disabled"
+
+evaluate {*translateText}(self, 14, "consult_folder_1")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 3, "consult_folder_2")
+evaluate {*translateButton}(self, 4, "consult_folder_3")
+evaluate {*translateButton}(self, 5, "consult_folder_4")
+evaluate {*translateButton}(self, 6, "consult_folder_5")
+evaluate {*translateButton}(self, 7, "badge_3")
+evaluate {*translateButton}(self, 8, "consult_folder_6")
+evaluate {*translateButton}(self, 9, "consult_folder_7")
+
+execute app/scripts/home/fillSpace.gcs
 end
