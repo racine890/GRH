@@ -33,3 +33,7 @@ consult_folder_4 Reject
 consult_folder_5 Validate
 consult_folder_6 Add
 consult_folder_7 Print
+document_screen_1 Enter type of document
+document_screen_2 Select the path
+document_screen_3 Document path
+document_screen_4 Select owner

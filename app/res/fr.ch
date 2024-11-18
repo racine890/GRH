@@ -33,3 +33,7 @@ consult_folder_4 Rejeter
 consult_folder_5 Valider
 consult_folder_6 Nouveau
 consult_folder_7 Imprimer
+document_screen_1 Type de document
+document_screen_2 Charger
+document_screen_3 Fichier attache
+document_screen_4 Propriétaire

@@ -2,4 +2,15 @@ execute app/scripts/db/get-worker.gcs
 SetVar *all_workers LASTLIST
 create ListBox with *all_workers at 200-180
 SetVar *openfile evaluate("")
+
+evaluate {*translateText}(self, 7, "document_screen_1")
+evaluate {*translateText}(self, 8, "document_screen_3")
+evaluate {*translateText}(self, 9, "document_screen_4")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 7, "badge_3")
+evaluate {*translateButton}(self, 3, "clocking_2")
+evaluate {*translateButton}(self, 5, "document_screen_2")
+
+execute app/scripts/home/fillSpace.gcs
+
 end
