@@ -13,9 +13,9 @@ GetTableElement 1 of SELECTED
 GetTableElement 0 of LASTRESULT 
 SetVar *selected_event_id LASTRESULT
 
-GetTableElement 1 of SELECTED
-GetTableElement 3 of LASTRESULT 
+ 
 # ecrire la date sous format sql
+GetInput 10
 evaluate formatDate({LASTRESULT})
 SetVar *dateStartEvent LASTRESULT
 
