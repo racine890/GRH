@@ -1,5 +1,5 @@
 
-evaluate str( ( ch_data("db_user","Config.ch"), ch_data("db_password","Config.ch"),ch_data("db_host","Config.ch"), ch_data("db_name","Config.ch")) )
+evaluate str( ( ch_data("db_user",basepath+"Config.ch"), ch_data("db_password",basepath+"Config.ch"),ch_data("db_host",basepath+"Config.ch"), ch_data("db_name",basepath+"Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
 query select_all with badge

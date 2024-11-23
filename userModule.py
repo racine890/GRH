@@ -81,7 +81,7 @@ def migrate(currentVersion, dbObject):
 						isPerfect = False
 			dbObject.cursor.execute("update grh_config set config_value = %s where config_name = 'db_version'", (migration_code,))
 	
-	logs_file = open("migrations.log.txt", "w")
+	logs_file = open(basepath+"migrations.log.txt", "w")
 	logs_file.write(logs)
 	logs_file.close()
 
@@ -116,6 +116,9 @@ if platform.system() =='Linux':
 	basepath= os.path.expanduser("~")+"/.gc_programms/tk/grh/"
 else:
 	basepath="C:/GC_PROGRAMMS/tk/grh/"
+
+if not os.path.exists(basepath):
+    os.makedirs(basepath+'data/')
 
 prepareData = lambda List : [{"title": '', "icon": e[2] , "description": e[1][:7], "action": '@[SetVar *selected '+ str(e[0])+','+str(e[2]) +']'} for e in List ]
 
@@ -223,7 +226,7 @@ def dates_diff(date1_str, date2_str):
 
 def updateText(self, evt=None):
 	self.vars.setvar('*notebook_contents', self.vars.getvar('*notebook').get('1.0', 'end'))
-	with open('notebook.txt', 'w') as f:
+	with open(basepath+'notebook.txt', 'w') as f:
 		f.write(self.vars.getvar('*notebook_contents'))
 
 def addHours(d, o, sd, so):

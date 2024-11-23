@@ -1,7 +1,7 @@
 # Defined once for all
 
 # The app langage
-evaluate chd('langage', 'Config.ch', alt='fr').strip()
+evaluate chd('langage', basepath+'Config.ch', alt='fr').strip()
 SetVar *app_langage LASTRESULT
 
 # A callback for button translation

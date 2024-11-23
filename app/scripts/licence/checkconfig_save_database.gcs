@@ -29,14 +29,14 @@ if 0 then
 	end
 
 # creation du fichier config.ch avec la fonction ch_create (seulement pour les ch)
-evaluate ch_create( "Config.ch")
+evaluate ch_create( basepath+"Config.ch")
 
 # enregistrer toutes les informations de la base de donnee cree
-evaluate ch_update("db_user: "+{*user_base_name},"Config.ch")
-evaluate ch_update("db_password: "+{*password},"Config.ch")
-evaluate ch_update("db_host: "+{*adress},"Config.ch")
-evaluate ch_update("db_name: "+{*data_base_name},"Config.ch")
-evaluate ch_update("langage: fr","Config.ch")
+evaluate ch_update("db_user: "+{*user_base_name},basepath+"Config.ch")
+evaluate ch_update("db_password: "+{*password},basepath+"Config.ch")
+evaluate ch_update("db_host: "+{*adress},basepath+"Config.ch")
+evaluate ch_update("db_name: "+{*data_base_name},basepath+"Config.ch")
+evaluate ch_update("langage: fr",basepath+"Config.ch")
 
 # execute le script initDatabase.gcs
 execute app/scripts/db/initDatabase.gcs
