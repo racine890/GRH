@@ -25,4 +25,13 @@ place *frame at 180-50
 # Syntax : create kanban with [list] show [?] columns {on [frame]}
 # if the on part is not specified, will create the kanban on the window sheet.
 create kanban with *data show 3 columns on *frame
+
+evaluate {*translateText}(self, 5, "editbadge_2")
+evaluate {*translateText}(self, 6, "editbadge_3")
+evaluate {*translateText}(self, 7, "editbadge_1")
+evaluate {*translateButton}(self, 3, "editbadge_4")
+evaluate {*translateButton}(self, 4, "editbadge_5")
+evaluate {*translateButton}(self, 2, "badge_1")
+
+execute app/scripts/home/fillSpace.gcs
 end

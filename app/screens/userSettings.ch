@@ -83,4 +83,7 @@ Button3.id: 1
 #on executera le script contenu dans le fichier switch-config1.gcs
 [events]
 Button-1: @[end]
+Key: @[end]
+BackSpace: app/screens/main.ch
+Return: @[end]
 [/events]

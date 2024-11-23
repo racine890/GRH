@@ -1,0 +1,35 @@
+# Defined once for all
+
+# The app langage
+evaluate chd('langage', 'Config.ch', alt='fr').strip()
+SetVar *app_langage LASTRESULT
+
+# A callback for button translation
+evaluate lambda self, id, code : getWidgetById(self.page.buttons, id).config(text = ch_data(code, "app/res/"+self.vars.getvar('*app_langage')+".ch", alt=code))
+SetVar *translateButton LASTRESULT
+
+# A callback for text translation
+evaluate lambda self, id, code : self.page.sheet.itemconfig(id, text = ch_data(code, "app/res/"+self.vars.getvar('*app_langage')+".ch", alt=code))
+SetVar *translateText LASTRESULT
+
+# A callback for input translation
+evaluate lambda self, id, code : getWidgetById(self.page.entries, id).config(text = ch_data(code, "app/res/"+self.vars.getvar('*app_langage')+".ch", alt=code))
+SetVar *translateInput LASTRESULT
+
+# A callback for main title translation
+evaluate lambda self, code : self.title(ch_data(code, "app/res/"+self.vars.getvar('*app_langage')+".ch"))
+SetVar *translateTitle LASTRESULT
+
+# A callback to get a translated string
+evaluate lambda self, code : ch_data(code, "app/res/"+self.vars.getvar('*app_langage')+".ch")
+SetVar *translateString LASTRESULT
+
+#### Part 2 : Using callbacks
+
+evaluate {*translateTitle}(self, "home_1")
+evaluate {*translateButton}(self, 0, "home_2")
+evaluate {*translateButton}(self, 1, "home_3")
+
+execute app/scripts/home/fillSpace.gcs
+
+end

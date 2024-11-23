@@ -32,4 +32,16 @@ if 1 then
 	turn LASTRESULT into int
 	add LASTRESULT more...
 	CreateText 13 LASTRESULT
+
+evaluate {*translateText}(self, 10, "us_1")
+evaluate {*translateText}(self, 11, "config_8")
+evaluate {*translateText}(self, 12, "us_2")
+evaluate {*translateText}(self, 13, "us_3")
+evaluate {*translateText}(self, 14, "us_4")
+evaluate {*translateButton}(self, 8, "badge_1")
+evaluate {*translateButton}(self, 12, "us_5")
+evaluate {*translateButton}(self, 9, "us_6")
+evaluate {*translateButton}(self, 1, "us_7")
+
+execute app/scripts/home/fillSpace.gcs
 end

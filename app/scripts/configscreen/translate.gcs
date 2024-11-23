@@ -1,0 +1,10 @@
+evaluate {*translateText}(self, 8, "configscreen_1")
+evaluate {*translateText}(self, 9, "configscreen_2")
+evaluate {*translateText}(self, 10, "configscreen_3")
+evaluate {*translateText}(self, 11, "configscreen_4")
+evaluate {*translateButton}(self, 1, "badge_1")
+evaluate {*translateButton}(self, 0, "clocking_2")
+
+execute app/scripts/home/fillSpace.gcs
+
+end

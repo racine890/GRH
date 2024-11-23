@@ -5,6 +5,9 @@ if 1 then
 
 GetInput 2
 SetVar *data_base_name LASTRESULT
+if evaluate({LASTRESULT} == "") then
+	MessageBox Error Please Set the database db_name
+	end
 
 GetInput 3
 SetVar *user_base_name LASTRESULT
@@ -25,14 +28,15 @@ compare *testvariable 0
 if 0 then
 	end
 
-#creation du fichier config.ch avec la fonction ch_create (seulement pour les ch)
+# creation du fichier config.ch avec la fonction ch_create (seulement pour les ch)
 evaluate ch_create( "Config.ch")
 
-#enregistrer toutes les informations de la base de donnee cree
+# enregistrer toutes les informations de la base de donnee cree
 evaluate ch_update("db_user: "+{*user_base_name},"Config.ch")
 evaluate ch_update("db_password: "+{*password},"Config.ch")
 evaluate ch_update("db_host: "+{*adress},"Config.ch")
 evaluate ch_update("db_name: "+{*data_base_name},"Config.ch")
+evaluate ch_update("langage: fr","Config.ch")
 
 # execute le script initDatabase.gcs
 execute app/scripts/db/initDatabase.gcs
@@ -43,7 +47,7 @@ end
 
 
 [@connect]
-#permet de mettre du python dans le gcs
+# permet de mettre du python dans le gcs
 evaluate str( ( {*user_base_name}, {*password}, {*adress}, {*data_base_name} ) )
 define $TMP LASTRESULT
 connect MySQL with $TMP

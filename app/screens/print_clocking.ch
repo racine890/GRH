@@ -2,6 +2,7 @@
 #	clocking
 #		Pointage des heures d'arrivée et de départ
 #
+OnDisplay: app/scripts/print_clocking/translate.gcs
 
 Background: app/res/bgform.png
 Text.nb: 2
@@ -48,4 +49,6 @@ Button2.id: 3
 [events]
 Key: @[end]
 Button-1: @[end]
+BackSpace: @[app/screens/main.ch]
+Return: @[app/scripts/post/save-post.gcs]
 [/events]

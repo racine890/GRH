@@ -4,6 +4,18 @@ create ListBox 0 with *all_workers at 200-180
 
 execute app/scripts/db/get-document.gcs
 create ListBox 1 with LASTLIST at 200-50
-print("After :",self.page.boxes)
+
 SetVar *openfile evaluate(tuple())
+
+evaluate {*translateText}(self, 7, "editdocument_1")
+evaluate {*translateText}(self, 8, "editdocument_2")
+evaluate {*translateText}(self, 9, "editdocument_3")
+evaluate {*translateText}(self, 10, "editdocument_4")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 3, "editbadge_4")
+evaluate {*translateButton}(self, 5, "editdocument_5")
+evaluate {*translateButton}(self, 8, "editbadge_5")
+
+execute app/scripts/home/fillSpace.gcs
+
 end

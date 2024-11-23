@@ -6,12 +6,10 @@
 Background: app/res/bgform.png
 
 Text.nb: 1
-Text1: selected the post
+Text1: select the post
 Text1.id: 0
 0.x: 100
 0.y: 60
-
-
 
 Buttons.nb: 2
 Button.size: 30
@@ -29,11 +27,13 @@ Button2: Transfer
 Button2.id:7
 7.x: 300
 7.y: 380
-7.link:app/scripts/post-workerstation/transfer.gcs
+7.link: app/scripts/post-workerstation/transfer.gcs
 
 OnDisplay: app/scripts/post-workerstation/listBoxPost.gcs
 
 [events]
 Button-1: @[end]
+BackSpace: @[app/screens/consult-folder.ch]
+Return: @[app/scripts/post-workerstation/transfer.gcs]
 Key: @[end]
 [/events]

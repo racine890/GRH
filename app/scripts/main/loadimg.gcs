@@ -13,6 +13,17 @@ count *session_notifications
 CreateText 8 LASTRESULT
 config item 19 fill="white", font=("Arial Black", 19)
 
+evaluate {*translateText}(self, 2, "main_8")
+evaluate {*translateText}(self, 3, "main_1")
+evaluate {*translateText}(self, 4, "main_2")
+evaluate {*translateText}(self, 5, "main_3")
+evaluate {*translateText}(self, 6, "main_4")
+evaluate {*translateText}(self, 7, "main_5")
+evaluate {*translateText}(self, 8, "main_6")
+evaluate {*translateText}(self, 9, "main_7")
+
+execute app/scripts/home/fillSpace.gcs
+
 CheckFlag *bdates_initiated
 if 1 then
 	end

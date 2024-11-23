@@ -29,4 +29,20 @@ SetInputText 16 LASTRESULT
 evaluate getConfig("sun_eve", {*session_config})
 SetInputText 17 LASTRESULT
 
+evaluate {*translateText}(self, 18, "workdays_1")
+evaluate {*translateText}(self, 19, "workdays_2")
+evaluate {*translateText}(self, 20, "workdays_3")
+evaluate {*translateText}(self, 21, "workdays_4")
+evaluate {*translateText}(self, 22, "workdays_5")
+evaluate {*translateText}(self, 23, "workdays_6")
+evaluate {*translateText}(self, 24, "workdays_7")
+evaluate {*translateText}(self, 25, "workdays_8")
+evaluate {*translateText}(self, 26, "workdays_9")
+evaluate {*translateText}(self, 28, "config_4")
+evaluate {*translateText}(self, 27, "config_5")
+evaluate {*translateText}(self, 29, "config_9")
+evaluate {*translateButton}(self, 3, "editbadge_4")
+evaluate {*translateButton}(self, 2, "badge_1")
+
+execute app/scripts/home/fillSpace.gcs
 end

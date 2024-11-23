@@ -4,17 +4,15 @@ Input.nb: 2
 
 Input.nb: 2
 Input.Background: #ADD2CA
-Input1: 
 Input1.id: 2
 2.x: 450
 2.y: 250
 
-Input2: 
 Input2.id: 3
 3.x: 450
 3.y: 300
 
-Text.nb: 4
+Text.nb: 2
 Text1: E-mail address
 Text1.id: 6
 6.x: 300
@@ -38,3 +36,10 @@ Button.Background: #55968F
 Button.Foreground: #FFFFFF
 
 OnDisplay: app/scripts/sign-in/configure.gcs
+
+[events]
+Key: @[end]
+Button-1: @[end]
+BackSpace: @[end]
+Return: app/scripts/sign-in/checkAndAllow.gcs
+[/events]

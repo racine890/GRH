@@ -16,4 +16,12 @@ create ListBox 1 with *fda.wanted_document at 280-260
 
 # La liste des séléctionnés
 SetVar *fda.choosen evaluate([])
+
+evaluate {*translateText}(self, 5, "fdas_1")
+evaluate {*translateText}(self, 6, "fdas_2")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 3, "fdas_3")
+evaluate {*translateButton}(self, 4, "consult_folder_2")
+
+execute app/scripts/home/fillSpace.gcs
 end

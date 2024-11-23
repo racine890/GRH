@@ -1,0 +1,10 @@
+evaluate {*translateText}(self, 8, "event_1")
+evaluate {*translateText}(self, 9, "event_2")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 3, "clocking_2")
+evaluate {*translateButton}(self, 6, "event_3")
+evaluate {*translateButton}(self, 7, "event_4")
+
+execute app/scripts/home/fillSpace.gcs
+
+end

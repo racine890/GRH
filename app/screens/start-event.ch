@@ -5,11 +5,10 @@ Text1.id: 0
 0.x: 200
 0.y: 50
 
-
-
 Buttons.nb: 2
 Button.size: 30
 Button.width: 100
+
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
 Button1: Turn back
@@ -24,6 +23,11 @@ Button2.id: 6
 6.x: 320
 6.y: 350
 
-
-
 OnDisplay: app/scripts/event/listBoxEvent.gcs
+
+[events]
+Key: @[end]
+Button-1: @[end]
+BackSpace: app/screens/event.ch
+Return: app/scripts/event/update-Event.gcs
+[/events]

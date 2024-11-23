@@ -4,6 +4,8 @@
 # 	nom de la base, l'utilisateur mysql(root), le mot de passe(), ladresse ip de la base(le localhost)
 #
 
+OnDisplay: app/scripts/configscreen/translate.gcs
+
 Buttons.nb: 2
 Button.size: 50
 Button.width: 150
@@ -67,4 +69,10 @@ Text4.id: 9
 
 Background: app/res/plum.png
 
+[events]
+Key: @[end]
+Button-1: @[end]
+Return: app/scripts/licence/checkconfig_save_database.gcs
+BackSpace: home.ch
+[/events]
 # END

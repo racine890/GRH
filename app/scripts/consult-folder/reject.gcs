@@ -1,9 +1,13 @@
+# Prevent errors
 MessageBox Validate Are you sure you want to reject this folder ?
 compare LASTRESULT True
 if 5 then
 	end
+
+# Do the thing
 SetVar *arg_id *wfds.folderToDisplay.id
 execute app/scripts/db/rejectFolder.gcs
+
 MessageBox Done! Folder has been rejected ! Do you want to send it back ?
 compare LASTRESULT True
 if 5 then

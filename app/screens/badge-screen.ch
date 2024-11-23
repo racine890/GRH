@@ -3,6 +3,8 @@
 #		Ecran formulaire de création d'un badge
 #
 
+OnDisplay: app/scripts/badge-screen/translate.gcs
+
 Background: app/res/bgform.png
 
 Buttons.nb: 3
@@ -30,7 +32,15 @@ Button3.id: 6
 6.x: 550
 6.y: 80
 
+Button4: Print summary
+Button4.id: 0
+0.link: app/screens/edit-badge.ch
+0.x: 550
+0.y: 45
+
 [events]
 Button-1: @[end]
 Key: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]
