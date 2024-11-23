@@ -63,8 +63,8 @@ Input1.id: 4
 [events]
 Button-1: app/scripts/editDocument/select.gcs
 Key: @[end]
-BackSpace: app/screens/document-screen.ch
-Return: app/scripts/editDocument/update.gcs
+BackSpace: @[end]
+Return: @[end]
 [/events]
 
 OnDisplay: app/scripts/editDocument/listBox-worker.gcs

@@ -119,3 +119,28 @@ workdays_9 Dimanche
 wbs_1 Décoration
 wbs_2 Période
 wbs_3 Tout révoquer
+
+we_1 Nom
+we_2 Prénom
+we_3 Date de naissance
+we_4 Addresse
+we_5 E-mail
+
+wea_1 Evènement
+wea_2 Date prévue 
+wea_3 Date de fin
+wea_4 justification
+
+wfds_1 Sélectionner Dossier
+wfds_2 Créer Dossier
+wfds_3 créer pièce
+wfds_4 Consulter
+wfds_5 Nouveaux
+wfds_6 Validés
+wfds_7 Rejetés
+
+wps_1 Sélectionner Poste
+wps_2 Gérer dossiers
+wps_3 Attribuer Statut
+
+wss_1 Sélectionner statut

@@ -6,4 +6,18 @@ if evaluate(not (hasRight('Boss', {*session_rights}) or hasRight('Hr Director', 
 		ConfigButton 16 state="disabled"
 if evaluate(not (hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}) or hasRight('Worker', {*session_rights}) or hasRight('Invited User', {*session_rights}) or hasRight('Archivist', {*session_rights}))) then
 	ConfigButton 14 state="disabled"
+
+evaluate {*translateText}(self, 13, "we_1")
+evaluate {*translateText}(self, 14, "we_2")
+evaluate {*translateText}(self, 15, "we_3")
+evaluate {*translateText}(self, 16, "we_4")
+evaluate {*translateText}(self, 17, "we_5")
+evaluate {*translateButton}(self, 7, "clocking_2")
+evaluate {*translateButton}(self, 6, "badge_1")
+evaluate {*translateButton}(self, 13, "wps_3")
+evaluate {*translateButton}(self, 14, "wps_2")
+evaluate {*translateButton}(self, 15, "badge_3")
+evaluate {*translateButton}(self, 16, "clocking_3")
+
+execute app/scripts/home/fillSpace.gcs
 end

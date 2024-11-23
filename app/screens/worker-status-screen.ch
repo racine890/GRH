@@ -1,5 +1,6 @@
 Background: app/res/bgform.png
 Text.nb: 2
+
 Text1: Select worker
 Text1.id: 0
 0.x: 200
@@ -28,3 +29,10 @@ Button2.id: 3
 3.y: 350
 
 OnDisplay: app/scripts/worker/listBoxStatusWorker.gcs
+
+[events]
+Key: @[end]
+Button-1: @[end]
+BackSpace: @[end]
+Return: @[end]
+[/events]

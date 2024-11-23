@@ -3,7 +3,15 @@ evaluate  self.page.boxes.clear()
 execute app/scripts/db/collect-status.gcs
 SetVar *all_status LASTLIST
 create ListBox 0 with *all_status at 280-260
+
 execute app/scripts/db/get-worker.gcs
 SetVar *all_workers LASTLIST
 create ListBox 1 with *all_workers at 280-150
+
+evaluate {*translateText}(self, 4, "folder_2")
+evaluate {*translateText}(self, 5, "wss_1")
+evaluate {*translateButton}(self, 3, "clocking_2")
+evaluate {*translateButton}(self, 2, "badge_1")
+
+execute app/scripts/home/fillSpace.gcs
 end

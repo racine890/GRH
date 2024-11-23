@@ -44,7 +44,6 @@ Button2.id: 6
 6.x: 320
 6.y: 400
 
-
 edit.nb: 1
 edit.Background: #ADD2CA
 
@@ -68,9 +67,11 @@ Input2.id: 10
 10.y: 220
 10.type:date
 
-
 OnDisplay: app/scripts/event/listBoxWorkerEvent.gcs
+
 [events]
 Button-1: app/scripts/event/set.gcs
 Key: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]

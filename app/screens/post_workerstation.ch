@@ -33,7 +33,7 @@ OnDisplay: app/scripts/post-workerstation/listBoxPost.gcs
 
 [events]
 Button-1: @[end]
-BackSpace: @[app/screens/consult-folder.ch]
-Return: @[app/scripts/post-workerstation/transfer.gcs]
+BackSpace: @[end]
+Return: @[end]
 Key: @[end]
 [/events]

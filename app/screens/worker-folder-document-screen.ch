@@ -71,6 +71,9 @@ Input1.id: 4
 
 [events]
 Key: app/scripts/folder/search-folder.gcs
+Button-1: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]
 
 OnDisplay: app/scripts/folder/listBoxWorkerFolder.gcs

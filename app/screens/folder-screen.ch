@@ -64,6 +64,6 @@ Edit.size: 50
 [events]
 Button-1: @[print var LASTCLICKEDID]
 Key: @[end]
-BackSpace: app/screens/worker-folder-document-screen.ch
-Return: app/scripts/folder/save-folder.gcs
+BackSpace: @[end]
+Return: @[end]
 [/events]

@@ -4,7 +4,6 @@
 # print file
 # print section 
 # PrintVars
-print var LASTCLICKEDID
 switch LASTCLICKEDID
 
 if 10 then

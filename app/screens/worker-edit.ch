@@ -83,4 +83,6 @@ Input5.id: 12
 [events]
 Button-1: app/scripts/worker-edit/set.gcs
 Key: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]

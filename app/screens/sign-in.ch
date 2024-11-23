@@ -41,5 +41,5 @@ OnDisplay: app/scripts/sign-in/configure.gcs
 Key: @[end]
 Button-1: @[end]
 BackSpace: @[end]
-Return: app/scripts/sign-in/checkAndAllow.gcs
+Return: @[end]
 [/events]

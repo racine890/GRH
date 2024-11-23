@@ -100,6 +100,8 @@ Input5.id: 12
 12.y: 280
 
 [events]
-Button-1: @[end]
 Key: @[end]
+Button-1: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]

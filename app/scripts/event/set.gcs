@@ -1,5 +1,5 @@
 # focus_get retourne un widget donc permettra de prendre uniquement la valeur du clique
-
+print var LASTCLICKEDID
 if evaluate( self.focus_get() != self.page.boxes[1][1] ) then
 	end
 GetTableElement 1 of SELECTED

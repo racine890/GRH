@@ -43,8 +43,8 @@ Button3.id: 4
 [events]
 Key: @[end]
 Button-1: @[end]
-BackSpace: app/screens/consult-folder.ch
-Return: app/scripts/folder-document/saveFolderDocument.gcs
+BackSpace: @[end]
+Return: @[end]
 [/events]
 
 OnDisplay: app/scripts/folder-document/listBoxFolderDocument.gcs

@@ -7,4 +7,14 @@ create ListBox 0 with *all_workers at 270-40
 execute app/scripts/db/collect-event.gcs
 SetVar *all_event LASTLIST
 create ListBox 1 with *all_event at 270-130
+
+evaluate {*translateText}(self, 6, "folder_2")
+evaluate {*translateText}(self, 7, "wea_1")
+evaluate {*translateText}(self, 8, "wea_2")
+evaluate {*translateText}(self, 10, "wea_3")
+evaluate {*translateText}(self, 9, "wea_4")
+evaluate {*translateButton}(self, 6, "clocking_2")
+evaluate {*translateButton}(self, 5, "badge_1")
+
+execute app/scripts/home/fillSpace.gcs
 end
