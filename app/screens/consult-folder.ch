@@ -94,8 +94,8 @@ Edit.BeginY: 200
 [events]
 Key: @[end]
 Button-1: @[end]
-Return: app/scripts/consult-folder/validate.gcs
-BackSpace: app/scripts/consult-folder/reject.gcs
+Return: @[end]
+BackSpace: @[end]
 [/events]
 
 OnDisplay: app/scripts/consult-folder/update.gcs

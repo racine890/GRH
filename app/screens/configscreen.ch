@@ -72,7 +72,7 @@ Background: app/res/plum.png
 [events]
 Key: @[end]
 Button-1: @[end]
-Return: app/scripts/licence/checkconfig_save_database.gcs
-BackSpace: home.ch
+Return: @[end]
+BackSpace: @[end]
 [/events]
 # END

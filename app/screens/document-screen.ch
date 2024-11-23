@@ -62,8 +62,8 @@ Text3.id: 6
 [events]
 Key: @[end]
 Button-1: @[end]
-Return: app/scripts/document/save-file.gcs
-BackSpace: app/screens/worker-folder-document-screen.ch
+Return: @[end]
+BackSpace: @[end]
 [/events]
 
 OnDisplay: app/scripts/document/listBox-worker.gcs

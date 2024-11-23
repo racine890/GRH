@@ -62,6 +62,6 @@ Input2.id: 5
 [events]
 Button-1: @[end]
 Key: @[end]
-BackSpace: app/screens/main.ch
-Return: app/scripts/event/save.gcs
+BackSpace: @[end]
+Return: @[end]
 [/events]

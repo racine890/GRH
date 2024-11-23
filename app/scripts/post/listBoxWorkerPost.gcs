@@ -8,5 +8,9 @@ execute app/scripts/db/get-worker.gcs
 SetVar *all_workers LASTLIST
 create ListBox 1 with *all_workers at 280-150
 
+evaluate {*translateText}(self, 4, "folder_2")
+evaluate {*translateText}(self, 5, "wps_1")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 3, "clocking_2")
 execute app/scripts/home/fillSpace.gcs
 end

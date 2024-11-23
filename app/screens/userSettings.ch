@@ -84,6 +84,6 @@ Button3.id: 1
 [events]
 Button-1: @[end]
 Key: @[end]
-BackSpace: app/screens/main.ch
+BackSpace: @[end]
 Return: @[end]
 [/events]

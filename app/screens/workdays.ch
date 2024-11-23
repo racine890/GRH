@@ -153,6 +153,6 @@ Input14.id: 17
 [events]
 Button-1: app/scripts/workdays/switch.gcs
 Key: @[end]
-BackSpace: app/screens/main.ch
-Return: app/scripts/workdays/update.gcs
+BackSpace: @[end]
+Return: @[end]
 [/events]

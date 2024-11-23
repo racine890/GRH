@@ -22,4 +22,15 @@ create ListBox with *disp at 200-173
 
 # Largeur configurée au plus large élément
 evaluate self.page.boxes[0][1].config(width=0)
+
+evaluate {*translateText}(self, 10, "wfds_1")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 3, "wfds_2")
+evaluate {*translateButton}(self, 5, "wfds_3")
+evaluate {*translateButton}(self, 6, "wfds_4")
+evaluate {*translateButton}(self, 7, "wfds_5")
+evaluate {*translateButton}(self, 8, "wfds_6")
+evaluate {*translateButton}(self, 9, "wfds_7")
+
+execute app/scripts/home/fillSpace.gcs
 end

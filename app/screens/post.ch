@@ -45,7 +45,7 @@ Button4.id: 5
 
 [events]
 Button-1: @[end]
-BackSpace: @[app/screens/main.ch]
-Return: @[app/scripts/post/save-post.gcs]
+BackSpace: @[end]
+Return: @[end]
 Key: @[end]
 [/events]

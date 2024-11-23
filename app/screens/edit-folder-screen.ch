@@ -64,6 +64,6 @@ Edit.id: 8
 [events]
 Button-1: @[end]
 Key: @[end]
-Return: app/scripts/folder/update.gcs
-BackSpace: app/screens/consult-folder.ch
+Return: @[end]
+BackSpace: @[end]
 [/events]

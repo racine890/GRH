@@ -28,3 +28,10 @@ Button2.id: 3
 3.y: 350
 
 OnDisplay: app/scripts/post/listBoxWorkerPost.gcs
+
+[events]
+Key: @[end]
+Button-1: @[end]
+BackSpace: @[end]
+Return: @[end]
+[/events]

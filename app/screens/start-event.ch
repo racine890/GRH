@@ -28,6 +28,6 @@ OnDisplay: app/scripts/event/listBoxEvent.gcs
 [events]
 Key: @[end]
 Button-1: @[end]
-BackSpace: app/screens/event.ch
-Return: app/scripts/event/update-Event.gcs
+BackSpace: @[end]
+Return: @[end]
 [/events]

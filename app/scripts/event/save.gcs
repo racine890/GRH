@@ -22,7 +22,7 @@ if evaluate(not dateCheck({*foresight})) then
 evaluate formatDate({*foresight})
 SetVar *foresight LASTRESULT
 #comparer la date entree a la date du jour
-evaluate comparer_dates({*foresight},get_today())
+evaluate compare_dates({*foresight},get_today())
 compare LASTRESULT 2
 if 0 then
 	execute app/scripts/db/insert-event.gcs

@@ -119,3 +119,28 @@ workdays_9 Sunday
 wbs_1 Select badge
 wbs_2 Enter Period
 wbs_3 Revoke all
+
+we_1 Enter name
+we_2 Enter Lastname
+we_3 Enter birthday
+we_4 Enter address
+we_5 Enter mail
+
+wea_1 Select event
+wea_2 Planned date 
+wea_3 Enter the end of the event
+wea_4 justify
+
+wfds_1 Select file
+wfds_2 create folder
+wfds_3 create document
+wfds_4 Post up
+wfds_5 New
+wfds_6 Validated
+wfds_7 Rejected
+
+wps_1 Select post
+wps_2 Manage files
+wps_3 Attribute Status
+
+wss_1 Select status

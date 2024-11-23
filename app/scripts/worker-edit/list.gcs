@@ -1,4 +1,15 @@
 execute app/scripts/db/get-worker.gcs
 create ListBox with LASTLIST at 30-200
 SetVar *we_worker_id None
+
+evaluate {*translateText}(self, 10, "we_1")
+evaluate {*translateText}(self, 11, "we_2")
+evaluate {*translateText}(self, 12, "we_3")
+evaluate {*translateText}(self, 13, "we_4")
+evaluate {*translateText}(self, 14, "we_5")
+evaluate {*translateButton}(self, 7, "editbadge_4")
+evaluate {*translateButton}(self, 13, "editbadge_5")
+evaluate {*translateButton}(self, 6, "badge_1")
+
+execute app/scripts/home/fillSpace.gcs
 end

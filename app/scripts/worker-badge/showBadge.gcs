@@ -1,4 +1,3 @@
-print var LASTCLICKEDID
 compare SELECTED None
 if 0 then
 	end
