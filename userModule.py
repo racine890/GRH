@@ -8,6 +8,7 @@ import platform
 import os
 from datetime import datetime
 from tkinter import PhotoImage
+from functools import partial
 
 try:
 	from sys import path
@@ -219,6 +220,11 @@ def dates_diff(date1_str, date2_str):
 		diff_minutes -= 60
 
 	return (abs(diff_heures), abs(diff_minutes))
+
+def updateText(self, evt=None):
+	self.vars.setvar('*notebook_contents', self.vars.getvar('*notebook').get('1.0', 'end'))
+	with open('notebook.txt', 'w') as f:
+		f.write(self.vars.getvar('*notebook_contents'))
 
 def addHours(d, o, sd, so):
 	mt = sd*(60*d[0]+d[1]) + so*(60*o[0]+o[1])

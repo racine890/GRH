@@ -6,3 +6,4 @@ GEST RH.model
 *.html
 *.pyd
 migrations.log.txt
+notebook.txt
