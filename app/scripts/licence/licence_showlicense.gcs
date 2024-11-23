@@ -1,7 +1,7 @@
 #licence_showlicense.gcs
 #On vérifie si le fichier accepted.txt existe. Si oui, on affiche main.ch
-check file Config.ch
-if 1 then
+print(os.path.exists(basepath+'Config.ch'))
+if evaluate(os.path.exists(basepath+'Config.ch')) then
 	load app/screens/sign-in.ch
 	end
 #Si non, alors on charge le texte contenu dans app/res/conditions.txt dans notre edit, On affiche la checkbox; on désactive le bouton, et on crée un booléen qui nous servira à savoir si la checkbox est cochée ou non

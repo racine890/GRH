@@ -1,6 +1,7 @@
 #license_next.gcs
 #Ecrire le texte "Terms and Conditions have been accepted dans le fichier accepted.txt
-write Terms and Conditions have been accepted. =>accepted.txt
+evaluate basepath+"accepted.txt"
+write Terms and Conditions have been accepted. =>LASTRESULT
 #Le bouton suivant, juste afficher l'écran de connexion
 load app/screens/configscreen.ch
 end

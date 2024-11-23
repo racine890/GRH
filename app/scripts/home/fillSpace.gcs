@@ -6,7 +6,11 @@ evaluate Label({*frame-left}, text="GRH NoteBook", bg="white", font=("Arial", 30
 pack LASTRESULT side="top"
 
 evaluate Text({*frame-left}, bg='#55968F', fg='#FFFFFF', width="45", height="14", wrap="word", font=("Arial", 20))
+SetVar *notebook LASTRESULT
 pack LASTRESULT side="top", expand=True, fill="x", padx=(10,10),pady=(0, 10)
+
+evaluate {*notebook}.insert('1.0', {*notebook_contents})
+evaluate {*notebook}.bind("<Leave>", partial(updateText, self))
 
 create frame with background="#55968F", width=1210, height=990
 SetVar *frame-right LASTRESULT
