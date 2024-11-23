@@ -18,7 +18,7 @@ Text2.id: 1
 Buttons.nb: 3
 
 Button.size: 30
-Button.width: 100
+Button.width: 150
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
 
@@ -43,6 +43,8 @@ Button3.id: 4
 [events]
 Key: @[end]
 Button-1: @[end]
+BackSpace: app/screens/consult-folder.ch
+Return: app/scripts/folder-document/saveFolderDocument.gcs
 [/events]
 
 OnDisplay: app/scripts/folder-document/listBoxFolderDocument.gcs

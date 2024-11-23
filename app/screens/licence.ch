@@ -26,6 +26,9 @@ Edit.size: 300
 
 [events]
 Button-1: app/scripts/licence/licence_accept.gcs
+Key: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]
 
 Buttons.width: 200

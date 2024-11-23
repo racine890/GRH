@@ -56,4 +56,7 @@ OnDisplay: app/scripts/worker-badge/listBoxWorkerBadge.gcs
 
 [events]
 Button-1: app/scripts/worker-badge/showBadge.gcs
+Key: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]

@@ -4,10 +4,11 @@
 #
 
 Background: app/res/bgform.png
+OnDisplay: app/scripts/states/translate.gcs
 
 Buttons.nb: 4
 Button.size: 30
-Button.width: 150
+Button.width: 170
 Button.Background: #FFFFFF
 Button.Foreground: #55968F
 
@@ -34,3 +35,10 @@ Button2.id: 1
 1.x: 550
 1.y: 180
 1.link: app/screens/main.ch
+
+[events]
+Key: @[end]
+Button-1: @[end]
+BackSpace: @[end]
+Return: @[end]
+[/events]

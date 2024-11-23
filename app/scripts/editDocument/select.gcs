@@ -1,3 +1,5 @@
+print var LASTCLICKEDID
+
 if evaluate(len(self.page.boxes)<2) then
 	end
 

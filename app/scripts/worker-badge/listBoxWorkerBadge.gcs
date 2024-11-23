@@ -11,4 +11,13 @@ create ListBox 1 with *all_workers at 280-150
 
 LoadPic app/res/badge.png at 480-260
 SetVar SELECTED None
+
+evaluate {*translateText}(self, 8, "wbs_2")
+evaluate {*translateText}(self, 6, "folder_2")
+evaluate {*translateText}(self, 7, "wbs_1")
+evaluate {*translateButton}(self, 3, "clocking_2")
+evaluate {*translateButton}(self, 2, "badge_1")
+evaluate {*translateButton}(self, 6, "wbs_3")
+
+execute app/scripts/home/fillSpace.gcs
 end

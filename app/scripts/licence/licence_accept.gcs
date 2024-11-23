@@ -1,3 +1,5 @@
+print var LASTCLICKEDID
+
 #licence_accept.gcs
 #Vérifier si l'élément graphique numéro 5 a été cliqué ( ici, notre checkbox )
 compare LASTCLICKEDID 5

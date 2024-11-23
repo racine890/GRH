@@ -1,3 +1,5 @@
+print var LASTCLICKEDID
+
 # If an image has been clicked from the kanban, it may look like "1,badge.png"
 if evaluate({*selected} != '' and ',' in {*selected}) then
 

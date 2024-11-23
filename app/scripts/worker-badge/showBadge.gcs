@@ -1,3 +1,4 @@
+print var LASTCLICKEDID
 compare SELECTED None
 if 0 then
 	end
@@ -8,5 +9,5 @@ if evaluate(not 0 in {SELECTED}) then
 GetTableElement 0 of SELECTED
 GetTableElement 2 of LASTRESULT
 define $PIC LASTRESULT
-ChangePic 10 $PIC
+ChangePic 11 $PIC
 end

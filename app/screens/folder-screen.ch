@@ -37,10 +37,10 @@ Button1.id: 3
 3.y: 400
 
 Button2: Save
-Button2.id:4
+Button2.id: 4
 4.x: 270
 4.y: 400
-4.link:app/scripts/folder/save-folder.gcs
+4.link: app/scripts/folder/save-folder.gcs
 
 Button3: Choose document
 Button3.id: 5
@@ -62,6 +62,8 @@ Edit.width: 200
 Edit.size: 50
 
 [events]
-Button-1: @[end]
+Button-1: @[print var LASTCLICKEDID]
 Key: @[end]
+BackSpace: app/screens/worker-folder-document-screen.ch
+Return: app/scripts/folder/save-folder.gcs
 [/events]

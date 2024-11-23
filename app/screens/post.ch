@@ -5,6 +5,8 @@ Text1.id: 0
 0.x: 100
 0.y: 200
 
+OnDisplay: app/scripts/post/translate.gcs
+
 Buttons.nb: 4
 Button.size: 30
 Button.width: 150
@@ -18,13 +20,13 @@ Button1.id: 1
 
 Button2: Save
 Button2.id:2
-2.x: 250
+2.x: 300
 2.y: 300
-2.link:app/scripts/post/save-post.gcs
+2.link: app/scripts/post/save-post.gcs
 
-input.nb: 1
-input.Background: #ADD2CA
-Input1: 
+Input.nb: 1
+Input.Background: #ADD2CA
+
 Input1.id: 3
 3.x: 250
 3.y: 220
@@ -43,7 +45,7 @@ Button4.id: 5
 
 [events]
 Button-1: @[end]
-BackSpace: @[end]
-Return: @[end]
+BackSpace: @[app/screens/main.ch]
+Return: @[app/scripts/post/save-post.gcs]
 Key: @[end]
 [/events]

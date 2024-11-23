@@ -87,6 +87,6 @@ OnDisplay: app/scripts/config-1/config-init.gcs
 [events]
 Key: @[end]
 Button-1: app/scripts/config-1/switch-config1.gcs
-BackSpace: @[end]
-Return: @[end]
+BackSpace: app/screens/main.ch
+Return: app/scripts/config-1/save-user.gcs
 [/events]

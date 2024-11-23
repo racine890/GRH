@@ -45,6 +45,7 @@ Text8: configuration
 Text8.id: 7
 7.x: 70
 7.y: 300
+
 #les icones se telechargerons apres le chargement de l'appli
 OnDisplay: app/scripts/main/loadimg.gcs
 
@@ -52,4 +53,7 @@ OnDisplay: app/scripts/main/loadimg.gcs
 
 [events]
 Button-1: app/scripts/main/switch-main.gcs
+Key: @[end]
+BackSpace: @[end]
+Return: @[end]
 [/events]

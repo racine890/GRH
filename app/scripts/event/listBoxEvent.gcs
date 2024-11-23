@@ -1,4 +1,10 @@
 execute app/scripts/db/selectWorkerEvent.gcs
 SetVar *all_event LASTLIST
 create ListBox 1 with *all_event at 270-130
+
+evaluate {*translateText}(self, 4, "se_1")
+evaluate {*translateButton}(self, 5, "badge_1")
+evaluate {*translateButton}(self, 6, "se_2")
+
+execute app/scripts/home/fillSpace.gcs
 end

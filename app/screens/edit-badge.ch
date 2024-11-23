@@ -54,4 +54,6 @@ Edit.size: 50
 [events]
 Button-1: app/scripts/badge/set-badge.gcs
 Key: @[end]
+Return: app/scripts/badge/update-badge.gcs
+BackSpace: app/screens/badge-screen.ch
 [/events]
