@@ -7,3 +7,4 @@ GEST RH.model
 *.pyd
 migrations.log.txt
 notebook.txt
+dist

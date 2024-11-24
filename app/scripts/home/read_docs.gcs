@@ -3,9 +3,9 @@
 SetVar *platform PLATFORM
 compare *platform win32
 if 0 then
-	evaluate system("start https://gcenterburkina.com/path/to/doc")
+	evaluate system("start https://gcenterburkina.com/sys_pages/page_doc.php?id=22")
 	end
-evaluate system("xdg-open https://gcenterburkina.com/path/to/doc")
+evaluate system("xdg-open https://gcenterburkina.com/sys_pages/page_doc.php?id=22")
 end
 
 # role :
