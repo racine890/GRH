@@ -36,7 +36,7 @@ evaluate {LASTRESULT}.replace('%WORKER%', str({*state.worker}))
 evaluate {LASTRESULT}.replace('%DESC%', str({*state.description}))
 SetVar *output LASTRESULT
 
-evaluate open("state.html", "w")
+evaluate open(basepath+"state.html", "w")
 SetVar *fh LASTRESULT
 evaluate {*fh}.write({*output})
 evaluate {*fh}.close()
@@ -44,9 +44,9 @@ evaluate {*fh}.close()
 SetVar *platform PLATFORM
 compare *platform win32
 if 0 then
-	evaluate system("start state.html")
+	evaluate system("start \""+basepath+"state.html\"")
 	end
-evaluate system('xdg-open state.html')
+evaluate system('xdg-open "'+basepath+'state.html"')
 end
 [/@create]
 

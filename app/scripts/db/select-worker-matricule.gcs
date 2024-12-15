@@ -1,17 +1,11 @@
 evaluate str( ( ch_data("db_user",basepath+"Config.ch"), ch_data("db_password",basepath+"Config.ch"),ch_data("db_host",basepath+"Config.ch"), ch_data("db_name",basepath+"Config.ch")) )
 define $TMP LASTRESULT
 connect MySQL with $TMP
-#print var LASTFILE
-execute query insert
-commit
+# selection des droits dans la base de donnee
+query select_one with getUser
 close database
 end
 
-[insert]
-insert into grh_worker(firstname, lastname, date_birth,address,mail, matricule) values ( *worker_name,*lastname,*birthday,*address,*mail, *matricule );
-[/insert]
-
-
-
-
-
+[getUser]
+select * from grh_worker where  matricule = *matricule and statut = 1;
+[/getUser]

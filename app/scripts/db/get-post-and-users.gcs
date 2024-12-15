@@ -8,5 +8,8 @@ close database
 end
 
 [guas]
-select * from grh_worker, grh_workerstation, grh_worker_workerstation_assoc where grh_worker.id = grh_worker_workerstation_assoc.id_worker and grh_worker_workerstation_assoc.id_workerstation = grh_workerstation.id and grh_workerstation.statut = 1 order by label asc;
+select grh_worker.id, firstname, lastname, date_birth, matricule, address, mail,
+grh_worker.statut, grh_worker.create_date, grh_workerstation.id, label,
+
+ from grh_worker, grh_workerstation, grh_worker_workerstation_assoc where grh_worker.id = grh_worker_workerstation_assoc.id_worker and grh_worker_workerstation_assoc.id_workerstation = grh_workerstation.id and grh_workerstation.statut = 1 order by label asc;
 [/guas]

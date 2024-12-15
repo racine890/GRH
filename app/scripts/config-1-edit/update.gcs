@@ -1,0 +1,22 @@
+if evaluate( {SELECTED} == "" or 0 not in {SELECTED} ) then
+	MessageBox Wait.. Please select the right
+	end
+
+GetTableElement 0 of SELECTED
+GetTableElement 0 of LASTRESULT 
+SetVar *form_right_id LASTRESULT
+
+if evaluate(  1 in {SELECTED} ) then
+	GetTableElement 1 of SELECTED
+	GetTableElement 0 of LASTRESULT 
+	SetVar *worker_id LASTRESULT
+
+SetVar *arg_id *user_id
+SetVar *arg_right *form_right_id
+SetVar *arg_worker *worker_id
+
+execute app/scripts/db/upd-user.gcs
+
+MessageBox success operation succeeded
+
+end

@@ -1,0 +1,33 @@
+check var *arg_id 
+if 0 then
+	print val missing param : *arg_id
+	end
+
+check var *arg_right 
+if 0 then
+	print val missing param : *arg_right
+	end
+
+check var *arg_worker 
+if 0 then
+	print val missing param : *arg_worker
+	end
+
+evaluate str( ( ch_data("db_user",basepath+"Config.ch"), ch_data("db_password",basepath+"Config.ch"),ch_data("db_host",basepath+"Config.ch"), ch_data("db_name",basepath+"Config.ch")) )
+define $TMP LASTRESULT
+connect MySQL with $TMP
+
+execute query upd
+execute query upd2
+
+commit
+close database
+end
+
+[upd]
+Update grh_user set worker_id = *arg_worker where id = *arg_id;
+[/upd]
+
+[upd2]
+Update grh_user_right_assoc set id_right = *arg_right where id_user = *arg_id;
+[/upd2]

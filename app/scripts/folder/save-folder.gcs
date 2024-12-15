@@ -26,5 +26,9 @@ execute app/scripts/db/insert-workerfolder.gcs
 SetVar SELECTED
 
 # Notifier et quitter
+compare *creator None
+if 0 then
+	MessageBox Error Your account is not linked to any worker, so you can not create a folder.
+	end
 MessageBox done.. Operation success
 end

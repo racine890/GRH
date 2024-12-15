@@ -12,7 +12,7 @@ connect MySQL with $TMP
 GetTableElement 5 of *session_user
 SetVar *workerstation_id LASTRESULT
 
-GetTableElement 0 of *session_user
+GetTableElement 4 of *session_user
 SetVar *current_user LASTRESULT
 
 if evaluate(hasRight('Hr Director', {*session_rights}) or hasRight('Boss', {*session_rights})) then

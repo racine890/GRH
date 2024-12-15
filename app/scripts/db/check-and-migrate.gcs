@@ -1,3 +1,6 @@
+evaluate basepath+"state.html"
+SetVar *tmp_state_file LASTRESULT
+
 try @check else @fail
 end
 

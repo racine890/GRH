@@ -13,5 +13,7 @@ close database
 end
 
 [get]
-Select * from grh_folder, grh_worker where grh_worker.id = grh_folder.id_worker and grh_folder.statut=1 and grh_folder.id = *arg_id limit 1;
+Select grh_folder.id, grh_folder.id_worker, grh_folder.workerstation_id, 
+grh_folder.label, grh_folder.description, grh_folder.creator, grh_folder.create_date, 
+grh_worker.id, grh_worker.firstname, grh_worker.lastname from grh_folder, grh_worker where grh_worker.id = grh_folder.id_worker and grh_folder.statut=1 and grh_folder.id = *arg_id limit 1;
 [/get]

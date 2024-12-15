@@ -8,6 +8,10 @@ SetVar *workerstation_id LASTRESULT
 GetTableElement 4 of *session_user
 SetVar *creator LASTRESULT
 
+compare *creator None
+if 0 then
+	end
+
 compare *workerstation_id 0
 if 0 then
 	execute query insertLess

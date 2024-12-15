@@ -1,0 +1,11 @@
+if evaluate( {SELECTED} == '' or not 2 in {SELECTED}) then
+	print var SELECTED
+	MessageBox Error Choose a worker first!
+	end
+
+GetTableElement 2 of SELECTED
+GetTableElement 0 of LASTRESULT
+SetVar *user_id LASTRESULT
+
+load app/screens/config-1-edit.ch
+end

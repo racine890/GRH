@@ -10,13 +10,13 @@ SetVar *total LASTRESULT
 evaluate unFormatDate(get_today())
 SetVar *today LASTRESULT
 
-PrintState MySTATE as state.html use app/res/default.dat
+define $STATE *tmp_state_file
+PrintState MySTATE as $STATE use app/res/default.dat
 
 if evaluate(platform.system() != "Linux") then
-	evaluate system('state.html')
+	evaluate system("start \""+basepath+"state.html\"")
 	end
-
-evaluate system('xdg-open state.html')
+evaluate system('xdg-open "'+basepath+'state.html"')
 end
 [/@create]
 

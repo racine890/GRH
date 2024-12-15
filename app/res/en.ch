@@ -19,6 +19,7 @@ config_6 Choose the right
 config_7 Password
 config_8 Username
 config_9 User Management
+config_10 (Re)Assign
 
 configgeneral_1 Phone
 configgeneral_2 Email
@@ -66,7 +67,7 @@ fdas_1 Select document
 fdas_2 Choosen documents
 fdas_3 Select
 
-folder_1 Choose document
+folder_1 Description
 folder_2 select worker
 folder_3 Label of folder
 

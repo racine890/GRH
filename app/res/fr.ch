@@ -19,6 +19,7 @@ config_6 Droit
 config_7 Mot de passe
 config_8 Pseudonyme
 config_9 Gestion utilisateurs
+config_10 (Re)Assigner
 
 configgeneral_1 Téléphone
 configgeneral_2 Email
@@ -66,7 +67,7 @@ fdas_1 Sélectionner Pièce
 fdas_2 Pièces sélectionnées
 fdas_3 Sélectionner
 
-folder_1 Choisir pièce
+folder_1 Description
 folder_2 Choisir employé
 folder_3 Titre du dossier
 

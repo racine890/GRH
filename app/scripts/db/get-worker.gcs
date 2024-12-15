@@ -3,6 +3,13 @@ evaluate str( ( ch_data("db_user",basepath+"Config.ch"), ch_data("db_password",b
 define $TMP LASTRESULT
 connect MySQL with $TMP
 
+if evaluate(not (hasRight('Boss', {*session_rights}) or hasRight('Hr Director', {*session_rights}))) then
+	GetTableElement 4 of *session_user
+	SetVar *my_id LASTRESULT
+	query select_all with workerNested
+	close database
+	end
+
 query select_all with worker
 
 close database
@@ -11,3 +18,7 @@ end
 [worker]
 	Select * from grh_worker where statut=1
 [/worker]
+
+[workerNested]
+	Select * from grh_worker where statut=1 and id = *my_id
+[/workerNested]

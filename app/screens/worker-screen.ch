@@ -7,7 +7,7 @@ Background: app/res/bgform.png
 
 OnDisplay: app/scripts/worker-screen/rights-apply.gcs
 
-Text.nb: 5
+Text.nb: 6
 Text1: Enter name
 Text1.id: 0
 0.x: 100
@@ -32,6 +32,11 @@ Text5: Enter mail
 Text5.id: 4
 4.x: 100
 4.y: 260
+
+Text6: Matricule
+Text6.id: 17
+17.x: 100
+17.y: 10
 
 Buttons.nb: 6
 Button.size: 30
@@ -75,7 +80,7 @@ Button6.id: 16
 16.x: 550
 16.y: 120
 
-Input.nb: 5
+Input.nb: 6
 Input.Background: #ADD2CA
 
 Input1.id: 8
@@ -98,6 +103,10 @@ Input4.id: 11
 Input5.id: 12
 12.x: 250
 12.y: 280
+
+Input6.id: 18
+18.x: 250
+18.y: 30
 
 [events]
 Key: @[end]

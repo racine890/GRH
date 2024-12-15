@@ -1,17 +1,18 @@
 execute app/scripts/config-1/loadimag.gcs
 execute app/scripts/config-1/listBoxRight.gcs
 
-evaluate {*translateText}(self, 8, "config_9")
-evaluate {*translateText}(self, 9, "config_8")
-evaluate {*translateText}(self, 10, "config_7")
-evaluate {*translateText}(self, 11, "config_6")
-evaluate {*translateText}(self, 12, "config_5")
-evaluate {*translateText}(self, 13, "config_4")
-evaluate {*translateText}(self, 14, "config_1")
+evaluate {*translateText}(self, 9, "config_9")
+evaluate {*translateText}(self, 10, "config_8")
+evaluate {*translateText}(self, 11, "config_7")
+evaluate {*translateText}(self, 12, "config_6")
+evaluate {*translateText}(self, 13, "config_5")
+evaluate {*translateText}(self, 14, "config_4")
+evaluate {*translateText}(self, 15, "config_1")
 evaluate {*translateButton}(self, 8, "badge_1")
 evaluate {*translateButton}(self, 9, "clocking_2")
 evaluate {*translateButton}(self, 11, "config_3")
 evaluate {*translateButton}(self, 12, "config_2")
+evaluate {*translateButton}(self, 14, "config_10")
 
 execute app/scripts/home/fillSpace.gcs
 

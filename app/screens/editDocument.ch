@@ -1,3 +1,8 @@
+#
+#	EditDocument.ch
+#	Edition of a GRH Document
+#
+
 Background: app/res/bgform.png
 
 Text.nb: 4

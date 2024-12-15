@@ -13,6 +13,9 @@ SetVar *address LASTRESULT
 GetInput 12
 SetVar *mail LASTRESULT
 
+GetInput 18
+SetVar *matricule LASTRESULT
+
 if evaluate( {*worker_name} == ""  ) then
 	MessageBox Wait.. Please Enter workername
 	end
@@ -23,6 +26,10 @@ if evaluate( {*lastname} == "" ) then
 
 if evaluate( {*birthday} == "" ) then
 	MessageBox Wait.. Please Enter birthday
+	end
+
+if evaluate( {*matricule} == "" ) then
+	MessageBox Wait.. Please Enter matricule
 	end
 
 # vérifier que la date saisie est une vraie date ( pas si elle est correcte )
@@ -45,6 +52,15 @@ compare *check-mail None
 
 if 5 then
 	MessageBox Error This mail is already use
+	end
+
+execute app/scripts/db/select-worker-matricule.gcs
+
+SetVar *check-matricule LASTTUPLE
+compare *check-matricule None
+
+if 5 then
+	MessageBox Error This matricule is already use
 	end
 
 evaluate int(get_today().split('-')[0]) - int({*birthday}.split(' ')[0].split('/')[-1])

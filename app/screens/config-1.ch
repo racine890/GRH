@@ -47,7 +47,7 @@ Input2.id: 6
 6.x: 350
 6.y:  200
 
-Buttons.nb: 4
+Buttons.nb: 5
 Button.size: 30
 Button.width: 100
 Button.Background: #FFFFFF
@@ -76,6 +76,12 @@ Button4.id: 12
 12.link: app/scripts/config-1/disable.gcs
 12.x: 380
 12.y: 0
+
+Button5: (Re) Assign
+Button5.id: 14
+14.link: app/scripts/config-1/edit.gcs
+14.x: 500
+14.y: 0
 
 Text7: Choose a woker
 Text7.id: 10

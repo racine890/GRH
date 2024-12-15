@@ -1,0 +1,19 @@
+evaluate  self.page.boxes.clear()
+
+execute app/scripts/db/collect-right.gcs
+SetVar *all_rights LASTLIST
+create ListBox 0 with *all_rights at 350-240
+
+execute app/scripts/db/worker-not-count.gcs
+SetVar *all_workers LASTLIST
+create ListBox 1 with *all_workers at 350-320
+
+evaluate {*translateText}(self, 4, "config_1")
+evaluate {*translateText}(self, 5, "config_6")
+
+evaluate {*translateButton}(self, 8, "badge_1")
+evaluate {*translateButton}(self, 9, "clocking_2")
+
+execute app/scripts/home/fillSpace.gcs
+
+end

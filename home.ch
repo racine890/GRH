@@ -8,7 +8,7 @@ Onload: app/scripts/db/check-and-migrate.gcs
 OnDisplay: app/scripts/home/translate.gcs
 UnFixed: True
 Background: app/res/bg.png
-
+debug: yes
 Buttons.nb: 2
 Button1: Sign-in
 Button1.id: 0

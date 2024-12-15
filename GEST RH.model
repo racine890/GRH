@@ -15,6 +15,7 @@ Conventions :
  Todo :
 	- Optimiser
 	- Etats html / pdf
+	- Améliorer le check de la base de données - Ne pas simplement vérifier le fichier de configuration. Si la base existe, skipper la création elle-même
 	- Amélioration graphique (Voir Leslie)
 	- Permettre d'aggrandir (Evaluer faisabilité)
 	- Revoir les libellés (avec Leslie)
@@ -23,6 +24,10 @@ Conventions :
 
 	- Publier - Finir la gestion des droits avant
 	- Ajouter créateur et transmetteur sur folder. Créateur pour qu'il puisse suivre, transmetteur pour qu'en renvoyant ça lui revienne.
+	- Ajouter Matricule
+	- Suivi des promotions, mutations, et départs.
+	- Intégration avec des terminaux biométriques ou cartes RFID (optionnel).
+	- Suivi des participants et évaluations post-événement.
 
 Done :
 - Gérer l'authentification ( Sécurité ) (ok)

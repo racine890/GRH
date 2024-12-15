@@ -11,13 +11,13 @@ SetVar *total LASTRESULT
 evaluate unFormatDate(get_today())
 SetVar *today LASTRESULT
 
-PrintState MySTATE as state.html use app/res/alt.dat
+define $STATE *tmp_state_file
+PrintState MySTATE as $STATE use app/res/alt.dat
 
 if evaluate(platform.system() != "Linux") then
-	evaluate system('state.html')
+	evaluate system("start \""+basepath+"state.html\"")
 	end
-
-evaluate system('xdg-open state.html')
+evaluate system('xdg-open "'+basepath+'state.html"')
 end
 [/@create]
 
@@ -35,7 +35,6 @@ COMPANY: G. CENTER
 [/MySTATE]
 
 [@process]
-evaluate print({*html}+'<tr><td colspan="6">'+{*element}[10]+'<td></tr>')
 if evaluate({*element}[9] != {*last}) then
 	evaluate {*html}+'<tr><td colspan="6">'+{*element}[10]+'</td></tr>' =>*html
 evaluate {*html}+'<tr><td>'+{*element}[1]+'</td><td>'+{*element}[2]+'</td><td>'+unFormatDate(str({*element}[3]))+'</td><td>'+str({*element}[5])+'</td><td>'+str({*element}[6])+'</td><td>'+unFormatDate(str({*element}[8]))+'</td></tr>' =>*html
