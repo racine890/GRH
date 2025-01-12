@@ -1,3 +1,5 @@
+# Popup d'affichage des messages
+
 Title: Notifications
 Width: 500
 Size: 400
@@ -7,7 +9,6 @@ Onload: app/scripts/messages/init.gcs
 OnDisplay: app/scripts/messages/display.gcs
 
 Background: app/res/bgcongig1.png
-#Background.x: 400
 
 Edit.nb: 1
 Edit1.id: 0
@@ -40,9 +41,10 @@ Button2.id: 3
 3.y: 260
 3.link: app/scripts/messages/previous.gcs
 
-
 AppIcon: app/res/notification.png
 
 [events]
 FocusOut: @[exit]
 [/events]
+
+# END

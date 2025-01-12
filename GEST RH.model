@@ -5,6 +5,7 @@ Conventions :
 	- On enregistrera un maximum d'informations dans les tables, meme si on ne sait pas ce qu'on va en faire.
 	- Pour chaque table, on va créer 3 droits : read, write, et remove.
 	- Pour chaque écran ch, on va créer 3 droits : read, write, et remove.
+	- Ajouter une interface web
 	- Les tables de liaisons doivent etre nommées dans le genre grh_table1_table2_assoc. Exemple, une liaison entre la table grh_user et la table grh_worker aura le nom grh_user_worker_assoc.
 	- On utilisera des constantes d'état. ( Par exemple 0 pour désactivé, 1 pour actif, 2 pour en état brouillon , etc )
 	- Bouton supprimer toutes affectations badges
